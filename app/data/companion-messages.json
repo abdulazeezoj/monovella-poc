@@ -1,0 +1,202 @@
+[
+  {
+    "id": "e29815e1-edc5-5ef4-8253-43b2a7d730bb",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 1,
+    "role": "COMPANION",
+    "type": "SYSTEM",
+    "body": "Hello Amara. I'm Teni. You can tell me what you've eaten, how you're feeling, or what you've measured, and I'll put it in your record. I'll always read it back before I save anything. I don't diagnose and I don't prescribe; that's a licensed expert's job, and I can help you find one.",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-01-27T08:55:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "def8991e-fc48-5b20-b311-9ced2ca25912",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 2,
+    "role": "USER",
+    "type": "TEXT",
+    "body": "I've been getting that burning feeling again after dinner",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-08-04T16:15:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "e2934f9e-9613-50f4-9441-fac5eac6b622",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 3,
+    "role": "COMPANION",
+    "type": "TEXT",
+    "body": "That's the third time this month. Do you want me to log it as heartburn?",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-08-04T16:16:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "33310ddf-0a38-557d-810a-ad7127971114",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 4,
+    "role": "USER",
+    "type": "TEXT",
+    "body": "yes, moderate",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-08-04T16:17:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "16b57381-cbc9-5e73-85ff-af3f3b028c65",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 5,
+    "role": "COMPANION",
+    "type": "LOG_PROPOSAL",
+    "body": "Saving this to your calendar.",
+    "item": {
+      "category": "SYMPTOMS",
+      "symptom": "Heartburn",
+      "severity": "Moderate (2 of 3)",
+      "logged_at": "25 Jul 2026, 16:15"
+    },
+    "pending_confirmation": false,
+    "sent_at": "2026-08-04T16:17:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "26defec9-1a9b-5744-ac47-480c348fce3b",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 6,
+    "role": "USER",
+    "type": "TEXT",
+    "body": "what did the doctor say about the cream last week",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-08-24T11:15:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "2a3ef84c-0fe4-53fe-9775-f2f88bcd0a14",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 7,
+    "role": "COMPANION",
+    "type": "TEXT",
+    "body": "Dr. Bassey's plan from 23 August says: stop all current creams, start azelaic acid 20% twice daily, and use SPF 50 every morning with a midday reapplication. She wrote that the sunscreen is the part that does most of the work. The full note is on your case record.",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-08-24T11:16:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "91be2524-e0ef-5135-b372-7aaffbf3af80",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 8,
+    "role": "USER",
+    "type": "TEXT",
+    "body": "I walked for about 35 minutes this morning",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-08-29T05:15:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "9d7adc53-4a3a-5a72-93a9-94b1292f2c2a",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 9,
+    "role": "COMPANION",
+    "type": "LOG_PROPOSAL",
+    "body": "Nice one. Logging a 35-minute walk for this morning.",
+    "item": {
+      "category": "Physical activity",
+      "type": "Walk",
+      "duration": "35 minutes",
+      "logged_at": "Today, 05:15"
+    },
+    "pending_confirmation": false,
+    "sent_at": "2026-08-29T05:16:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "86027234-0316-5f52-a586-3046f53139bd",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 10,
+    "role": "USER",
+    "type": "TEXT",
+    "body": "also I only slept about five hours",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-08-29T05:17:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "805490ca-1c99-5726-9bc4-d6337f1efe8e",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "seq": 11,
+    "role": "COMPANION",
+    "type": "LOG_PROPOSAL",
+    "body": "Got it. I have you down as 23:20 to 05:40, six hours twenty. Should I save that, or do you want to change the times?",
+    "item": {
+      "category": "Sleep",
+      "asleep": "23:20",
+      "awake": "05:40",
+      "duration": "6h 20m"
+    },
+    "pending_confirmation": true,
+    "sent_at": "2026-08-29T05:18:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "9442f0f3-2140-53a2-9cc5-8895e809c026",
+    "patient_id": "e3d66bdb-d166-5558-84ff-3f2a634b1959",
+    "seq": 1,
+    "role": "COMPANION",
+    "type": "SYSTEM",
+    "body": "Hello Kelechi. This conversation belongs only to your record.",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-08-17T09:15:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "f7bdc068-9107-5a45-ac23-202763403948",
+    "patient_id": "e3d66bdb-d166-5558-84ff-3f2a634b1959",
+    "seq": 2,
+    "role": "USER",
+    "type": "TEXT",
+    "body": "I had a mild headache after lunch",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-08-27T12:15:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "e46baa49-59f0-5a88-84bb-f137db1368b5",
+    "patient_id": "e3d66bdb-d166-5558-84ff-3f2a634b1959",
+    "seq": 3,
+    "role": "COMPANION",
+    "type": "LOG_PROPOSAL",
+    "body": "Save Kelechi's mild headache to the calendar?",
+    "item": {
+      "category": "SYMPTOMS",
+      "symptom": "Headache",
+      "severity": "A little (1 of 3)",
+      "logged_at": "2 days ago, 12:15"
+    },
+    "pending_confirmation": true,
+    "sent_at": "2026-08-27T12:16:00",
+    "emergency_routing": null
+  },
+  {
+    "id": "c66d426f-095c-579c-b933-6eb50d1f85a2",
+    "patient_id": "a6823d29-f250-54ce-892c-dabcb92a7704",
+    "seq": 1,
+    "role": "COMPANION",
+    "type": "SYSTEM",
+    "body": "Hello Tobi. This conversation belongs only to Tobi's record.",
+    "item": null,
+    "pending_confirmation": false,
+    "sent_at": "2026-07-21T09:15:00",
+    "emergency_routing": null
+  }
+]

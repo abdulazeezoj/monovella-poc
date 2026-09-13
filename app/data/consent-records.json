@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1db9c67f-60fc-55ef-b06a-8600bad487f2",
+    "acting_user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "patient_id": "bed7735f-56ee-58bd-8ffe-b3df58fe8cad",
+    "actor_capacity": "GUARDIAN",
+    "guardian_relationship": "PARENT",
+    "purpose": "DEPENDANT_RECORD_CARE",
+    "document_or_statement_version": "dependant-record-care-v1",
+    "action": "CONSENTED",
+    "occurred_at": "2026-03-02T09:15:00",
+    "care_event_id": null,
+    "replaces_entry_id": null,
+    "withdrawn_entry_id": null
+  }
+]

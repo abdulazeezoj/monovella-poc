@@ -1,0 +1,53 @@
+[
+  {
+    "id": "4bc547ad-62de-58b9-8c2e-8fe936ab6436",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "type": "OBSERVATION",
+    "observation": "Your last four cycles have each run a day or two longer than the one before.",
+    "reasoning": "Comparing the start and end dates you logged in May, June, July and August: 5 days, then 6, then 7, then 8. That is a consistent direction rather than one unusual month, which is why it is worth naming. It does not tell us the cause. Bleeding can lengthen for many reasons, several of them ordinary. An expert can.",
+    "occurred_at": "2026-08-08T12:15:00",
+    "source_log_entries": [
+      "d8837937-407f-5a1e-afc1-a12205ec6235",
+      "6731a9cb-de5f-57aa-9644-b0a6ef880d91",
+      "94c6c64b-565c-589a-8c72-eb88a6db2df5",
+      "f9fad5a3-7857-570d-b5f6-906177957304"
+    ],
+    "dismissed_at": null
+  },
+  {
+    "id": "92b54b2c-b337-5501-a8e6-91af1262a9e8",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "type": "OBSERVATION",
+    "observation": "The heartburn you logged in late July always followed a meal after 9pm.",
+    "reasoning": "Three of the three heartburn entries in that stretch came the night of a dinner you logged after 9pm, and none came on a night you ate earlier. Three matches is a small number, so treat this as a pattern worth watching rather than a settled fact.",
+    "occurred_at": "2026-08-09T10:15:00",
+    "source_log_entries": [
+      "d714759f-edb6-59ce-97dd-840428e902fd",
+      "9b1062fb-cba3-521a-92ca-1fc8fa02efbc"
+    ],
+    "dismissed_at": null
+  },
+  {
+    "id": "aa46b52a-02be-531f-83bc-6eeaab921133",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "type": "PREDICTION",
+    "observation": "If your recent pattern holds, your next period would start around 30 August.",
+    "reasoning": "Your last four cycles started 29, 30 and 29 days apart. That average puts the next one within a couple of days of tomorrow. Cycles move for all sorts of reasons, so this is an estimate from your own history, not a schedule.",
+    "occurred_at": "2026-08-26T11:15:00",
+    "source_log_entries": ["f9fad5a3-7857-570d-b5f6-906177957304"],
+    "dismissed_at": null
+  },
+  {
+    "id": "809eeeb7-c934-553f-b63a-f6460798c5b0",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "type": "OBSERVATION",
+    "observation": "You slept under six hours on four of the last seven nights.",
+    "reasoning": "From the sleep windows you logged. Nothing here says why, and one short week is not a trend.",
+    "occurred_at": "2026-08-28T08:15:00",
+    "source_log_entries": [
+      "e92a3222-88b4-5cdc-819b-bad3a166b01e",
+      "23c4cea1-1a83-5ceb-a773-ccf0263e910d"
+    ],
+    "dismissed_at": "2026-08-28T09:15:00"
+  }
+]

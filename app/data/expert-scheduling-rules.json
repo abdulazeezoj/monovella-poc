@@ -1,0 +1,135 @@
+[
+  {
+    "expert_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 4
+  },
+  {
+    "expert_id": "7fe93c96-578f-5505-8a2a-e47c309277dc",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "efa4328d-e636-5c78-aa3e-5f9dd490dd18",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "5b592f08-554d-5ba5-96f9-57e185f0d8a6",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "28f8f8bf-4c65-58d0-9a8d-bab7c6e64cae",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "0165234e-9163-5b22-ab77-a6cff5b526a7",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "3a661350-0381-5377-9cb5-b87d0fd7204f",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "e49e4571-8bb8-53f1-a9e1-2378bfd3d29d",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "2e3a092a-bfa8-52f0-9bde-93a0c97921a9",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "27147c66-0192-50df-a45f-750a8669f335",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "11d39e2d-d793-54af-b774-9cde47bb6018",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "00542d78-7ffd-5a31-b6da-bbb37bb6bb30",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "dea21d41-4ff5-5304-a0f5-e6eb4b3c42a2",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "49a278fa-d1b0-5fcf-a37a-fb7b7299a9b4",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "3df7dccc-5b40-50bc-9a63-2975ae149f06",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "731451e2-b337-5478-a518-09d2701ce6a6",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "e1d4e07f-a4af-5ef1-843d-2f7bf78759a7",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "f09bdef0-2281-5f43-945b-e9ff4b184707",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  },
+  {
+    "expert_id": "616b7528-114e-5c9a-9a0a-bb5acd31f892",
+    "appointment_duration_minutes": 45,
+    "buffer_minutes": 15,
+    "minimum_notice_minutes": 120,
+    "max_bookings_per_day": 6
+  }
+]

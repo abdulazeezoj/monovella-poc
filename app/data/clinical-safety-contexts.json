@@ -1,0 +1,67 @@
+[
+  {
+    "id": "c5207fa4-9d6a-5e06-9449-c6e54aeb2495",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "version": 1,
+    "source": "PATIENT",
+    "supplied_by_user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "allergies_answer": "NONE_KNOWN",
+    "reported_allergies": [],
+    "medicines_answer": "NOT_SURE",
+    "current_medicines": [],
+    "additional_context": null,
+    "confirmed_at": "2026-01-21T09:15:00",
+    "supersedes_id": null,
+    "correction_reason": null
+  },
+  {
+    "id": "57ea6e2e-6a3b-574e-99c4-4cf01694aff0",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "version": 2,
+    "source": "PATIENT",
+    "supplied_by_user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "allergies_answer": "REPORTED",
+    "reported_allergies": [
+      {
+        "substance": "Amoxicillin",
+        "reaction": "Raised itchy rash after the second dose"
+      }
+    ],
+    "medicines_answer": "NOT_SURE",
+    "current_medicines": [],
+    "additional_context": "I corrected this after remembering the antibiotic reaction.",
+    "confirmed_at": "2026-08-28T09:15:00",
+    "supersedes_id": "c5207fa4-9d6a-5e06-9449-c6e54aeb2495",
+    "correction_reason": "Remembered a prior medicine reaction."
+  },
+  {
+    "id": "cf5dfe5d-797f-52a1-b5b1-a2adef7645f4",
+    "patient_id": "a6823d29-f250-54ce-892c-dabcb92a7704",
+    "version": 1,
+    "source": "GUARDIAN",
+    "supplied_by_user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "allergies_answer": "NONE_KNOWN",
+    "reported_allergies": [],
+    "medicines_answer": "DECLINED",
+    "current_medicines": [],
+    "additional_context": null,
+    "confirmed_at": "2026-08-17T09:15:00",
+    "supersedes_id": null,
+    "correction_reason": null
+  },
+  {
+    "id": "27a5a3f7-1a66-55af-86e0-33912b3c3613",
+    "patient_id": "e3d66bdb-d166-5558-84ff-3f2a634b1959",
+    "version": 1,
+    "source": "GUARDIAN",
+    "supplied_by_user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "allergies_answer": "NOT_SURE",
+    "reported_allergies": [],
+    "medicines_answer": "NONE_KNOWN",
+    "current_medicines": [],
+    "additional_context": null,
+    "confirmed_at": "2026-01-31T09:15:00",
+    "supersedes_id": null,
+    "correction_reason": null
+  }
+]

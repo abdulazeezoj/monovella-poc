@@ -1,0 +1,93 @@
+[
+  {
+    "id": "a9311da8-7ae8-5fee-8a95-e4ee8dce8cce",
+    "provider_type": "SPECIALIST",
+    "name": "Dr. Ifeoma Nwachukwu",
+    "verification_status": "PENDING",
+    "review_due_by": "2026-08-27T09:15:00",
+    "overdue": true,
+    "due_soon": false,
+    "submitted_at": "2026-08-20T09:15:00"
+  },
+  {
+    "id": "3953a6d3-e2f1-5135-899b-2f4617aee2be",
+    "provider_type": "PHARMACY",
+    "name": "Sunrise Pharmacy Ltd",
+    "verification_status": "PENDING",
+    "review_due_by": "2026-08-29T15:15:00",
+    "overdue": false,
+    "due_soon": true,
+    "submitted_at": "2026-08-24T09:15:00"
+  },
+  {
+    "id": "87de3b56-8a38-5db9-96db-2606e965d137",
+    "provider_type": "LAB",
+    "name": "Precision Medical Laboratory",
+    "verification_status": "PENDING",
+    "review_due_by": "2026-08-30T09:15:00",
+    "overdue": false,
+    "due_soon": true,
+    "submitted_at": "2026-08-25T09:15:00"
+  },
+  {
+    "id": "06a95510-ed55-5075-a0ef-63d7d421b1e7",
+    "provider_type": "SPECIALIST",
+    "name": "Dr. Musa Abdulkarim",
+    "verification_status": "PENDING",
+    "review_due_by": "2026-08-28T12:15:00",
+    "overdue": true,
+    "due_soon": false,
+    "submitted_at": "2026-08-21T09:15:00"
+  },
+  {
+    "id": "9b1d4dba-c4f9-58d9-b683-71deb4b0e570",
+    "provider_type": "SPECIALIST",
+    "name": "Grace Okoro",
+    "verification_status": "PENDING",
+    "review_due_by": "2026-09-01T09:15:00",
+    "overdue": false,
+    "due_soon": false,
+    "submitted_at": "2026-08-27T09:15:00"
+  },
+  {
+    "id": "6111f8e6-7da8-5e91-92da-3b5487e42971",
+    "provider_type": "PHARMACY",
+    "name": "Fountain Chemists",
+    "verification_status": "PENDING",
+    "review_due_by": "2026-09-02T09:15:00",
+    "overdue": false,
+    "due_soon": false,
+    "submitted_at": "2026-08-28T09:15:00"
+  },
+  {
+    "id": "3085258c-fedf-5047-a8e4-713cf72c45b1",
+    "provider_type": "LAB",
+    "name": "BioTrust Diagnostics",
+    "verification_status": "APPROVED",
+    "review_due_by": "2026-08-13T09:15:00",
+    "overdue": false,
+    "due_soon": false,
+    "submitted_at": "2026-08-08T09:15:00"
+  },
+  {
+    "id": "9eb8aa88-cce3-563e-8a14-bc184db3fa30",
+    "provider_type": "SPECIALIST",
+    "name": "Dr. Peter Aluko",
+    "verification_status": "REJECTED",
+    "review_due_by": "2026-08-02T09:15:00",
+    "overdue": false,
+    "due_soon": false,
+    "submitted_at": "2026-07-28T09:15:00"
+  },
+  {
+    "id": "5bff35ad-684c-579b-b04c-9eda77532411",
+    "provider_type": "SPECIALIST",
+    "name": "Dr. Tunde Ogunleye",
+    "verification_status": "PENDING",
+    "request_kind": "RENEWAL",
+    "review_due_by": "2026-08-31T09:15:00",
+    "overdue": false,
+    "due_soon": false,
+    "submitted_at": "2026-08-26T09:15:00"
+  }
+]

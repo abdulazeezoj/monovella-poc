@@ -1,0 +1,12 @@
+# Which dependencies may run install scripts.
+#
+# Prisma needs its engines built to generate a client and run migrations, and
+# esbuild needs its platform binary. The two left false are existing transitive
+# deps that already work without their scripts, so nothing is gained by running
+# them and the smaller surface is the safer default.
+allowBuilds:
+  '@prisma/engines': true
+  esbuild: true
+  msgpackr-extract: false
+  prisma: true
+  workerd: false

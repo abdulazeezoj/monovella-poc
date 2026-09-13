@@ -1,0 +1,35 @@
+[
+  {
+    "id": "28986b1e-78ef-53cc-ba86-146750bf7056",
+    "consultation_id": "32653572-5ffa-514b-be70-4b34fd2cbb03",
+    "patient_id": "f03f53fa-74d3-549c-b8f9-23482428ba00",
+    "filed_by_user_id": "3bd710eb-a533-565e-9bef-c9a2349ce7fa",
+    "details": "I am concerned that my symptoms were not addressed before the consultation ended.",
+    "status": "OPEN",
+    "triage": "UNASSESSED",
+    "filed_at": "2026-08-26T09:15:00",
+    "expected_response_by": "2026-08-28T09:15:00",
+    "assigned_staff_id": null,
+    "reviewed_at": null,
+    "resolved_at": null,
+    "outcome": null,
+    "attachment_name": null,
+    "escalated_at": null,
+    "audit_history": [
+      {
+        "at": "2026-08-26T09:15:00",
+        "actor_type": "PATIENT",
+        "action": "FILED",
+        "note": null
+      }
+    ],
+    "patient_updates": [
+      {
+        "at": "2026-08-26T09:15:00",
+        "message": "Your concern was received for clinical-safety review."
+      }
+    ],
+    "overdue": true,
+    "due_soon": false
+  }
+]

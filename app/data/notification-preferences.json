@@ -1,0 +1,57 @@
+[
+  {
+    "id": "f218605c-caf0-55da-8281-a215190383a4",
+    "scope": "PATIENT",
+    "subject_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "appointment_reminders": true,
+    "incoming_request_alerts": null,
+    "payment_fee_updates": true,
+    "credential_licence_reminders": null,
+    "queue_overdue_alerts": null,
+    "product_updates": true
+  },
+  {
+    "id": "62f7dfd2-eaee-5198-9e4f-64718bcf045c",
+    "scope": "EXPERT",
+    "subject_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "appointment_reminders": null,
+    "incoming_request_alerts": true,
+    "payment_fee_updates": true,
+    "credential_licence_reminders": true,
+    "queue_overdue_alerts": null,
+    "product_updates": true
+  },
+  {
+    "id": "f119d5b7-eea5-501f-8ef9-3873e7c3df94",
+    "scope": "PHARMACY",
+    "subject_id": "a9d23d6e-f056-5692-a5ae-56c5931496b2",
+    "appointment_reminders": null,
+    "incoming_request_alerts": true,
+    "payment_fee_updates": true,
+    "credential_licence_reminders": true,
+    "queue_overdue_alerts": null,
+    "product_updates": true
+  },
+  {
+    "id": "4d1a2447-039e-55cb-b413-62f3744c255e",
+    "scope": "LAB",
+    "subject_id": "b8caede4-2ed1-5327-a898-52baa1da7168",
+    "appointment_reminders": null,
+    "incoming_request_alerts": true,
+    "payment_fee_updates": true,
+    "credential_licence_reminders": true,
+    "queue_overdue_alerts": null,
+    "product_updates": true
+  },
+  {
+    "id": "e1b39895-482c-59ac-8ba9-e81c5c3ae770",
+    "scope": "STAFF",
+    "subject_id": "b432ce1d-52a5-5261-9b74-9f1dbcbfe549",
+    "appointment_reminders": null,
+    "incoming_request_alerts": null,
+    "payment_fee_updates": null,
+    "credential_licence_reminders": null,
+    "queue_overdue_alerts": true,
+    "product_updates": null
+  }
+]

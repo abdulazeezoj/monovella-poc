@@ -1,0 +1,248 @@
+[
+  {
+    "id": "a9d23d6e-f056-5692-a5ae-56c5931496b2",
+    "provider_type": "PHARMACY",
+    "business_name": "GreenLife Pharmacy",
+    "availability_status": "ONLINE",
+    "distance_km": 1.2,
+    "services_offered": null,
+    "state": "Lagos",
+    "premises_address": "14 Herbert Macaulay Way, Yaba, Lagos",
+    "city": "Lagos",
+    "local_government_area": "Lagos Mainland",
+    "cac_number": "RC-2884190",
+    "license_number": "PCN/PRM/LA/2021/04417",
+    "profile_note": "Usually carries common medications. Delivery within Yaba and Surulere the same day.",
+    "contact_name": "Ibrahim Sule",
+    "contact_phone": "+234 802 314 7761",
+    "logo_url": null,
+    "organization_id": null,
+    "service_fees": null,
+    "payout_bank_code": "058",
+    "payout_bank_account_number": "0123456789",
+    "payout_account_name": "GreenLife Pharmacy Ltd.",
+    "payout_verified_at": "2026-08-17T09:15:00"
+  },
+  {
+    "id": "1ce7d2a4-36a5-59e4-9971-4f9487113da8",
+    "provider_type": "PHARMACY",
+    "business_name": "MedPlus Ikeja",
+    "availability_status": "AWAY",
+    "distance_km": 4.8,
+    "services_offered": null,
+    "state": "Lagos",
+    "premises_address": "Allen Avenue, Ikeja, Lagos",
+    "city": "Lagos",
+    "local_government_area": "Ikeja",
+    "profile_note": "Wide stock, including refrigerated items. Pickup only.",
+    "contact_name": "Funmi Adigun",
+    "contact_phone": "+234 803 552 9012",
+    "logo_url": null,
+    "organization_id": null,
+    "service_fees": null,
+    "payout_bank_code": "057",
+    "payout_bank_account_number": "1122334455",
+    "payout_account_name": "MedPlus Ikeja Ltd.",
+    "payout_verified_at": "2026-08-17T09:15:00"
+  },
+  {
+    "id": "1922de8d-9939-5ccf-83f2-86e9e51b6d54",
+    "provider_type": "PHARMACY",
+    "business_name": "Alpha Chemists",
+    "availability_status": "OUT_OF_OFFICE",
+    "distance_km": 6.4,
+    "services_offered": null,
+    "state": "Lagos",
+    "premises_address": "22 Adeniran Ogunsanya, Surulere, Lagos",
+    "city": "Lagos",
+    "local_government_area": "Surulere",
+    "profile_note": "Common medications and dermatology lines.",
+    "contact_name": "Chinedu Okoye",
+    "contact_phone": "+234 806 771 4420",
+    "logo_url": null,
+    "organization_id": null,
+    "service_fees": null,
+    "payout_bank_code": "044",
+    "payout_bank_account_number": "0033441122",
+    "payout_account_name": "Alpha Chemists Ltd.",
+    "payout_verified_at": "2026-08-17T09:15:00"
+  },
+  {
+    "id": "c423a8c5-c1ed-5218-9f96-860f410b2cad",
+    "provider_type": "PHARMACY",
+    "business_name": "HopeWell Pharmacy",
+    "availability_status": "ONLINE",
+    "distance_km": 9.1,
+    "services_offered": null,
+    "state": "Lagos",
+    "premises_address": "Admiralty Way, Lekki Phase 1, Lagos",
+    "city": "Lagos",
+    "local_government_area": "Eti-Osa",
+    "profile_note": "Open until 10pm daily.",
+    "contact_name": "Grace Effiong",
+    "contact_phone": "+234 809 220 6614",
+    "logo_url": null,
+    "organization_id": null,
+    "service_fees": null,
+    "payout_bank_code": "033",
+    "payout_bank_account_number": "2001887766",
+    "payout_account_name": "HopeWell Pharmacy Ltd.",
+    "payout_verified_at": "2026-08-17T09:15:00"
+  },
+  {
+    "id": "b8caede4-2ed1-5327-a898-52baa1da7168",
+    "provider_type": "LAB",
+    "business_name": "Lagos Diagnostics",
+    "availability_status": "ONLINE",
+    "distance_km": 2.1,
+    "services_offered": [
+      "Haematology",
+      "Chemistry",
+      "Hormones",
+      "Microbiology",
+      "Home sample collection"
+    ],
+    "state": "Lagos",
+    "premises_address": "3 Commercial Avenue, Yaba, Lagos",
+    "city": "Lagos",
+    "local_government_area": "Lagos Mainland",
+    "cac_number": "RC-5278134",
+    "license_number": "MLSCN/LAB/2020/1188",
+    "profile_note": "Results typically within 24 hours.",
+    "contact_name": "Ngozi Chukwu",
+    "contact_phone": "+234 807 441 3390",
+    "logo_url": null,
+    "organization_id": null,
+    "service_fees": [
+      {
+        "service": "Haematology",
+        "fee_kobo": 500000
+      },
+      {
+        "service": "Chemistry",
+        "fee_kobo": 650000
+      },
+      {
+        "service": "Hormones",
+        "fee_kobo": 1200000
+      },
+      {
+        "service": "Microbiology",
+        "fee_kobo": 800000
+      },
+      {
+        "service": "Home sample collection",
+        "fee_kobo": 350000
+      }
+    ],
+    "payout_bank_code": "058",
+    "payout_bank_account_number": "0099887766",
+    "payout_account_name": "Lagos Diagnostics Ltd.",
+    "payout_verified_at": "2026-08-17T09:15:00"
+  },
+  {
+    "id": "f665662f-6c68-5304-9178-a3650e9905f1",
+    "provider_type": "LAB",
+    "business_name": "SynLab Ikoyi",
+    "availability_status": "AWAY",
+    "distance_km": 5.6,
+    "services_offered": ["Microbiology", "Culture and sensitivity", "Histopathology"],
+    "state": "Lagos",
+    "premises_address": "18 Awolowo Road, Ikoyi, Lagos",
+    "city": "Lagos",
+    "local_government_area": "Eti-Osa",
+    "profile_note": "Microbiology and culture work, including sensitivities.",
+    "contact_name": "Tunde Bakare",
+    "contact_phone": "+234 813 662 5581",
+    "logo_url": null,
+    "organization_id": null,
+    "service_fees": [
+      {
+        "service": "Microbiology",
+        "fee_kobo": 800000
+      },
+      {
+        "service": "Culture and sensitivity",
+        "fee_kobo": 1000000
+      },
+      {
+        "service": "Histopathology",
+        "fee_kobo": 1500000
+      }
+    ],
+    "payout_bank_code": "057",
+    "payout_bank_account_number": "5544332211",
+    "payout_account_name": "SynLab Ikoyi Ltd.",
+    "payout_verified_at": "2026-08-17T09:15:00"
+  },
+  {
+    "id": "c8572d8e-167b-5360-b278-fae895c418c4",
+    "provider_type": "LAB",
+    "business_name": "Clinix Laboratory",
+    "availability_status": "OUT_OF_OFFICE",
+    "distance_km": 7.9,
+    "services_offered": ["Chemistry", "Haematology", "Imaging"],
+    "state": "Lagos",
+    "premises_address": "Ogudu Road, Ojota, Lagos",
+    "city": "Lagos",
+    "local_government_area": "Kosofe",
+    "profile_note": "Walk-ins accepted before 11am.",
+    "contact_name": "Blessing Nwachukwu",
+    "contact_phone": "+234 815 903 2247",
+    "logo_url": null,
+    "organization_id": null,
+    "service_fees": [
+      {
+        "service": "Chemistry",
+        "fee_kobo": 650000
+      },
+      {
+        "service": "Haematology",
+        "fee_kobo": 500000
+      },
+      {
+        "service": "Imaging",
+        "fee_kobo": 1800000
+      }
+    ],
+    "payout_bank_code": "044",
+    "payout_bank_account_number": "0077665544",
+    "payout_account_name": "Clinix Laboratory Ltd.",
+    "payout_verified_at": "2026-08-17T09:15:00"
+  },
+  {
+    "id": "b152af64-32c3-5228-b4a6-8ecc3447c1b1",
+    "provider_type": "LAB",
+    "business_name": "PathCare Abuja",
+    "availability_status": "ONLINE",
+    "distance_km": null,
+    "services_offered": ["Chemistry", "Hormones", "Genetics"],
+    "state": "FCT",
+    "premises_address": "Plot 244 Ademola Adetokunbo, Wuse II, Abuja",
+    "city": "Abuja",
+    "local_government_area": "Abuja Municipal",
+    "profile_note": "Endocrine and genetic panels.",
+    "contact_name": "Ahmed Musa",
+    "contact_phone": "+234 816 774 1198",
+    "logo_url": null,
+    "organization_id": null,
+    "service_fees": [
+      {
+        "service": "Chemistry",
+        "fee_kobo": 650000
+      },
+      {
+        "service": "Hormones",
+        "fee_kobo": 1200000
+      },
+      {
+        "service": "Genetics",
+        "fee_kobo": 2500000
+      }
+    ],
+    "payout_bank_code": "033",
+    "payout_bank_account_number": "3009911223",
+    "payout_account_name": "PathCare Abuja Ltd.",
+    "payout_verified_at": "2026-08-17T09:15:00"
+  }
+]

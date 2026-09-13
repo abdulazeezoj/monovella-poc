@@ -1,0 +1,147 @@
+[
+  {
+    "consultation_id": "e5b05de0-903c-54ba-990a-be6557f50448",
+    "subjective": "Three weeks of intermittent burning in the upper abdomen, worse at night and after late meals. No vomiting, no weight loss, no blood in stool. Has been taking a friend's antacid with partial relief.",
+    "objective": "BP 118/76. Temperature 36.8 C. Abdomen soft, mild epigastric tenderness, no guarding, no rebound. No pallor, no jaundice.",
+    "assessment": "Dyspepsia, most likely acid-related. H. pylori not yet excluded; a stool antigen test will settle that before committing to eradication.",
+    "plan": "Omeprazole 20mg once daily before breakfast for 14 days. Stool antigen for H. pylori. Avoid late heavy meals and NSAIDs. Review once the result is in, sooner if pain wakes her nightly or she notices dark stool.",
+    "finalized_at": "2026-08-07T08:53:00"
+  },
+  {
+    "consultation_id": "6370b9b9-896d-5c66-a2ac-82f3082e6d48",
+    "subjective": "Dark patches across both cheeks, six months, worse since a bleaching cream bought at a market in April. Some itching in the first weeks, none now. Very conscious of it at work.",
+    "objective": "Symmetrical hyperpigmented macules over both malar areas, well demarcated, no scale, no erythema. No telangiectasia. Fitzpatrick V.",
+    "assessment": "Post-inflammatory hyperpigmentation on a background of probable melasma, likely aggravated by an unregulated topical steroid in the cream she used. No sign of ochronosis.",
+    "plan": "Stop all current creams today. Azelaic acid 20% twice daily. Broad-spectrum SPF 50 every morning, reapplied at midday. Vitamin D level, since she has been avoiding sun entirely. Review in six weeks; expect slow change, not fast. If there is no movement by then, referral to a colleague who works specifically with pigmentation in skin of colour.",
+    "finalized_at": "2026-08-23T08:07:00"
+  },
+  {
+    "consultation_id": "7ea9a8b9-6c36-53bd-9731-7f42104d4062",
+    "subjective": "Heavier and longer periods over the last four cycles, with clots and two days off work last month. Cramping starts a day before bleeding.",
+    "objective": null,
+    "assessment": null,
+    "plan": null,
+    "finalized_at": null,
+    "attachments": [
+      {
+        "id": "soapatt_001",
+        "section": "OBJECTIVE",
+        "kind": "DRAWING",
+        "media_url": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22420%22%3E%3Crect%20width%3D%22640%22%20height%3D%22420%22%20fill%3D%22%23f5f2ec%22/%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23211d18%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%22220%22%20y%3D%2290%22%20width%3D%22200%22%20height%3D%22160%22%20rx%3D%2218%22/%3E%3Cline%20x1%3D%22220%22%20y1%3D%22170%22%20x2%3D%22420%22%20y2%3D%22170%22/%3E%3Cline%20x1%3D%22320%22%20y1%3D%2290%22%20x2%3D%22320%22%20y2%3D%22250%22/%3E%3Ccircle%20cx%3D%22270%22%20cy%3D%22215%22%20r%3D%2226%22/%3E%3Cpath%20d%3D%22M258%20203%20L%20282%20227%20M%20282%20203%20L%20258%20227%22/%3E%3C/g%3E%3Ctext%20x%3D%22150%22%20y%3D%22300%22%20font-family%3D%22monospace%22%20font-size%3D%2218%22%20fill%3D%22%23211d18%22%3EL%20lower%20quadrant%3A%20mild%20tenderness%2C%20no%20mass%3C/text%3E%3C/svg%3E",
+        "verification_status": "VALID",
+        "flagged_reason": null,
+        "created_at": "2026-08-29T07:35:00"
+      }
+    ]
+  },
+  {
+    "consultation_id": "73c0903e-fc11-5589-9ca3-fa8b040ea23a",
+    "subjective": "Two days of fever and a dry cough. Eating less, drinking normally. No rash, no ear pulling, no vomiting.",
+    "objective": "Temperature 38.4 C at home. Alert, well perfused, no respiratory distress on video. Throat not clearly visualised.",
+    "assessment": "Likely viral upper respiratory infection. No red flags on today's assessment.",
+    "plan": "Paracetamol suspension 250mg/5ml, 5ml six-hourly as needed. Fluids. Return or seek in-person care if the fever passes 72 hours, breathing becomes fast or laboured, or he stops drinking.",
+    "finalized_at": "2026-07-21T13:00:00"
+  },
+  {
+    "consultation_id": "b5825b12-5bff-5a80-8a53-e7fd3f977540",
+    "subjective": "Persistent patch on the forearm. Remote photographs did not show enough detail.",
+    "objective": "Reviewed the guest expert's in-person observations with the patient.",
+    "assessment": "The examination findings have been reviewed and explained to the patient.",
+    "plan": "The patient will follow the agreed care plan and arrange a review if the patch changes or does not settle.",
+    "guest_objective_contribution": {
+      "expert_id": "11d39e2d-d793-54af-b774-9cde47bb6018",
+      "submitted_at": "2026-08-12T10:55:00",
+      "text": "Examined the forearm patch in person. Recorded its appearance and extent for the primary expert's review."
+    },
+    "finalized_at": "2026-08-12T11:07:00"
+  },
+  {
+    "consultation_id": "8473065d-8449-593b-85b3-f2bad60aff16",
+    "subjective": "Guardian reports a persistent patch on Tobi's forearm. Photos have not been clear enough for assessment.",
+    "objective": "Remote images are insufficient. An in-person examination has been requested.",
+    "assessment": "Assessment pending the guest examination.",
+    "plan": "Review the guest's findings with the guardian before agreeing next steps.",
+    "finalized_at": null
+  },
+  {
+    "consultation_id": "69200834-2aee-5231-b9db-a67c01a18a20",
+    "subjective": "Recurrent painful bumps in both armpits for eight months, flaring before periods, occasionally discharging.",
+    "objective": null,
+    "assessment": null,
+    "plan": null,
+    "finalized_at": null,
+    "attachments": [
+      {
+        "id": "soapatt_002",
+        "section": "OBJECTIVE",
+        "kind": "PHOTO",
+        "media_url": "/soap-attachments/con_106_objective_photo.jpg",
+        "verification_status": "FLAGGED",
+        "flagged_reason": "We couldn't read this clearly.",
+        "created_at": "2026-08-29T09:09:00"
+      }
+    ]
+  },
+  {
+    "consultation_id": "4dd6268e-55a1-5851-9dd7-07e6ecf25f20",
+    "subjective": "Itchy scalp with flaking for two months.",
+    "objective": "Diffuse fine scale over the vertex, mild erythema, no bogginess, no hair loss at the margins.",
+    "assessment": "Seborrhoeic dermatitis of the scalp.",
+    "plan": "Ketoconazole 2% shampoo twice weekly for four weeks, left on five minutes. Review if no better at four weeks.",
+    "finalized_at": "2026-07-30T11:05:00"
+  },
+  {
+    "consultation_id": "3fcd1658-7995-5188-881c-4aa3091c0412",
+    "subjective": "Dark patches across both cheeks, six months, worse since a bleaching cream bought at a market in April. Some itching in the first weeks, none now. Very conscious of it at work.",
+    "objective": "Symmetrical hyperpigmented macules over both malar areas, well demarcated, no scale, no erythema. No telangiectasia. Fitzpatrick V.",
+    "assessment": "Post-inflammatory hyperpigmentation on a background of probable melasma, likely aggravated by an unregulated topical steroid in the cream she used. No sign of ochronosis.",
+    "plan": "Stop all current creams today. Azelaic acid 20% twice daily. Broad-spectrum SPF 50 every morning, reapplied at midday. Vitamin D level, since she has been avoiding sun entirely. Review in six weeks; expect slow change, not fast. If there is no movement by then, referral to a colleague who works specifically with pigmentation in skin of colour.",
+    "finalized_at": "2026-08-28T04:45:00",
+    "attachments": []
+  },
+  {
+    "consultation_id": "2a6ff7cd-7e6d-5153-bfc8-6bf851b414c1",
+    "subjective": "Dark patches across both cheeks, six months, worse since a bleaching cream bought at a market in April. Some itching in the first weeks, none now. Very conscious of it at work.",
+    "objective": "Symmetrical hyperpigmented macules over both malar areas, well demarcated, no scale, no erythema. No telangiectasia. Fitzpatrick V.",
+    "assessment": "Post-inflammatory hyperpigmentation on a background of probable melasma, likely aggravated by an unregulated topical steroid in the cream she used. No sign of ochronosis.",
+    "plan": "Stop all current creams today. Azelaic acid 20% twice daily. Broad-spectrum SPF 50 every morning, reapplied at midday. Vitamin D level, since she has been avoiding sun entirely. Review in six weeks; expect slow change, not fast. If there is no movement by then, referral to a colleague who works specifically with pigmentation in skin of colour.",
+    "finalized_at": "2026-08-25T02:45:00",
+    "attachments": []
+  },
+  {
+    "consultation_id": "dfe4dc6e-5942-5a14-9194-0394fa41d984",
+    "subjective": "Three weeks of intermittent burning in the upper abdomen, worse at night and after late meals. No vomiting, no weight loss, no blood in stool. Has been taking a friend's antacid with partial relief.",
+    "objective": "BP 118/76. Temperature 36.8 C. Abdomen soft, mild epigastric tenderness, no guarding, no rebound. No pallor, no jaundice.",
+    "assessment": "Dyspepsia, most likely acid-related. H. pylori not yet excluded; a stool antigen test will settle that before committing to eradication.",
+    "plan": "Omeprazole 20mg once daily before breakfast for 14 days. Stool antigen for H. pylori. Avoid late heavy meals and NSAIDs. Review once the result is in, sooner if pain wakes her nightly or she notices dark stool.",
+    "finalized_at": "2026-08-26T03:45:00",
+    "attachments": []
+  },
+  {
+    "consultation_id": "6d9a7076-048e-5094-a7bd-d7dcbd3063d6",
+    "subjective": "Three weeks of intermittent burning in the upper abdomen, worse at night and after late meals. No vomiting, no weight loss, no blood in stool. Has been taking a friend's antacid with partial relief.",
+    "objective": "BP 118/76. Temperature 36.8 C. Abdomen soft, mild epigastric tenderness, no guarding, no rebound. No pallor, no jaundice.",
+    "assessment": "Dyspepsia, most likely acid-related. H. pylori not yet excluded; a stool antigen test will settle that before committing to eradication.",
+    "plan": "Omeprazole 20mg once daily before breakfast for 14 days. Stool antigen for H. pylori. Avoid late heavy meals and NSAIDs. Review once the result is in, sooner if pain wakes her nightly or she notices dark stool.",
+    "finalized_at": "2026-08-18T08:45:00",
+    "attachments": []
+  },
+  {
+    "consultation_id": "792fed81-1782-539d-bc7f-7d70ba2edc09",
+    "subjective": "Three weeks of intermittent burning in the upper abdomen, worse at night and after late meals. No vomiting, no weight loss, no blood in stool. Has been taking a friend's antacid with partial relief.",
+    "objective": "BP 118/76. Temperature 36.8 C. Abdomen soft, mild epigastric tenderness, no guarding, no rebound. No pallor, no jaundice.",
+    "assessment": "Dyspepsia, most likely acid-related. H. pylori not yet excluded; a stool antigen test will settle that before committing to eradication.",
+    "plan": "Omeprazole 20mg once daily before breakfast for 14 days. Stool antigen for H. pylori. Avoid late heavy meals and NSAIDs. Review once the result is in, sooner if pain wakes her nightly or she notices dark stool.",
+    "finalized_at": "2026-08-16T08:45:00",
+    "attachments": []
+  },
+  {
+    "consultation_id": "2bafec92-7ace-5477-b192-3ddc555ad239",
+    "subjective": "Three weeks of intermittent burning in the upper abdomen, worse at night and after late meals. No vomiting, no weight loss, no blood in stool. Has been taking a friend's antacid with partial relief.",
+    "objective": "BP 118/76. Temperature 36.8 C. Abdomen soft, mild epigastric tenderness, no guarding, no rebound. No pallor, no jaundice.",
+    "assessment": "Dyspepsia, most likely acid-related. H. pylori not yet excluded; a stool antigen test will settle that before committing to eradication.",
+    "plan": "Omeprazole 20mg once daily before breakfast for 14 days. Stool antigen for H. pylori. Avoid late heavy meals and NSAIDs. Review once the result is in, sooner if pain wakes her nightly or she notices dark stool.",
+    "finalized_at": "2026-08-15T08:45:00",
+    "attachments": []
+  }
+]

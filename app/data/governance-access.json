@@ -1,0 +1,34 @@
+[
+  {
+    "actor_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "status": "ACTIVE"
+  },
+  {
+    "actor_id": "28f8f8bf-4c65-58d0-9a8d-bab7c6e64cae",
+    "status": "RESTRICTED"
+  },
+  {
+    "actor_id": "a9d23d6e-f056-5692-a5ae-56c5931496b2",
+    "status": "ACTIVE"
+  },
+  {
+    "actor_id": "b8caede4-2ed1-5327-a898-52baa1da7168",
+    "status": "ACTIVE"
+  },
+  {
+    "actor_id": "b432ce1d-52a5-5261-9b74-9f1dbcbfe549",
+    "status": "ACTIVE"
+  },
+  {
+    "actor_id": "0145b6ce-1ff1-530e-8ff1-e2ba34e2af64",
+    "status": "ACTIVE"
+  },
+  {
+    "actor_id": "98dc53d9-4976-5411-99b1-2239e3e8f40f",
+    "status": "PENDING"
+  },
+  {
+    "actor_id": "f7d24366-778b-51af-8e1b-a00adda43694",
+    "status": "RESTRICTED"
+  }
+]

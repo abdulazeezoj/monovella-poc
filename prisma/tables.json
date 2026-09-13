@@ -1,0 +1,386 @@
+{
+  "Account": {
+    "instants": [
+      "created_at",
+      "updated_at"
+    ],
+    "table": "account"
+  },
+  "CareAccessGrant": {
+    "instants": [
+      "ended_at",
+      "granted_at"
+    ],
+    "table": "careAccessGrant"
+  },
+  "ChatMessage": {
+    "instants": [
+      "sent_at"
+    ],
+    "table": "chatMessage"
+  },
+  "CheckoutPayment": {
+    "instants": [
+      "paid_at",
+      "refunded_at"
+    ],
+    "table": "checkoutPayment"
+  },
+  "ClinicalComplaintReferral": {
+    "instants": [
+      "escalated_at",
+      "expected_response_by",
+      "filed_at",
+      "resolved_at",
+      "reviewed_at"
+    ],
+    "table": "clinicalComplaintReferral"
+  },
+  "ClinicalSafetyContext": {
+    "instants": [
+      "confirmed_at"
+    ],
+    "table": "clinicalSafetyContext"
+  },
+  "CompanionMemory": {
+    "instants": [
+      "confirmed_at",
+      "dismissed_at"
+    ],
+    "table": "companionMemory"
+  },
+  "CompanionMessage": {
+    "instants": [
+      "sent_at"
+    ],
+    "table": "companionMessage"
+  },
+  "ConsentRecord": {
+    "instants": [
+      "occurred_at"
+    ],
+    "table": "consentRecord"
+  },
+  "Consultation": {
+    "instants": [
+      "call_answered_at",
+      "call_ended_at",
+      "call_ring_expires_at",
+      "call_started_at",
+      "call_token_expires_at",
+      "cancelled_at",
+      "clinical_safety_acknowledged_at",
+      "closed_at",
+      "completed_at",
+      "expert_joined_at",
+      "patient_joined_at",
+      "referral_disclosure_ack_at",
+      "requested_at",
+      "respond_by",
+      "responded_at",
+      "scheduled_end",
+      "scheduled_start",
+      "slot_released_at",
+      "telemedicine_consent_at"
+    ],
+    "table": "consultation"
+  },
+  "DeviceSession": {
+    "instants": [
+      "created_at",
+      "expires_at",
+      "last_seen_at",
+      "revoked_at"
+    ],
+    "table": "deviceSession"
+  },
+  "Expert": {
+    "instants": [
+      "next_available_start"
+    ],
+    "table": "expert"
+  },
+  "ExpertAvailabilitySlot": {
+    "instants": [
+      "end",
+      "start"
+    ],
+    "table": "expertAvailabilitySlot"
+  },
+  "ExpertPayoutDetails": {
+    "instants": [
+      "payout_verified_at",
+      "updated_at"
+    ],
+    "table": "expertPayoutDetails"
+  },
+  "ExpertPayoutHistoryEntry": {
+    "instants": [
+      "changed_at",
+      "payout_verified_at"
+    ],
+    "table": "expertPayoutHistoryEntry"
+  },
+  "ExpertScheduleException": {
+    "instants": [],
+    "table": "expertScheduleException"
+  },
+  "ExpertScheduleSlot": {
+    "instants": [],
+    "table": "expertScheduleSlot"
+  },
+  "ExpertSchedulingRules": {
+    "instants": [],
+    "table": "expertSchedulingRules"
+  },
+  "Feedback": {
+    "instants": [
+      "submitted_at"
+    ],
+    "table": "feedback"
+  },
+  "FixtureMeta": {
+    "instants": [
+      "anchor"
+    ],
+    "table": "fixtureMeta"
+  },
+  "GovernanceAccess": {
+    "instants": [],
+    "table": "governanceAccess"
+  },
+  "GovernanceApplicationLink": {
+    "instants": [],
+    "table": "governanceApplicationLink"
+  },
+  "GovernanceAssignment": {
+    "instants": [],
+    "table": "governanceAssignment"
+  },
+  "GovernanceAuditEvent": {
+    "instants": [
+      "occurred_at"
+    ],
+    "table": "governanceAuditEvent"
+  },
+  "GovernanceRevision": {
+    "instants": [],
+    "table": "governanceRevision"
+  },
+  "HistoryReadEvent": {
+    "instants": [
+      "read_at"
+    ],
+    "table": "historyReadEvent"
+  },
+  "Insight": {
+    "instants": [
+      "dismissed_at",
+      "occurred_at"
+    ],
+    "table": "insight"
+  },
+  "LabOrder": {
+    "instants": [
+      "issued_at",
+      "result_at",
+      "result_corrected_at"
+    ],
+    "table": "labOrder"
+  },
+  "LogEntry": {
+    "instants": [
+      "logged_at",
+      "updated_at"
+    ],
+    "table": "logEntry"
+  },
+  "Member": {
+    "instants": [],
+    "table": "member"
+  },
+  "NotificationPreferences": {
+    "instants": [],
+    "table": "notificationPreferences"
+  },
+  "Organization": {
+    "instants": [],
+    "table": "organization"
+  },
+  "Patient": {
+    "instants": [
+      "created_at",
+      "verified_at"
+    ],
+    "table": "patient"
+  },
+  "PatientReferralCode": {
+    "instants": [],
+    "table": "patientReferralCode"
+  },
+  "PaymentDispute": {
+    "instants": [
+      "decision_due_by",
+      "raised_at"
+    ],
+    "table": "paymentDispute"
+  },
+  "PaymentDisputeQueueItem": {
+    "instants": [
+      "decision_due_by",
+      "raised_at"
+    ],
+    "table": "paymentDisputeQueueItem"
+  },
+  "PaymentMethod": {
+    "instants": [
+      "verified_at"
+    ],
+    "table": "paymentMethod"
+  },
+  "PayoutSupportRequest": {
+    "instants": [],
+    "table": "payoutSupportRequest"
+  },
+  "Prescription": {
+    "instants": [
+      "filled_at",
+      "issued_at"
+    ],
+    "table": "prescription"
+  },
+  "PrivacyRequest": {
+    "instants": [
+      "response_due_by",
+      "submitted_at"
+    ],
+    "table": "privacyRequest"
+  },
+  "Provider": {
+    "instants": [
+      "payout_verified_at"
+    ],
+    "table": "provider"
+  },
+  "ProviderApplicationDetail": {
+    "instants": [
+      "cac_verified_at",
+      "license_verified_at",
+      "submitted_at"
+    ],
+    "table": "providerApplicationDetail"
+  },
+  "ProviderApplicationQueueItem": {
+    "instants": [
+      "review_due_by",
+      "submitted_at"
+    ],
+    "table": "providerApplicationQueueItem"
+  },
+  "ProviderCredential": {
+    "instants": [
+      "retired_at",
+      "verified_at"
+    ],
+    "table": "providerCredential"
+  },
+  "ProviderPayout": {
+    "instants": [
+      "completed_at",
+      "initiated_at"
+    ],
+    "table": "providerPayout"
+  },
+  "ProviderRequest": {
+    "instants": [
+      "capacity_released_at",
+      "price_changed_at",
+      "requested_at",
+      "respond_by",
+      "responded_at",
+      "result_corrected_at",
+      "result_uploaded_at"
+    ],
+    "table": "providerRequest"
+  },
+  "ProviderScheduleException": {
+    "instants": [],
+    "table": "providerScheduleException"
+  },
+  "ProviderScheduleSlot": {
+    "instants": [],
+    "table": "providerScheduleSlot"
+  },
+  "ProviderSession": {
+    "instants": [],
+    "table": "providerSession"
+  },
+  "ReferenceData": {
+    "instants": [],
+    "table": "referenceData"
+  },
+  "RefundRequest": {
+    "instants": [
+      "decided_at",
+      "decision_due_by",
+      "filed_at"
+    ],
+    "table": "refundRequest"
+  },
+  "RefundRequestQueueItem": {
+    "instants": [
+      "filed_at"
+    ],
+    "table": "refundRequestQueueItem"
+  },
+  "Report": {
+    "instants": [
+      "ready_at",
+      "requested_at",
+      "revoked_at"
+    ],
+    "table": "report"
+  },
+  "SoapNote": {
+    "instants": [
+      "finalized_at"
+    ],
+    "table": "soapNote"
+  },
+  "StaffAccount": {
+    "instants": [
+      "revoked_at"
+    ],
+    "table": "staffAccount"
+  },
+  "StandingQueueItem": {
+    "instants": [
+      "standing_suspended_at"
+    ],
+    "table": "standingQueueItem"
+  },
+  "SupportCase": {
+    "instants": [
+      "closed_at",
+      "response_due_by",
+      "submitted_at"
+    ],
+    "table": "supportCase"
+  },
+  "TwoFactorSettings": {
+    "instants": [],
+    "table": "twoFactorSettings"
+  },
+  "User": {
+    "instants": [
+      "closure_requested_at",
+      "created_at",
+      "recovery_email_verified_at"
+    ],
+    "table": "user"
+  },
+  "Verification": {
+    "instants": [],
+    "table": "verification"
+  }
+}

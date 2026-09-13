@@ -1,0 +1,1461 @@
+// use prisma-next
+
+// Monovella's data model, generated from the prototype fixtures by
+// scripts/gen-prisma.ts. Edit the generator or the fixtures, never this file.
+// Targets Postgres, which PRODUCT_ARCH_V0.md plans the FastAPI backend onto. A
+// model with only an `id` column has a declared shape (app/data/types.ts) and no
+// fixture rows yet. Every model has a real, generated primary key - none is a
+// fixed-key singleton, even where the fixtures currently ship it exactly one row.
+// Enum values and `uuid`-typed columns come from Product_Docs/openapi.json; a
+// plain `String` status is one the specification has not pinned down, and a
+// `Json` column's shape is not modelled here (app/data/types.ts is the authority).
+
+enum ActivityType {
+  GYM
+  OTHER
+  RUN
+  WALK
+}
+
+enum ActorType {
+  EXPERT
+  LAB
+  PATIENT
+  PHARMACY
+}
+
+enum AvailabilityStatus {
+  AWAY
+  ONLINE
+  OUT_OF_OFFICE
+}
+
+enum CareAccessGrantGrantSource {
+  CARE_EVENT
+  EMERGENCY
+}
+
+enum CareAccessGrantGranteeType {
+  EXPERT
+  GUEST_EXPERT
+  LAB
+  PHARMACY
+  STAFF
+}
+
+enum CareAccessGrantScope {
+  ENCOUNTER_RECORD
+  FULFILMENT_FIELDS
+  GUEST_EXAM_CONTEXT
+  OPERATIONAL_CASE
+  PURPOSE_HISTORY
+  REQUEST_SUMMARY
+}
+
+enum CareAccessGrantStatus {
+  CURRENT
+  ENDED
+}
+
+enum ChatMessageType {
+  IMAGE
+  SYSTEM
+  TEXT
+  VIDEO
+  VOICE
+}
+
+enum CheckoutPaymentMethod {
+  CARD
+  TRANSFER
+}
+
+enum CheckoutPaymentStatus {
+  CHARGED_BACK
+  FAILED
+  PAID
+  PENDING
+  REFUNDED
+  REFUND_FAILED
+  REFUND_PENDING
+}
+
+enum ClinicalComplaintReferralStatus {
+  APPEALED
+  CLOSED
+  OPEN
+  UNDER_REVIEW
+}
+
+enum ClinicalComplaintReferralTriage {
+  IMMEDIATE_EMERGENCY
+  ROUTINE
+  UNASSESSED
+  URGENT_SAFETY
+}
+
+enum ClinicalSafetyAnswer {
+  DECLINED
+  NONE_KNOWN
+  NOT_SURE
+  REPORTED
+}
+
+enum ClinicalSafetyContextSource {
+  GUARDIAN
+  PATIENT
+}
+
+enum CompanionMessageType {
+  LOG_PROPOSAL
+  SYSTEM
+  TEXT
+  VOICE
+}
+
+enum CompanionRole {
+  COMPANION
+  USER
+}
+
+enum ConsentRecordAction {
+  ACKNOWLEDGED
+  CONSENTED
+  REPLACED
+  WITHDRAWN
+}
+
+enum ConsentRecordActorCapacity {
+  ACCOUNT_HOLDER
+  GUARDIAN
+}
+
+enum ConsentRecordPurpose {
+  DEPENDANT_RECORD_CARE
+  EXPERT_REFERRAL
+  GENERAL_TERMS
+  LAB_DISCLOSURE
+  NIN_VERIFICATION
+  PHARMACY_DISCLOSURE
+  PRIVACY_NOTICE
+  TELEMEDICINE
+}
+
+enum ConsultationCallConnectionState {
+  FAILED
+  GOOD
+  RECONNECTING
+  WEAK
+}
+
+enum ConsultationCallInitiatedBy {
+  EXPERT
+  PATIENT
+}
+
+enum ConsultationCallOutcome {
+  CANCELLED
+  CONNECTION_FAILED
+  DECLINED
+  ENDED
+  MISSED
+}
+
+enum ConsultationCallState {
+  ACTIVE
+  ENDED
+  NONE
+  RINGING
+}
+
+enum ConsultationCancelledBy {
+  EXPERT
+  PATIENT
+  STAFF
+}
+
+enum ConsultationClosedBy {
+  EXPERT
+  PATIENT
+  STAFF
+}
+
+enum ConsultationCloseoutReason {
+  CLINICAL_COMPLETION
+  EXPERT_CANCELLED
+  EXPERT_NO_SHOW
+  FAILED_CALL_CHAT_COMPLETED
+  PATIENT_CANCELLED
+  PATIENT_NO_SHOW
+  WINDOW_ELAPSED
+}
+
+enum ConsultationExpertCameraPermission {
+  DENIED
+  GRANTED
+  PROMPT
+}
+
+enum ConsultationExpertMicrophonePermission {
+  DENIED
+  GRANTED
+  PROMPT
+}
+
+enum ConsultationPatientCameraPermission {
+  DENIED
+  GRANTED
+  PROMPT
+}
+
+enum ConsultationPatientMicrophonePermission {
+  DENIED
+  GRANTED
+  PROMPT
+}
+
+enum ConsultationPayoutOutcome {
+  NOT_EARNED
+  PAID
+  PAYABLE
+  PENDING
+  WITHHELD
+}
+
+enum ConsultationRefundOutcome {
+  ELIGIBLE
+  NOT_ELIGIBLE
+  PENDING
+  REFUNDED
+}
+
+enum ConsultationStatus {
+  ACTIVE
+  CANCELLED
+  COMPLETED
+  DECLINED
+  REQUESTED
+  SCHEDULED
+  TIMED_OUT
+}
+
+enum DrinkType {
+  OTHER
+  WATER
+}
+
+enum FeePayerRole {
+  GUEST
+  PRIMARY
+}
+
+enum FeedbackInteractionType {
+  EXPERT
+  LAB
+  PHARMACY
+}
+
+enum FeedbackModerationStatus {
+  APPROVED
+  HELD
+  PENDING
+}
+
+enum FulfillmentStatus {
+  FILLED
+  NOT_FILLED
+  UNFILLED
+}
+
+enum Gender {
+  FEMALE
+  MALE
+  OTHER
+  PREFER_NOT_TO_SAY
+}
+
+enum GovernanceAccessStatus {
+  ACTIVE
+  PENDING
+  REJECTED
+  RESTRICTED
+}
+
+enum GovernanceApplicationLinkApplicationKind {
+  ADDITIONAL_CREDENTIAL
+  INITIAL
+  LICENCE_RENEWAL
+}
+
+enum GovernanceAuditEventAction {
+  APPROVED
+  AUTO_LIFTED
+  DEACTIVATED
+  DECIDED
+  LIFTED
+  PROVISIONED
+  REJECTED
+  SUBMITTED
+  UPHELD
+}
+
+enum GovernanceAuditEventSubjectType {
+  APPLICATION
+  DISPUTE
+  STAFF
+  STANDING
+}
+
+enum GuardianReason {
+  HEALTH_CONDITION
+  MINOR
+  NO_NIN_YET
+}
+
+enum GuestExaminationStatus {
+  ACCEPTED
+  AWAITING_PATIENT_PAYMENT
+  COMPLETED
+  DECLINED
+  REQUESTED
+}
+
+enum HistoryReadEventRoute {
+  EMERGENCY
+  NORMAL
+}
+
+enum InsightType {
+  OBSERVATION
+  PREDICTION
+}
+
+enum LabCollectionMethod {
+  BRANCH
+  HOME
+}
+
+enum LabResultStatus {
+  ATTACHED
+  PENDING
+}
+
+enum LogCategory {
+  CYCLE
+  DRINK
+  FOOD
+  PHYSICAL_ACTIVITY
+  SLEEP
+  SYMPTOMS
+  VITALS
+}
+
+enum LogSource {
+  COMPANION
+  FORM
+}
+
+enum MealType {
+  BREAKFAST
+  DINNER
+  LUNCH
+  SNACK
+}
+
+enum NotificationPreferencesScope {
+  EXPERT
+  LAB
+  PATIENT
+  PHARMACY
+  STAFF
+}
+
+enum PartyType {
+  EXPERT
+  PATIENT
+}
+
+enum PatientIdStatus {
+  PROVISIONAL
+  UNVERIFIED
+  VERIFIED
+}
+
+enum PrivacyRequestIdentityStatus {
+  VERIFICATION_REQUIRED
+  VERIFIED
+}
+
+enum PrivacyRequestRequestType {
+  ACCESS
+  CONSENT_QUESTION
+  CORRECTION
+  DELETION
+  OBJECTION
+}
+
+enum PrivacyRequestStatus {
+  IN_REVIEW
+  RESOLVED
+  SUBMITTED
+  WAITING_ON_CUSTOMER
+}
+
+enum ProfessionalType {
+  DOCTOR
+  LAB_SCIENTIST
+  NURSE
+  PHARMACIST
+  PHYSIOTHERAPIST
+}
+
+enum ProviderCredentialType {
+  CERTIFICATION
+  OPERATING_LICENCE
+}
+
+enum ProviderCredentialVerificationStatus {
+  PENDING
+  REJECTED
+  VERIFIED
+}
+
+enum ProviderOrderStatus {
+  FULFILLED
+  MISSED_COLLECTION
+  OUT_FOR_DELIVERY
+  PREPARING
+  READY_FOR_PICKUP
+}
+
+enum ProviderPayoutStatus {
+  FAILED
+  PAID
+  PENDING
+  PROCESSING
+  REVERSED
+}
+
+enum ProviderRequestDeliveryOrPickup {
+  DELIVERY
+  PICKUP
+}
+
+enum ProviderRequestStatus {
+  ACCEPTED
+  CANCELLED
+  DECLINED
+  EXPIRED
+  OBSOLETE
+  REQUESTED
+  UNABLE_TO_FULFIL
+  WITHDRAWN
+}
+
+enum ProviderResultStatus {
+  AWAITING
+  CORRECTED
+  DELAYED
+  INCORRECT_FILE
+  PHYSICAL_COPY_ONLY
+  UPLOADED
+}
+
+enum ProviderType {
+  LAB
+  PHARMACY
+  SPECIALIST
+}
+
+enum RefundReason {
+  NON_PERFORMANCE
+}
+
+enum ReportScope {
+  CONSULTATION
+  DATE_RANGE
+  FULL_HISTORY
+}
+
+enum ReportStatus {
+  FAILED
+  GENERATING
+  READY
+  REVOKED
+}
+
+enum RequestKind {
+  CREDENTIAL_ADDITION
+  INITIAL
+  RENEWAL
+}
+
+enum ScheduleExceptionKind {
+  EXTRA_HOURS
+  UNAVAILABLE
+}
+
+enum Specialty {
+  CARDIOLOGY
+  CHRONIC_DISEASE_MONITORING
+  DERMATOLOGY
+  ENDOCRINOLOGY
+  GASTROENTEROLOGY
+  GENERAL_PRACTICE
+  GENERAL_SURGERY
+  INFECTIOUS_DISEASE
+  MATERNAL_CHILD_HEALTH
+  MEDICATION_THERAPY_MANAGEMENT
+  NEPHROLOGY
+  NEUROLOGY
+  OBSTETRICS_GYNECOLOGY
+  OPHTHALMOLOGY
+  ORTHOPEDICS
+  OTC_WELLNESS_COUNSELING
+  OTORHINOLARYNGOLOGY
+  PEDIATRICS
+  PHYSIOTHERAPY
+  POST_OP_FOLLOW_UP
+  PSYCHIATRY
+  PULMONOLOGY
+  RESULT_INTERPRETATION_REFERRAL
+  UROLOGY
+  WOUND_CARE_GUIDANCE
+}
+
+enum StaffRole {
+  PLATFORM_ADMIN
+}
+
+enum SupportCaseCategory {
+  GENERAL
+  SERVICE_RECOVERY
+}
+
+enum SupportCaseRequesterRole {
+  EXPERT
+  LAB
+  PATIENT
+  PHARMACY
+}
+
+enum SupportCaseStatus {
+  IN_REVIEW
+  RESOLVED
+  SUBMITTED
+  WAITING_ON_CUSTOMER
+}
+
+enum TwoFactorSettingsMethod {
+  TOTP
+}
+
+enum TwoFactorSettingsSubjectType {
+  PROVIDER
+  STAFF
+  USER
+}
+
+enum UserClosureStatus {
+  ACTIVE
+  CLOSURE_REQUESTED
+}
+
+enum VitalType {
+  BLOOD_PRESSURE
+  HEART_RATE
+  TEMPERATURE
+  WEIGHT
+}
+
+enum WorkdayImpactAnswer {
+  DISMISSED
+  NO
+  YES
+}
+
+model Account {
+  id Uuid @id
+  user_id Uuid
+  user_id_rel User? @relation("Account_user_id", fields: [user_id], references: [id])
+  provider_id String
+  account_id String
+  pin_hash String
+  pin_failed_attempts Int
+  pin_locked_until String?
+  created_at TimestamptzString
+  updated_at TimestamptzString
+}
+
+model ProviderApplicationDetail {
+  id Uuid @id
+  provider_type ProviderType
+  status String
+  business_name String?
+  cac_number String?
+  cac_verified_at TimestamptzString?
+  license_number String?
+  license_document_url String?
+  license_document_flagged Boolean?
+  license_verified_at TimestamptzString?
+  license_verification_note String?
+  premises_address String?
+  prior_rejection_reason String?
+  contact_person String
+  submitted_at TimestamptzString
+  expert Json?
+  services_offered String[]?
+  request_kind RequestKind?
+  license_expiry_date String?
+  prior_license_expiry_date String?
+  city String?
+  local_government_area String?
+  state String?
+  GovernanceApplicationLink_application_id GovernanceApplicationLink[] @relation("GovernanceApplicationLink_application_id")
+}
+
+model ProviderApplicationQueueItem {
+  id Uuid @id
+  provider_type ProviderType
+  name String
+  verification_status String
+  review_due_by TimestamptzString?
+  overdue Boolean
+  due_soon Boolean
+  submitted_at TimestamptzString
+  request_kind RequestKind?
+}
+
+model CareAccessGrant {
+  id Uuid @id
+  patient_identity_id Uuid
+  patient_identity_id_rel Patient? @relation("CareAccessGrant_patient_identity_id", fields: [patient_identity_id], references: [id])
+  grantee_type CareAccessGrantGranteeType
+  grantee_id Uuid
+  care_event_id Uuid
+  purpose String
+  scope CareAccessGrantScope
+  grant_source CareAccessGrantGrantSource
+  status CareAccessGrantStatus
+  granted_at TimestamptzString
+  ended_at TimestamptzString?
+  end_reason String?
+}
+
+model ChatMessage {
+  id Uuid @id
+  consultation_id Uuid
+  consultation_id_rel Consultation? @relation("ChatMessage_consultation_id", fields: [consultation_id], references: [id])
+  sender_type PartyType
+  type ChatMessageType
+  body String?
+  media_url String?
+  sent_at TimestamptzString
+  duration_seconds Int?
+}
+
+model CheckoutPayment {
+  id Uuid @id
+  consultation_id Uuid?
+  provider_request_id Uuid?
+  provider_id Uuid
+  provider_type ProviderType
+  total_amount_kobo Int
+  provider_amount_kobo Int
+  commission_amount_kobo Int
+  method CheckoutPaymentMethod
+  status CheckoutPaymentStatus
+  nomba_order_reference String
+  paid_at TimestamptzString?
+  refunded_at TimestamptzString?
+  refund_method String?
+  payer_role FeePayerRole
+  patient_id Uuid?
+  payer_user_id Uuid?
+}
+
+model ClinicalComplaintReferral {
+  id Uuid @id
+  consultation_id Uuid
+  patient_id Uuid
+  filed_by_user_id Uuid
+  details String
+  status ClinicalComplaintReferralStatus
+  triage ClinicalComplaintReferralTriage
+  filed_at TimestamptzString
+  expected_response_by TimestamptzString
+  assigned_staff_id Uuid?
+  reviewed_at TimestamptzString?
+  resolved_at TimestamptzString?
+  outcome String?
+  attachment_name String?
+  escalated_at TimestamptzString?
+  audit_history Json
+  patient_updates Json
+  overdue Boolean
+  due_soon Boolean
+}
+
+model ClinicalSafetyContext {
+  id Uuid @id
+  patient_id Uuid
+  patient_id_rel Patient? @relation("ClinicalSafetyContext_patient_id", fields: [patient_id], references: [id])
+  version Int
+  source ClinicalSafetyContextSource
+  supplied_by_user_id Uuid
+  allergies_answer ClinicalSafetyAnswer
+  reported_allergies Json
+  medicines_answer ClinicalSafetyAnswer
+  current_medicines String[]
+  additional_context String?
+  confirmed_at TimestamptzString
+  supersedes_id Uuid?
+  correction_reason String?
+}
+
+model CompanionMemory {
+  id Uuid @id
+  note String
+  keywords String[]
+  confirmed_at TimestamptzString?
+  dismissed_at TimestamptzString?
+  patient_id Uuid
+  patient_id_rel Patient? @relation("CompanionMemory_patient_id", fields: [patient_id], references: [id])
+}
+
+model CompanionMessage {
+  id Uuid @id
+  patient_id Uuid
+  patient_id_rel Patient? @relation("CompanionMessage_patient_id", fields: [patient_id], references: [id])
+  seq Int
+  role CompanionRole
+  type CompanionMessageType
+  body String?
+  item Json?
+  pending_confirmation Boolean
+  sent_at TimestamptzString
+  emergency_routing String?
+}
+
+model ConsentRecord {
+  id Uuid @id
+  acting_user_id Uuid
+  patient_id Uuid?
+  patient_id_rel Patient? @relation("ConsentRecord_patient_id", fields: [patient_id], references: [id])
+  actor_capacity ConsentRecordActorCapacity
+  guardian_relationship String?
+  purpose ConsentRecordPurpose
+  document_or_statement_version String
+  action ConsentRecordAction
+  occurred_at TimestamptzString
+  care_event_id Uuid?
+  replaces_entry_id Uuid?
+  withdrawn_entry_id Uuid?
+}
+
+model Consultation {
+  id Uuid @id
+  expert_id Uuid
+  expert_id_rel Expert? @relation("Consultation_expert_id", fields: [expert_id], references: [id])
+  patient_identity_id Uuid
+  patient_identity_id_rel Patient? @relation("Consultation_patient_identity_id", fields: [patient_identity_id], references: [id])
+  status ConsultationStatus
+  platform_fee_kobo Int
+  expert_fee_kobo Int
+  requested_at TimestamptzString
+  scheduled_start TimestamptzString?
+  scheduled_end TimestamptzString?
+  respond_by TimestamptzString?
+  referred_from_id Uuid?
+  referral_reason String?
+  referral_chain_depth Int?
+  telemedicine_consent_at TimestamptzString?
+  referral_disclosure_ack_at TimestamptzString?
+  completed_at TimestamptzString?
+  call_state ConsultationCallState?
+  call_initiated_by ConsultationCallInitiatedBy?
+  call_started_at TimestamptzString?
+  call_answered_at TimestamptzString?
+  call_ended_at TimestamptzString?
+  call_ring_expires_at TimestamptzString?
+  call_outcome ConsultationCallOutcome?
+  call_token_version String?
+  call_token_expires_at TimestamptzString?
+  call_connection_state ConsultationCallConnectionState?
+  patient_call_muted Boolean?
+  expert_call_muted Boolean?
+  patient_call_camera_on Boolean?
+  expert_call_camera_on Boolean?
+  patient_call_device String?
+  expert_call_device String?
+  patient_microphone_permission ConsultationPatientMicrophonePermission?
+  patient_camera_permission ConsultationPatientCameraPermission?
+  expert_microphone_permission ConsultationExpertMicrophonePermission?
+  expert_camera_permission ConsultationExpertCameraPermission?
+  cancelled_at TimestamptzString?
+  cancelled_by ConsultationCancelledBy?
+  cancellation_reason String?
+  closeout_reason ConsultationCloseoutReason?
+  closed_by ConsultationClosedBy?
+  closed_at TimestamptzString?
+  closeout_version Int?
+  slot_released_at TimestamptzString?
+  patient_joined_at TimestamptzString?
+  expert_joined_at TimestamptzString?
+  refund_outcome ConsultationRefundOutcome?
+  payout_outcome ConsultationPayoutOutcome?
+  clinical_safety_context_id Uuid?
+  clinical_safety_context_version String?
+  clinical_safety_acknowledged_at TimestamptzString?
+  clinical_safety_acknowledged_by_expert_id Uuid?
+  workday_impact_answer WorkdayImpactAnswer?
+  responded_at TimestamptzString?
+  request_summary String?
+  guest_expert_id Uuid?
+  guest_examination_status GuestExaminationStatus?
+  guest_examination_reason String?
+  guest_expert_fee_kobo Int?
+  ChatMessage_consultation_id ChatMessage[] @relation("ChatMessage_consultation_id")
+  LabOrder_consultation_id LabOrder[] @relation("LabOrder_consultation_id")
+  PaymentDispute_consultation_id PaymentDispute[] @relation("PaymentDispute_consultation_id")
+  Prescription_consultation_id Prescription[] @relation("Prescription_consultation_id")
+  SoapNote_consultation_id SoapNote[] @relation("SoapNote_consultation_id")
+}
+
+model DeviceSession {
+  id Uuid @id
+  user_id Uuid
+  user_id_rel User? @relation("DeviceSession_user_id", fields: [user_id], references: [id])
+  is_current Boolean
+  token_hash String
+  ip_address String
+  user_agent String
+  created_at TimestamptzString
+  expires_at TimestamptzString
+  last_seen_at TimestamptzString?
+  revoked_at TimestamptzString?
+}
+
+model PaymentDisputeQueueItem {
+  id Uuid @id
+  raised_by ActorType
+  provider_type ProviderType
+  decision_due_by TimestamptzString?
+  overdue Boolean
+  due_soon Boolean
+  amount_kobo Int
+  raised_at TimestamptzString
+  subject String
+}
+
+model ExpertAvailabilitySlot {
+  id Uuid @id
+  expert_id Uuid
+  expert_id_rel Expert? @relation("ExpertAvailabilitySlot_expert_id", fields: [expert_id], references: [id])
+  start TimestamptzString
+  end TimestamptzString
+  taken Boolean
+}
+
+model ExpertPayoutDetails {
+  expert_id Uuid @id
+  expert_id_rel Expert? @relation("ExpertPayoutDetails_expert_id", fields: [expert_id], references: [id])
+  payout_bank_account_number String?
+  payout_bank_code String?
+  payout_account_name String?
+  payout_verified_at TimestamptzString?
+  payout_ussd_string String?
+  payout_payment_link String?
+  updated_at TimestamptzString
+}
+
+model ExpertPayoutHistoryEntry {
+  id Uuid @id
+  expert_id Uuid
+  expert_id_rel Expert? @relation("ExpertPayoutHistoryEntry_expert_id", fields: [expert_id], references: [id])
+  payout_bank_account_number String?
+  payout_bank_code String?
+  payout_account_name String?
+  payout_verified_at TimestamptzString?
+  payout_ussd_string String?
+  payout_payment_link String?
+  changed_at TimestamptzString
+}
+
+model ExpertScheduleException {
+  id Uuid @id
+  expert_id Uuid
+  expert_id_rel Expert? @relation("ExpertScheduleException_expert_id", fields: [expert_id], references: [id])
+  date String
+  kind ScheduleExceptionKind
+  start_time String?
+  end_time String?
+  note String
+}
+
+model ExpertScheduleSlot {
+  id Uuid @id
+  expert_id Uuid
+  expert_id_rel Expert? @relation("ExpertScheduleSlot_expert_id", fields: [expert_id], references: [id])
+  day_of_week Int
+  start_time String
+  end_time String
+  booked_count Int
+  capacity Int
+}
+
+model ExpertSchedulingRules {
+  expert_id Uuid @id
+  expert_id_rel Expert? @relation("ExpertSchedulingRules_expert_id", fields: [expert_id], references: [id])
+  appointment_duration_minutes Int
+  buffer_minutes Int
+  minimum_notice_minutes Int
+  max_bookings_per_day Int
+}
+
+model Expert {
+  id Uuid @id
+  first_name String
+  last_name String
+  professional_type ProfessionalType
+  specialty Specialty
+  gender Gender
+  availability_status AvailabilityStatus
+  consultation_fee_kobo Int
+  next_available_start TimestamptzString?
+  address String
+  city String
+  local_government_area String
+  state String?
+  years_practising Int
+  licence_number String
+  bio String
+  credentials Json
+  photo_url String?
+  organization_id Uuid?
+  organization_id_rel Organization? @relation("Expert_organization_id", fields: [organization_id], references: [id])
+  Consultation_expert_id Consultation[] @relation("Consultation_expert_id")
+  ExpertAvailabilitySlot_expert_id ExpertAvailabilitySlot[] @relation("ExpertAvailabilitySlot_expert_id")
+  ExpertPayoutDetails_expert_id ExpertPayoutDetails[] @relation("ExpertPayoutDetails_expert_id")
+  ExpertPayoutHistoryEntry_expert_id ExpertPayoutHistoryEntry[] @relation("ExpertPayoutHistoryEntry_expert_id")
+  ExpertScheduleException_expert_id ExpertScheduleException[] @relation("ExpertScheduleException_expert_id")
+  ExpertScheduleSlot_expert_id ExpertScheduleSlot[] @relation("ExpertScheduleSlot_expert_id")
+  ExpertSchedulingRules_expert_id ExpertSchedulingRules[] @relation("ExpertSchedulingRules_expert_id")
+  HistoryReadEvent_expert_id HistoryReadEvent[] @relation("HistoryReadEvent_expert_id")
+}
+
+model Feedback {
+  id String @id
+  interaction_type FeedbackInteractionType
+  interaction_id Uuid
+  patient_identity_id Uuid
+  submitted_by_user_id Uuid
+  rating Int
+  public_comment String
+  comment_kind String
+  voice_duration_seconds Int?
+  moderation_status FeedbackModerationStatus
+  provider_response String?
+  submitted_at TimestamptzString
+}
+
+model GovernanceAccess {
+  actor_id Uuid @id
+  status GovernanceAccessStatus
+}
+
+model GovernanceApplicationLink {
+  application_id Uuid @id
+  application_id_rel ProviderApplicationDetail? @relation("GovernanceApplicationLink_application_id", fields: [application_id], references: [id])
+  application_kind GovernanceApplicationLinkApplicationKind
+  actor_id Uuid?
+  target_credential_id String?
+  submitted_credential_id String?
+  licence_number String
+  expiry_date String
+  revision Int
+  assigned_staff_id Uuid
+  assigned_staff_id_rel StaffAccount? @relation("GovernanceApplicationLink_assigned_staff_id", fields: [assigned_staff_id], references: [id])
+}
+
+model GovernanceAssignment {
+  subject_id Uuid @id
+  staff_id Uuid
+  staff_id_rel StaffAccount? @relation("GovernanceAssignment_staff_id", fields: [staff_id], references: [id])
+}
+
+model GovernanceAuditEvent {
+  id String @id
+  subject_type GovernanceAuditEventSubjectType
+  subject_id Uuid
+  action GovernanceAuditEventAction
+  actor_id Uuid?
+  occurred_at TimestamptzString
+  note String?
+}
+
+model GovernanceRevision {
+  subject_id Uuid @id
+  revision Int
+}
+
+model HistoryReadEvent {
+  id Uuid @id
+  expert_id Uuid
+  expert_id_rel Expert? @relation("HistoryReadEvent_expert_id", fields: [expert_id], references: [id])
+  patient_identity_id Uuid
+  patient_identity_id_rel Patient? @relation("HistoryReadEvent_patient_identity_id", fields: [patient_identity_id], references: [id])
+  care_event_id Uuid
+  sections String[]
+  route HistoryReadEventRoute
+  read_at TimestamptzString
+}
+
+model Insight {
+  id Uuid @id
+  patient_id Uuid
+  patient_id_rel Patient? @relation("Insight_patient_id", fields: [patient_id], references: [id])
+  type InsightType
+  observation String
+  reasoning String
+  occurred_at TimestamptzString
+  source_log_entries String[]
+  dismissed_at TimestamptzString?
+}
+
+model LabOrder {
+  id Uuid @id
+  consultation_id Uuid
+  consultation_id_rel Consultation? @relation("LabOrder_consultation_id", fields: [consultation_id], references: [id])
+  test_requested String
+  instructions String?
+  recommended_lab_id Uuid?
+  issued_at TimestamptzString
+  corrects_id Uuid?
+  corrected_by_id Uuid?
+  result_status LabResultStatus?
+  result_at TimestamptzString?
+  result_summary String?
+  paid_note String?
+  result_source String?
+  result_file_name String?
+  result_corrected_at TimestamptzString?
+}
+
+model LogEntry {
+  id Uuid @id
+  patient_id Uuid
+  patient_id_rel Patient? @relation("LogEntry_patient_id", fields: [patient_id], references: [id])
+  category LogCategory
+  source LogSource
+  logged_at TimestamptzString
+  updated_at TimestamptzString
+  supersedes Uuid?
+  is_estimate Boolean
+  note String?
+  label String?
+  meal_type MealType?
+  symptom_ids String[]?
+  severity Int?
+  drink_type DrinkType?
+  count Int?
+  vital_type VitalType?
+  systolic Int?
+  diastolic Int?
+  activity_type ActivityType?
+  duration_minutes Int?
+  sleep_start_time String?
+  sleep_end_time String?
+  value Float?
+  start_date String?
+  end_date String?
+  flow_intensity Int?
+}
+
+model Member {
+  id Uuid @id
+}
+
+model FixtureMeta {
+  id Uuid @id
+  anchor TimestamptzString
+  openapi_version String
+  platform_fee_rate Float
+  platform_fee_cap_kobo Int
+  note String
+}
+
+model NotificationPreferences {
+  id Uuid @id
+  scope NotificationPreferencesScope
+  subject_id Uuid
+  appointment_reminders Boolean?
+  incoming_request_alerts Boolean?
+  payment_fee_updates Boolean?
+  credential_licence_reminders Boolean?
+  queue_overdue_alerts Boolean?
+  product_updates Boolean?
+}
+
+model Organization {
+  id Uuid @id
+  Expert_organization_id Expert[] @relation("Expert_organization_id")
+  Provider_organization_id Provider[] @relation("Provider_organization_id")
+}
+
+model Patient {
+  id Uuid @id
+  monovella_id String
+  first_name String?
+  last_name String?
+  status PatientIdStatus
+  date_of_birth String
+  gender Gender
+  is_dependant Boolean
+  guardian_user_id Uuid?
+  guardian_reason GuardianReason?
+  verified_at TimestamptzString?
+  created_at TimestamptzString
+  photo_url String?
+  address String
+  city String
+  local_government_area String
+  state String
+  CareAccessGrant_patient_identity_id CareAccessGrant[] @relation("CareAccessGrant_patient_identity_id")
+  ClinicalSafetyContext_patient_id ClinicalSafetyContext[] @relation("ClinicalSafetyContext_patient_id")
+  CompanionMemory_patient_id CompanionMemory[] @relation("CompanionMemory_patient_id")
+  CompanionMessage_patient_id CompanionMessage[] @relation("CompanionMessage_patient_id")
+  ConsentRecord_patient_id ConsentRecord[] @relation("ConsentRecord_patient_id")
+  Consultation_patient_identity_id Consultation[] @relation("Consultation_patient_identity_id")
+  HistoryReadEvent_patient_identity_id HistoryReadEvent[] @relation("HistoryReadEvent_patient_identity_id")
+  Insight_patient_id Insight[] @relation("Insight_patient_id")
+  LogEntry_patient_id LogEntry[] @relation("LogEntry_patient_id")
+  PatientReferralCode_patient_id PatientReferralCode[] @relation("PatientReferralCode_patient_id")
+  Report_patient_id Report[] @relation("Report_patient_id")
+}
+
+model PaymentDispute {
+  id Uuid @id
+  raised_by ActorType
+  raised_at TimestamptzString
+  decision_due_by TimestamptzString?
+  decision String?
+  decision_final Boolean
+  consultation_id Uuid
+  consultation_id_rel Consultation? @relation("PaymentDispute_consultation_id", fields: [consultation_id], references: [id])
+  provider_request_id Uuid?
+  provider_request_id_rel ProviderRequest? @relation("PaymentDispute_provider_request_id", fields: [provider_request_id], references: [id])
+  provider_type String
+  decision_favors String?
+}
+
+model PaymentMethod {
+  id Uuid @id
+  brand String
+  last4 String
+  expiry_month Int
+  expiry_year Int
+  verified_at TimestamptzString
+}
+
+model PayoutSupportRequest {
+  id Uuid @id
+}
+
+model Prescription {
+  id Uuid @id
+  consultation_id Uuid
+  consultation_id_rel Consultation? @relation("Prescription_consultation_id", fields: [consultation_id], references: [id])
+  medication String
+  dosage String
+  instructions String
+  issued_at TimestamptzString
+  corrects_id Uuid?
+  corrected_by_id Uuid?
+  fulfillment_status FulfillmentStatus?
+  filled_at TimestamptzString?
+  pharmacy_name String?
+  paid_note String?
+  receipt_file_name String?
+}
+
+model PrivacyRequest {
+  id String @id
+  patient_identity_id Uuid
+  request_type PrivacyRequestRequestType
+  scope String
+  identity_status PrivacyRequestIdentityStatus
+  status PrivacyRequestStatus
+  submitted_at TimestamptzString
+  response_due_by TimestamptzString
+  response String?
+}
+
+model ProviderCredential {
+  id Uuid @id
+  provider_id Uuid
+  provider_id_rel Provider? @relation("ProviderCredential_provider_id", fields: [provider_id], references: [id])
+  credential_type ProviderCredentialType
+  title String
+  reference_number String
+  document_filename String
+  expires_at String?
+  verification_status ProviderCredentialVerificationStatus
+  verified_at TimestamptzString?
+  retired_at TimestamptzString?
+}
+
+model ProviderPayout {
+  id Uuid @id
+  checkout_payment_id Uuid
+  provider_id Uuid
+  provider_type ProviderType
+  amount_kobo Int
+  status ProviderPayoutStatus
+  bank_account_last4 String
+  bank_code String
+  account_name String
+  transfer_reference String?
+  initiated_at TimestamptzString?
+  completed_at TimestamptzString?
+  failure_reason String?
+}
+
+model ProviderRequest {
+  id Uuid @id
+  provider_type ProviderType
+  provider_id Uuid
+  status ProviderRequestStatus
+  requested_at TimestamptzString
+  respond_by TimestamptzString?
+  responded_at TimestamptzString?
+  decline_reason String?
+  order_status ProviderOrderStatus?
+  delivery_or_pickup ProviderRequestDeliveryOrPickup?
+  delivery_note String?
+  slot_id Uuid?
+  result_status ProviderResultStatus?
+  prescription_id Uuid?
+  lab_order_id Uuid?
+  checkout_payment_id Uuid?
+  consultation_id Uuid
+  patient_identity_id Uuid
+  amount_kobo Int?
+  disclosure_consent Json
+  original_amount_kobo String?
+  price_changed_at TimestamptzString?
+  terminal_reason String?
+  capacity_released_at TimestamptzString?
+  result_file_name String?
+  result_source String?
+  result_uploaded_at TimestamptzString?
+  result_corrected_at TimestamptzString?
+  result_summary String?
+  PaymentDispute_provider_request_id PaymentDispute[] @relation("PaymentDispute_provider_request_id")
+}
+
+model ProviderScheduleException {
+  id Uuid @id
+  provider_id Uuid
+  provider_id_rel Provider? @relation("ProviderScheduleException_provider_id", fields: [provider_id], references: [id])
+  date String
+  kind String
+  start_time String?
+  end_time String?
+  collection_method LabCollectionMethod?
+  note String
+}
+
+model ProviderScheduleSlot {
+  id Uuid @id
+  provider_id Uuid
+  provider_id_rel Provider? @relation("ProviderScheduleSlot_provider_id", fields: [provider_id], references: [id])
+  day_of_week Int?
+  specific_date String?
+  start_time String
+  end_time String
+  collection_method LabCollectionMethod
+  capacity Int
+  booked_count Int
+  taken Boolean
+}
+
+model ProviderSession {
+  id Uuid @id
+}
+
+model Provider {
+  id Uuid @id
+  provider_type ProviderType
+  business_name String
+  availability_status String
+  distance_km Float?
+  services_offered String[]?
+  state String
+  premises_address String
+  city String
+  local_government_area String
+  cac_number String?
+  license_number String?
+  profile_note String
+  contact_name String
+  contact_phone String
+  logo_url String?
+  organization_id Uuid?
+  organization_id_rel Organization? @relation("Provider_organization_id", fields: [organization_id], references: [id])
+  service_fees Json?
+  payout_bank_code String
+  payout_bank_account_number String
+  payout_account_name String
+  payout_verified_at TimestamptzString
+  ProviderCredential_provider_id ProviderCredential[] @relation("ProviderCredential_provider_id")
+  ProviderScheduleException_provider_id ProviderScheduleException[] @relation("ProviderScheduleException_provider_id")
+  ProviderScheduleSlot_provider_id ProviderScheduleSlot[] @relation("ProviderScheduleSlot_provider_id")
+}
+
+model ReferenceData {
+  id Uuid @id
+  specialties Json
+  banks Json
+  states String[]
+  local_government_areas_by_state Json
+  symptoms Json
+  saved_items Json
+}
+
+model PatientReferralCode {
+  patient_id Uuid @id
+  patient_id_rel Patient? @relation("PatientReferralCode_patient_id", fields: [patient_id], references: [id])
+  referral_code String
+  referral_link String
+  converted_count Int
+}
+
+model RefundRequestQueueItem {
+  id Uuid @id
+  patient_id Uuid
+  reason RefundReason
+  filed_at TimestamptzString
+  overdue Boolean
+  due_soon Boolean
+  consultation_id Uuid
+  checkout_payment_id Uuid
+  amount_kobo Int
+}
+
+model RefundRequest {
+  id Uuid @id
+  consultation_id Uuid
+  checkout_payment_id Uuid
+  patient_id Uuid
+  reason RefundReason
+  filed_at TimestamptzString
+  decision_due_by TimestamptzString?
+  decided_at TimestamptzString?
+  decision String?
+  decision_final Boolean
+  refund_issued Boolean?
+  elaboration String?
+}
+
+model Report {
+  id Uuid @id
+  patient_id Uuid
+  patient_id_rel Patient? @relation("Report_patient_id", fields: [patient_id], references: [id])
+  scope ReportScope
+  status ReportStatus
+  consultation_id Uuid?
+  start_date String?
+  end_date String?
+  requested_at TimestamptzString
+  ready_at TimestamptzString?
+  pdf_url String?
+  verification_code String?
+  revoked_at TimestamptzString?
+}
+
+model SoapNote {
+  consultation_id Uuid @id
+  consultation_id_rel Consultation? @relation("SoapNote_consultation_id", fields: [consultation_id], references: [id])
+  subjective String?
+  objective String?
+  assessment String?
+  plan String?
+  finalized_at TimestamptzString?
+  attachments Json?
+  guest_objective_contribution Json?
+}
+
+model StaffAccount {
+  id Uuid @id
+  name String
+  email String
+  phone String
+  role StaffRole
+  revoked_at TimestamptzString?
+  must_change_password Boolean
+  failed_login_attempts Int
+  locked_until String?
+  photo_url String?
+  password_hash String
+  GovernanceApplicationLink_assigned_staff_id GovernanceApplicationLink[] @relation("GovernanceApplicationLink_assigned_staff_id")
+  GovernanceAssignment_staff_id GovernanceAssignment[] @relation("GovernanceAssignment_staff_id")
+}
+
+model StandingQueueItem {
+  id Uuid @id
+  actor_type ActorType
+  standing_suspended_at TimestamptzString
+  events String[]
+  overdue Boolean
+  due_soon Boolean
+  name String
+  event_log Json
+  linked_application_id Uuid?
+}
+
+model SupportCase {
+  id String @id
+  requester_role SupportCaseRequesterRole
+  requester_id Uuid
+  patient_identity_id Uuid?
+  category SupportCaseCategory
+  subject String
+  message String
+  status SupportCaseStatus
+  submitted_at TimestamptzString
+  response_due_by TimestamptzString
+  last_response String?
+  return_to String
+  closed_at TimestamptzString?
+}
+
+model TwoFactorSettings {
+  id Uuid @id
+  subject_type TwoFactorSettingsSubjectType
+  subject_id Uuid
+  enabled Boolean
+  method TwoFactorSettingsMethod?
+  recovery_codes_remaining Int
+  totp_secret_encrypted String?
+  recovery_codes_hashed String[]
+}
+
+model User {
+  id Uuid @id
+  phone String
+  recovery_email String?
+  recovery_email_verified_at TimestamptzString?
+  has_patient_identity Boolean
+  has_expert_identity Boolean
+  biometric_enabled Boolean
+  closure_status UserClosureStatus
+  closure_requested_at TimestamptzString?
+  created_at TimestamptzString
+  Account_user_id Account[] @relation("Account_user_id")
+  DeviceSession_user_id DeviceSession[] @relation("DeviceSession_user_id")
+}
+
+model Verification {
+  id Uuid @id
+}

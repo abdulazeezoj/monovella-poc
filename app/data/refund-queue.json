@@ -1,0 +1,24 @@
+[
+  {
+    "id": "15ae391f-c1fd-520e-92e7-1371f3c28ace",
+    "patient_id": "f03f53fa-74d3-549c-b8f9-23482428ba00",
+    "reason": "NON_PERFORMANCE",
+    "filed_at": "2026-08-26T11:15:00",
+    "overdue": true,
+    "due_soon": false,
+    "consultation_id": "32653572-5ffa-514b-be70-4b34fd2cbb03",
+    "checkout_payment_id": "3f49d9a0-3943-5aa6-915e-3482622bd4cb",
+    "amount_kobo": 240000
+  },
+  {
+    "id": "f943e57f-c805-5d14-9bda-a7393ad77520",
+    "patient_id": "873365df-8877-509a-8b82-1023530cba61",
+    "reason": "NON_PERFORMANCE",
+    "filed_at": "2026-08-29T03:15:00",
+    "overdue": false,
+    "due_soon": true,
+    "consultation_id": "09aab9b2-1e05-574c-8fad-d2d1d2dcb791",
+    "checkout_payment_id": "cfb14ae2-1d0f-5589-861a-f6f4ec09a161",
+    "amount_kobo": 240000
+  }
+]

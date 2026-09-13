@@ -1,0 +1,50 @@
+[
+  {
+    "id": "6b1f0dee-b513-50fc-ae20-7ae776cb2819",
+    "raised_by": "PATIENT",
+    "raised_at": "2026-08-27T06:15:00",
+    "decision_due_by": "2026-09-01T06:15:00",
+    "decision": null,
+    "decision_final": false,
+    "consultation_id": "a3944bc6-136e-56e6-b235-ffd8e41b2af2",
+    "provider_request_id": null,
+    "provider_type": "SPECIALIST",
+    "decision_favors": null
+  },
+  {
+    "id": "8f39c629-f82d-5eb7-be20-52121335fa86",
+    "raised_by": "PHARMACY",
+    "raised_at": "2026-08-23T10:15:00",
+    "decision_due_by": "2026-08-29T05:15:00",
+    "decision": null,
+    "decision_final": false,
+    "consultation_id": "e5b05de0-903c-54ba-990a-be6557f50448",
+    "provider_request_id": "c2725f9a-e426-54fd-aa6e-0065d640f355",
+    "provider_type": "PHARMACY",
+    "decision_favors": null
+  },
+  {
+    "id": "44af319f-b410-5a81-9e07-9ac1da3d248b",
+    "raised_by": "LAB",
+    "raised_at": "2026-08-28T03:15:00",
+    "decision_due_by": "2026-09-02T09:15:00",
+    "decision": null,
+    "decision_final": false,
+    "consultation_id": "3d92a15b-d03f-55b6-8712-c92a5bdded1c",
+    "provider_request_id": "fbd04800-3d8f-51bc-befc-3e6a7e100405",
+    "provider_type": "LAB",
+    "decision_favors": null
+  },
+  {
+    "id": "019ede12-6c26-54ed-a28a-15188e7541c0",
+    "raised_by": "PATIENT",
+    "raised_at": "2026-08-05T09:15:00",
+    "decision_due_by": "2026-08-10T09:15:00",
+    "decision": "The checkout was reversed after the provider declined the booking. The full total returned to the original card, so no further action is required.",
+    "decision_final": true,
+    "consultation_id": "776a9f3a-024a-52c3-96c9-93f704169af6",
+    "provider_request_id": null,
+    "provider_type": "SPECIALIST",
+    "decision_favors": "PATIENT"
+  }
+]

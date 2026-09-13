@@ -1,0 +1,38 @@
+[
+  {
+    "id": "5ed32ae3-ad66-52e0-b319-1898bc137029",
+    "user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "is_current": true,
+    "token_hash": "sha256:9f3a1c2e7b5d4098a1c6f2e8b7d3a0459c1e7f2b6a4d8c0e3f1b5a7d9c2e4f68",
+    "ip_address": "105.112.24.9",
+    "user_agent": "Monovella/1.0 (Expo; iOS 18.4; iPhone14,5)",
+    "created_at": "2026-07-02T09:15:00",
+    "expires_at": "2026-09-30T09:15:00",
+    "last_seen_at": "2026-08-29T09:14:00",
+    "revoked_at": null
+  },
+  {
+    "id": "617f87fb-e405-5b8f-8944-55d1cfd21b9a",
+    "user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "is_current": false,
+    "token_hash": "sha256:2b6d9a4f1e8c3057b2d5a9f4e1c8b6073a5d9f2e4c1b8a6d3f0e7c5b9a2d4f16",
+    "ip_address": "197.211.63.140",
+    "user_agent": "Monovella/1.0 (Expo; Android 14; SM-A546E)",
+    "created_at": "2026-02-09T09:15:00",
+    "expires_at": "2026-05-10T09:15:00",
+    "last_seen_at": "2026-07-27T09:15:00",
+    "revoked_at": "2026-07-27T09:15:00"
+  },
+  {
+    "id": "6915f01b-c904-5cc0-bd16-59d48de6a635",
+    "user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "is_current": false,
+    "token_hash": "sha256:7c1e5b8a3f9d0264c7b1a5e9f3d0c8462b7a1e5c9f3b0d6a4c8e2b5f9a1d3c70",
+    "ip_address": "154.113.8.201",
+    "user_agent": "Monovella/1.0 (Expo; iOS 17.6; iPhone13,2)",
+    "created_at": "2026-05-26T09:15:00",
+    "expires_at": "2026-08-24T09:15:00",
+    "last_seen_at": "2026-08-17T09:15:00",
+    "revoked_at": null
+  }
+]

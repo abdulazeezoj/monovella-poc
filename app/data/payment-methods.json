@@ -1,0 +1,18 @@
+[
+  {
+    "id": "68626650-40c8-599e-8719-f94654ee431f",
+    "brand": "Verve",
+    "last4": "4412",
+    "expiry_month": 9,
+    "expiry_year": 2029,
+    "verified_at": "2026-01-28T09:15:00"
+  },
+  {
+    "id": "d59657e8-08ce-5f52-8b21-7d624ba977b1",
+    "brand": "Mastercard",
+    "last4": "0087",
+    "expiry_month": 3,
+    "expiry_year": 2028,
+    "verified_at": "2026-07-18T09:15:00"
+  }
+]

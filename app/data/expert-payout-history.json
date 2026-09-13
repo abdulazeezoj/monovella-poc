@@ -1,0 +1,35 @@
+[
+  {
+    "id": "98e32d08-3d52-533d-a2e4-090e11ccaddc",
+    "expert_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "payout_bank_account_number": "0231889740",
+    "payout_bank_code": "058",
+    "payout_account_name": "Amara Okonkwo",
+    "payout_verified_at": "2026-05-03T09:15:00",
+    "payout_ussd_string": null,
+    "payout_payment_link": null,
+    "changed_at": "2026-05-03T09:15:00"
+  },
+  {
+    "id": "03f6d331-ac6d-5fd3-b9c8-fa669ad0edfd",
+    "expert_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "payout_bank_account_number": "0231889740",
+    "payout_bank_code": "058",
+    "payout_account_name": "Amara Okonkwo",
+    "payout_verified_at": "2025-12-12T09:15:00",
+    "payout_ussd_string": null,
+    "payout_payment_link": null,
+    "changed_at": "2025-12-12T09:15:00"
+  },
+  {
+    "id": "c4906f4e-46ac-5c91-b91a-fc7360284fb2",
+    "expert_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "payout_bank_account_number": "3084112990",
+    "payout_bank_code": "011",
+    "payout_account_name": "Amara Okonkwo",
+    "payout_verified_at": "2025-07-30T09:15:00",
+    "payout_ussd_string": null,
+    "payout_payment_link": null,
+    "changed_at": "2025-07-30T09:15:00"
+  }
+]

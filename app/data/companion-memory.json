@@ -1,0 +1,66 @@
+[
+  {
+    "id": "c994cf27-e0c5-5caa-bcb6-e710c60bd882",
+    "note": "Prefers to be called Amara, not Ms. Okonkwo.",
+    "keywords": ["name", "preference"],
+    "confirmed_at": "2026-03-02T09:15:00",
+    "dismissed_at": null,
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0"
+  },
+  {
+    "id": "f377e5eb-3673-5490-b93d-06ca306dc773",
+    "note": "Works in an open-plan office in Victoria Island; a clinic visit costs her most of a working day.",
+    "keywords": ["work", "travel", "time off"],
+    "confirmed_at": "2026-05-24T09:15:00",
+    "dismissed_at": null,
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0"
+  },
+  {
+    "id": "548fccb4-d4ee-591b-a1f0-6e3bf0049bb0",
+    "note": "Allergic to sulfa drugs, rash as a teenager.",
+    "keywords": ["allergy", "sulfa", "rash"],
+    "confirmed_at": "2026-06-02T09:15:00",
+    "dismissed_at": null,
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0"
+  },
+  {
+    "id": "c0de449c-b6b8-52ff-8a76-f28e90fc280f",
+    "note": "Manages her son Tobi's health from this account, and her sister Zainab's since April.",
+    "keywords": ["dependants", "guardian"],
+    "confirmed_at": "2026-07-20T09:15:00",
+    "dismissed_at": null,
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0"
+  },
+  {
+    "id": "d283e916-0934-5493-be91-9c58087dfc05",
+    "note": "Stopped the market lightening cream on 23 August and is nervous about the pigmentation coming back.",
+    "keywords": ["skin", "cream", "worry"],
+    "confirmed_at": null,
+    "dismissed_at": null,
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0"
+  },
+  {
+    "id": "59d27883-a410-5568-9b29-ae9005f85dc5",
+    "note": "Fasts on Wednesdays.",
+    "keywords": ["fasting", "routine"],
+    "confirmed_at": null,
+    "dismissed_at": null,
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0"
+  },
+  {
+    "id": "dede2b13-7dee-53ae-8e65-44e4f61f238c",
+    "patient_id": "e3d66bdb-d166-5558-84ff-3f2a634b1959",
+    "note": "Kelechi prefers appointment reminders after 6pm.",
+    "keywords": ["reminders", "evening"],
+    "confirmed_at": "2026-07-30T09:15:00",
+    "dismissed_at": null
+  },
+  {
+    "id": "1798d13d-f88b-576e-aacd-d183c3e31834",
+    "patient_id": "a6823d29-f250-54ce-892c-dabcb92a7704",
+    "note": "Tobi finds liquid medicine easier than tablets.",
+    "keywords": ["medicine", "preference"],
+    "confirmed_at": "2026-07-22T09:15:00",
+    "dismissed_at": null
+  }
+]

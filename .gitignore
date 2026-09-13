@@ -1,0 +1,37 @@
+.DS_Store
+.env
+
+# Environment files
+node_modules/
+__pycache__/
+
+# React Router
+.react-router/
+build/
+
+# Screenshot output from `mise run shots`
+screenshots/
+qa-screens/
+
+# playwright-cli session data
+.playwright-cli/
+
+*tmp*/
+# Prisma emits these from prisma/contract.prisma. `mise run schema` rebuilds them.
+prisma/contract.json
+prisma/contract.d.ts
+prisma/migrations/
+
+# A 5 MB Postgres data directory, rebuilt by `mise run seed` from the fixtures.
+public/prototype.pgdata
+
+# The fixture/schema hash `mise run seed` checks to decide whether it can skip
+# rebuilding prototype.pgdata. `mise run reset` ignores it and rebuilds anyway.
+prisma/.seed-hash
+
+# Playwright output. `mise run e2e` writes the HTML report, failure traces and
+# screenshots here, plus journey-coverage.json under tests/e2e/test-results/.
+playwright-report/
+test-results/
+blob-report/
+.playwright/.cache/

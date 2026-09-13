@@ -1,0 +1,49 @@
+[
+  {
+    "id": "4064b3d0-44a0-5299-95ec-fee4400ca1a3",
+    "subject_type": "USER",
+    "subject_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "enabled": false,
+    "method": null,
+    "recovery_codes_remaining": 0,
+    "totp_secret_encrypted": null,
+    "recovery_codes_hashed": []
+  },
+  {
+    "id": "7ead76f1-f6d3-593c-84d7-665f6c8e2e4d",
+    "subject_type": "PROVIDER",
+    "subject_id": "a9d23d6e-f056-5692-a5ae-56c5931496b2",
+    "enabled": false,
+    "method": null,
+    "recovery_codes_remaining": 0,
+    "totp_secret_encrypted": null,
+    "recovery_codes_hashed": []
+  },
+  {
+    "id": "8384236b-03c0-594a-a8f7-de32c6a4368c",
+    "subject_type": "PROVIDER",
+    "subject_id": "b8caede4-2ed1-5327-a898-52baa1da7168",
+    "enabled": false,
+    "method": null,
+    "recovery_codes_remaining": 0,
+    "totp_secret_encrypted": null,
+    "recovery_codes_hashed": []
+  },
+  {
+    "id": "c346c839-2ad9-5485-8376-1296d5eb96ac",
+    "subject_type": "STAFF",
+    "subject_id": "b432ce1d-52a5-5261-9b74-9f1dbcbfe549",
+    "enabled": true,
+    "method": "TOTP",
+    "recovery_codes_remaining": 6,
+    "totp_secret_encrypted": "enc:demo-totp-seed",
+    "recovery_codes_hashed": [
+      "argon2id$demo-recovery-code-0",
+      "argon2id$demo-recovery-code-1",
+      "argon2id$demo-recovery-code-2",
+      "argon2id$demo-recovery-code-3",
+      "argon2id$demo-recovery-code-4",
+      "argon2id$demo-recovery-code-5"
+    ]
+  }
+]

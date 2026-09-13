@@ -1,0 +1,35 @@
+[
+  {
+    "application_id": "10f1247f-f93b-5893-b3bf-b5cc76133376",
+    "application_kind": "INITIAL",
+    "actor_id": "a9d23d6e-f056-5692-a5ae-56c5931496b2",
+    "target_credential_id": "pcred_greenlife_licence",
+    "submitted_credential_id": null,
+    "licence_number": "PCN/PRM/LA/2021/04417",
+    "expiry_date": "2027-08-31",
+    "revision": 1,
+    "assigned_staff_id": "b432ce1d-52a5-5261-9b74-9f1dbcbfe549"
+  },
+  {
+    "application_id": "75101874-9742-57cf-abfd-1334c4662c56",
+    "application_kind": "INITIAL",
+    "actor_id": "b8caede4-2ed1-5327-a898-52baa1da7168",
+    "target_credential_id": "pcred_lagosdiag_licence",
+    "submitted_credential_id": null,
+    "licence_number": "MLSCN/LAB/2020/1188",
+    "expiry_date": "2027-06-30",
+    "revision": 1,
+    "assigned_staff_id": "b432ce1d-52a5-5261-9b74-9f1dbcbfe549"
+  },
+  {
+    "application_id": "5bff35ad-684c-579b-b04c-9eda77532411",
+    "application_kind": "LICENCE_RENEWAL",
+    "actor_id": "28f8f8bf-4c65-58d0-9a8d-bab7c6e64cae",
+    "target_credential_id": "exp_ogunleye_cred_1",
+    "submitted_credential_id": null,
+    "licence_number": "MDCN/2006/054129",
+    "expiry_date": "2027-02-01",
+    "revision": 1,
+    "assigned_staff_id": "b432ce1d-52a5-5261-9b74-9f1dbcbfe549"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "e5e86915-cbbc-548c-8bf4-048be28f84f2",
+    "consultation_id": "a3944bc6-136e-56e6-b235-ffd8e41b2af2",
+    "checkout_payment_id": "1a26868c-03d2-53bf-b48d-f561f302fce7",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "reason": "NON_PERFORMANCE",
+    "filed_at": "2026-08-17T10:15:00",
+    "decision_due_by": "2026-08-19T10:15:00",
+    "decided_at": "2026-08-18T09:15:00",
+    "decision": "The expert did not respond within the acceptance window. The full checkout total is refunded to the original payment method.",
+    "decision_final": true,
+    "refund_issued": true,
+    "elaboration": "Booked Tuesday, never heard back, had to book someone else."
+  },
+  {
+    "id": "5c204aca-389b-5e0f-ad72-acf82b06fce8",
+    "consultation_id": "776a9f3a-024a-52c3-96c9-93f704169af6",
+    "checkout_payment_id": "43014ae1-a128-5965-a0ec-8b507bcb6f73",
+    "patient_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "reason": "NON_PERFORMANCE",
+    "filed_at": "2026-08-19T12:15:00",
+    "decision_due_by": "2026-08-21T12:15:00",
+    "decided_at": "2026-08-20T11:15:00",
+    "decision": "Booking declined by the expert. Full checkout refund already issued automatically on 18 August; nothing further is owed.",
+    "decision_final": true,
+    "refund_issued": true,
+    "elaboration": null
+  },
+  {
+    "id": "15ae391f-c1fd-520e-92e7-1371f3c28ace",
+    "consultation_id": "32653572-5ffa-514b-be70-4b34fd2cbb03",
+    "checkout_payment_id": "3f49d9a0-3943-5aa6-915e-3482622bd4cb",
+    "patient_id": "f03f53fa-74d3-549c-b8f9-23482428ba00",
+    "reason": "NON_PERFORMANCE",
+    "filed_at": "2026-08-26T11:15:00",
+    "decision_due_by": "2026-08-28T11:15:00",
+    "decided_at": null,
+    "decision": null,
+    "decision_final": false,
+    "refund_issued": null,
+    "elaboration": "The appointment time came and went with no message."
+  },
+  {
+    "id": "f943e57f-c805-5d14-9bda-a7393ad77520",
+    "consultation_id": "09aab9b2-1e05-574c-8fad-d2d1d2dcb791",
+    "checkout_payment_id": "cfb14ae2-1d0f-5589-861a-f6f4ec09a161",
+    "patient_id": "873365df-8877-509a-8b82-1023530cba61",
+    "reason": "NON_PERFORMANCE",
+    "filed_at": "2026-08-29T03:15:00",
+    "decision_due_by": "2026-08-31T03:15:00",
+    "decided_at": null,
+    "decision": null,
+    "decision_final": false,
+    "refund_issued": null,
+    "elaboration": null
+  }
+]

@@ -1,0 +1,380 @@
+[
+  {
+    "id": "e2b67650-bd03-5ad9-9d95-2eaa7b503562",
+    "expert_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "day_of_week": 0,
+    "start_time": "09:00",
+    "end_time": "13:00",
+    "booked_count": 3,
+    "capacity": 1
+  },
+  {
+    "id": "6be21d4e-f199-52ae-acab-26dfb5c5fd7d",
+    "expert_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "day_of_week": 2,
+    "start_time": "09:00",
+    "end_time": "13:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "b1ea4363-4ad2-5130-8078-318ed3ea8251",
+    "expert_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "day_of_week": 2,
+    "start_time": "15:00",
+    "end_time": "18:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "f3d60638-c921-5aa4-b7d6-3be1c0c82829",
+    "expert_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "day_of_week": 4,
+    "start_time": "10:00",
+    "end_time": "14:00",
+    "booked_count": 2,
+    "capacity": 1
+  },
+  {
+    "id": "f0b8faa6-665c-52a8-82c6-8ec39041ec80",
+    "expert_id": "7fe93c96-578f-5505-8a2a-e47c309277dc",
+    "day_of_week": 0,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "ca7b1191-f875-52f2-b8a3-81ffa5e9224b",
+    "expert_id": "7fe93c96-578f-5505-8a2a-e47c309277dc",
+    "day_of_week": 1,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "1cbb75a3-9a1b-5cff-9926-83e0fbde6bbb",
+    "expert_id": "7fe93c96-578f-5505-8a2a-e47c309277dc",
+    "day_of_week": 3,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "booked_count": 2,
+    "capacity": 1
+  },
+  {
+    "id": "3569ccc5-ef81-5e72-87ad-f2443dd71742",
+    "expert_id": "7fe93c96-578f-5505-8a2a-e47c309277dc",
+    "day_of_week": 5,
+    "start_time": "09:00",
+    "end_time": "13:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "a9e66af8-3aeb-5635-afec-bcaa8ef67229",
+    "expert_id": "efa4328d-e636-5c78-aa3e-5f9dd490dd18",
+    "day_of_week": 1,
+    "start_time": "10:00",
+    "end_time": "15:00",
+    "booked_count": 4,
+    "capacity": 1
+  },
+  {
+    "id": "9130d634-7d39-5e2a-b4ed-6fbd05a1978b",
+    "expert_id": "efa4328d-e636-5c78-aa3e-5f9dd490dd18",
+    "day_of_week": 3,
+    "start_time": "10:00",
+    "end_time": "15:00",
+    "booked_count": 2,
+    "capacity": 1
+  },
+  {
+    "id": "36412c51-9005-507a-aea8-188099e4916e",
+    "expert_id": "5b592f08-554d-5ba5-96f9-57e185f0d8a6",
+    "day_of_week": 2,
+    "start_time": "14:00",
+    "end_time": "18:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "9fbb124c-244c-5715-b28c-03dcd667d984",
+    "expert_id": "5b592f08-554d-5ba5-96f9-57e185f0d8a6",
+    "day_of_week": 4,
+    "start_time": "14:00",
+    "end_time": "18:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "b66dfc0d-86e9-5d26-9917-2a221aabd195",
+    "expert_id": "28f8f8bf-4c65-58d0-9a8d-bab7c6e64cae",
+    "day_of_week": 1,
+    "start_time": "16:00",
+    "end_time": "19:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "6ce083bf-6382-5466-8f99-23e58c1207d2",
+    "expert_id": "0165234e-9163-5b22-ab77-a6cff5b526a7",
+    "day_of_week": 0,
+    "start_time": "07:00",
+    "end_time": "11:00",
+    "booked_count": 2,
+    "capacity": 1
+  },
+  {
+    "id": "323e397a-b36d-5c08-a5bc-81d1d7d990b1",
+    "expert_id": "0165234e-9163-5b22-ab77-a6cff5b526a7",
+    "day_of_week": 2,
+    "start_time": "07:00",
+    "end_time": "11:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "ba95048a-1a78-51a9-91d9-942f81efb621",
+    "expert_id": "0165234e-9163-5b22-ab77-a6cff5b526a7",
+    "day_of_week": 4,
+    "start_time": "07:00",
+    "end_time": "11:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "93b7b062-df9f-5eaa-a89d-e88514f23260",
+    "expert_id": "3a661350-0381-5377-9cb5-b87d0fd7204f",
+    "day_of_week": 0,
+    "start_time": "12:00",
+    "end_time": "16:00",
+    "booked_count": 2,
+    "capacity": 1
+  },
+  {
+    "id": "2deef5c1-c56b-54ff-b165-1fa916125f12",
+    "expert_id": "3a661350-0381-5377-9cb5-b87d0fd7204f",
+    "day_of_week": 3,
+    "start_time": "12:00",
+    "end_time": "16:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "4308ac8d-8fdc-581a-8dcc-326d9d0c1913",
+    "expert_id": "e49e4571-8bb8-53f1-a9e1-2378bfd3d29d",
+    "day_of_week": 1,
+    "start_time": "17:00",
+    "end_time": "20:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "0dbad3d6-82de-5ecd-84af-c3e968a1f910",
+    "expert_id": "e49e4571-8bb8-53f1-a9e1-2378bfd3d29d",
+    "day_of_week": 4,
+    "start_time": "17:00",
+    "end_time": "20:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "d8763984-af35-543f-9714-c48017963629",
+    "expert_id": "2e3a092a-bfa8-52f0-9bde-93a0c97921a9",
+    "day_of_week": 1,
+    "start_time": "09:00",
+    "end_time": "13:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "30ab135f-ffdd-5b49-8732-b13023fc707a",
+    "expert_id": "2e3a092a-bfa8-52f0-9bde-93a0c97921a9",
+    "day_of_week": 3,
+    "start_time": "09:00",
+    "end_time": "13:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "167b14e4-c022-5a20-aac5-c528b504d27d",
+    "expert_id": "27147c66-0192-50df-a45f-750a8669f335",
+    "day_of_week": 2,
+    "start_time": "10:00",
+    "end_time": "14:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "9e3c6b1a-d492-57e2-bb04-bfa49fbf1624",
+    "expert_id": "27147c66-0192-50df-a45f-750a8669f335",
+    "day_of_week": 5,
+    "start_time": "10:00",
+    "end_time": "13:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "fd66a0d7-84a3-534f-823b-4fbb50c6f567",
+    "expert_id": "11d39e2d-d793-54af-b774-9cde47bb6018",
+    "day_of_week": 0,
+    "start_time": "15:00",
+    "end_time": "19:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "a54fd7bb-5f14-5864-8534-99adb5b309f9",
+    "expert_id": "11d39e2d-d793-54af-b774-9cde47bb6018",
+    "day_of_week": 2,
+    "start_time": "15:00",
+    "end_time": "19:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "ec4b838b-6ff9-5cf0-90d3-ecc897240682",
+    "expert_id": "11d39e2d-d793-54af-b774-9cde47bb6018",
+    "day_of_week": 4,
+    "start_time": "15:00",
+    "end_time": "19:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "d44725a2-9058-534b-b774-f557ec73a923",
+    "expert_id": "00542d78-7ffd-5a31-b6da-bbb37bb6bb30",
+    "day_of_week": 1,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "93757a8f-238b-51b5-bb98-657d28be7d80",
+    "expert_id": "00542d78-7ffd-5a31-b6da-bbb37bb6bb30",
+    "day_of_week": 3,
+    "start_time": "14:00",
+    "end_time": "18:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "d7e900d0-df29-5f39-93ab-0f9e81ab3163",
+    "expert_id": "49a278fa-d1b0-5fcf-a37a-fb7b7299a9b4",
+    "day_of_week": 0,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "booked_count": 3,
+    "capacity": 1
+  },
+  {
+    "id": "ab0181bb-951c-56a7-832a-0b8b9674910e",
+    "expert_id": "49a278fa-d1b0-5fcf-a37a-fb7b7299a9b4",
+    "day_of_week": 1,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "booked_count": 2,
+    "capacity": 1
+  },
+  {
+    "id": "bfa3845c-4745-5640-8c55-e790b9e22d35",
+    "expert_id": "49a278fa-d1b0-5fcf-a37a-fb7b7299a9b4",
+    "day_of_week": 2,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "ce31560e-0abc-552a-93c7-1fed0c1aa35d",
+    "expert_id": "49a278fa-d1b0-5fcf-a37a-fb7b7299a9b4",
+    "day_of_week": 3,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "1725ae92-289c-554d-accf-6cc430dc815e",
+    "expert_id": "3df7dccc-5b40-50bc-9a63-2975ae149f06",
+    "day_of_week": 1,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "61ab8dce-423e-5dd9-921f-346370e2077d",
+    "expert_id": "3df7dccc-5b40-50bc-9a63-2975ae149f06",
+    "day_of_week": 4,
+    "start_time": "13:00",
+    "end_time": "17:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "26102c2c-0964-5f38-8151-1907347e9189",
+    "expert_id": "731451e2-b337-5478-a518-09d2701ce6a6",
+    "day_of_week": 0,
+    "start_time": "14:00",
+    "end_time": "18:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "9b7532ea-06a1-5ed3-a2d1-15ee21ff2690",
+    "expert_id": "731451e2-b337-5478-a518-09d2701ce6a6",
+    "day_of_week": 3,
+    "start_time": "09:00",
+    "end_time": "13:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "b8374d51-0bc8-5805-b7a0-2f8dcfad7785",
+    "expert_id": "e1d4e07f-a4af-5ef1-843d-2f7bf78759a7",
+    "day_of_week": 0,
+    "start_time": "10:00",
+    "end_time": "14:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "020c56e7-3d90-55da-a802-1e5747927225",
+    "expert_id": "e1d4e07f-a4af-5ef1-843d-2f7bf78759a7",
+    "day_of_week": 3,
+    "start_time": "10:00",
+    "end_time": "14:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "fce8fd20-dec5-54f4-842c-b33981713c1a",
+    "expert_id": "f09bdef0-2281-5f43-945b-e9ff4b184707",
+    "day_of_week": 2,
+    "start_time": "09:00",
+    "end_time": "13:00",
+    "booked_count": 0,
+    "capacity": 1
+  },
+  {
+    "id": "688ea9fe-d2c7-5f19-b6e9-70443e808553",
+    "expert_id": "f09bdef0-2281-5f43-945b-e9ff4b184707",
+    "day_of_week": 4,
+    "start_time": "09:00",
+    "end_time": "13:00",
+    "booked_count": 1,
+    "capacity": 1
+  },
+  {
+    "id": "3f65b2a5-6ced-53ea-ad04-5a9a71318391",
+    "expert_id": "616b7528-114e-5c9a-9a0a-bb5acd31f892",
+    "day_of_week": 1,
+    "start_time": "13:00",
+    "end_time": "17:00",
+    "booked_count": 0,
+    "capacity": 1
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "SUP-2026-0001",
+    "requester_role": "PATIENT",
+    "requester_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "patient_identity_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "category": "GENERAL",
+    "subject": "Calendar question",
+    "message": "I need help finding an older record.",
+    "status": "IN_REVIEW",
+    "submitted_at": "2026-08-29T02:15:00",
+    "response_due_by": "2026-08-30T02:15:00",
+    "last_response": "We are checking the record index and will reply here.",
+    "return_to": "/app/consultations",
+    "closed_at": null
+  },
+  {
+    "id": "SUP-2026-0002",
+    "requester_role": "EXPERT",
+    "requester_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "patient_identity_id": null,
+    "category": "GENERAL",
+    "subject": "Availability question",
+    "message": "One saved availability window needs review.",
+    "status": "SUBMITTED",
+    "submitted_at": "2026-08-29T04:15:00",
+    "response_due_by": "2026-08-30T04:15:00",
+    "last_response": null,
+    "return_to": "/app/expert/availability",
+    "closed_at": null
+  },
+  {
+    "id": "SUP-2026-0003",
+    "requester_role": "PHARMACY",
+    "requester_id": "a9d23d6e-f056-5692-a5ae-56c5931496b2",
+    "patient_identity_id": null,
+    "category": "GENERAL",
+    "subject": "Request list question",
+    "message": "A fulfilled request is still highlighted.",
+    "status": "WAITING_ON_CUSTOMER",
+    "submitted_at": "2026-08-29T06:15:00",
+    "response_due_by": "2026-08-30T06:15:00",
+    "last_response": "Please confirm the request reference shown on your screen.",
+    "return_to": "/pharmacy/requests",
+    "closed_at": null
+  },
+  {
+    "id": "SUP-2026-0004",
+    "requester_role": "LAB",
+    "requester_id": "b8caede4-2ed1-5327-a898-52baa1da7168",
+    "patient_identity_id": null,
+    "category": "GENERAL",
+    "subject": "Upload acknowledgement",
+    "message": "I cannot see the acknowledgement for a result upload.",
+    "status": "RESOLVED",
+    "submitted_at": "2026-08-27T09:15:00",
+    "response_due_by": "2026-08-28T09:15:00",
+    "last_response": "The acknowledgement is now visible on the request.",
+    "return_to": "/lab/requests",
+    "closed_at": "2026-08-28T06:15:00"
+  }
+]

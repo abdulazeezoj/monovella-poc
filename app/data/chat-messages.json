@@ -1,0 +1,174 @@
+[
+  {
+    "id": "0199e076-f455-54a0-bb9c-9243bf34b1d7",
+    "consultation_id": "7ea9a8b9-6c36-53bd-9731-7f42104d4062",
+    "sender_type": "EXPERT",
+    "type": "TEXT",
+    "body": "Good morning Amara. I've read what you sent through. Before we go further, how many pads or tampons are you getting through on your heaviest day?",
+    "media_url": null,
+    "sent_at": "2026-08-29T08:03:00"
+  },
+  {
+    "id": "73ea86ab-c4e2-5a36-b439-e643903830c1",
+    "consultation_id": "7ea9a8b9-6c36-53bd-9731-7f42104d4062",
+    "sender_type": "PATIENT",
+    "type": "TEXT",
+    "body": "Morning doctor. Maybe seven or eight. I have to change through the night too.",
+    "media_url": null,
+    "sent_at": "2026-08-29T08:06:00"
+  },
+  {
+    "id": "29e4ee33-e57a-5837-bb1c-27706a01b44c",
+    "consultation_id": "7ea9a8b9-6c36-53bd-9731-7f42104d4062",
+    "sender_type": "PATIENT",
+    "type": "VOICE",
+    "body": null,
+    "media_url": "/media/voice-note.m4a",
+    "sent_at": "2026-08-29T08:07:00",
+    "duration_seconds": 34
+  },
+  {
+    "id": "b9a8a7cb-67fc-59be-a01f-5dc3c85b2684",
+    "consultation_id": "7ea9a8b9-6c36-53bd-9731-7f42104d4062",
+    "sender_type": "EXPERT",
+    "type": "TEXT",
+    "body": "Thank you, that's clearer than any form would have been. The clots you mentioned Roughly what size?",
+    "media_url": null,
+    "sent_at": "2026-08-29T08:11:00"
+  },
+  {
+    "id": "49e9b3ce-63b8-5d14-a62a-397812f0ea43",
+    "consultation_id": "7ea9a8b9-6c36-53bd-9731-7f42104d4062",
+    "sender_type": "PATIENT",
+    "type": "TEXT",
+    "body": "Some are as big as a 100 naira coin. I took a photo last month.",
+    "media_url": null,
+    "sent_at": "2026-08-29T08:14:00"
+  },
+  {
+    "id": "8cb39ecd-fd2a-5b06-9fb1-ddf28d7d4101",
+    "consultation_id": "7ea9a8b9-6c36-53bd-9731-7f42104d4062",
+    "sender_type": "PATIENT",
+    "type": "IMAGE",
+    "body": null,
+    "media_url": "/media/attachment.jpg",
+    "sent_at": "2026-08-29T08:17:00"
+  },
+  {
+    "id": "2637c683-2f0e-55a6-999c-00f30f0891c1",
+    "consultation_id": "7ea9a8b9-6c36-53bd-9731-7f42104d4062",
+    "sender_type": "EXPERT",
+    "type": "TEXT",
+    "body": "Understood. Two things: I want a full blood count and a ferritin, because losing that volume monthly usually shows up as iron deficiency before anything else. I've put the order on your record. Second, I'd like to see your last four cycles from your Monovella calendar. You've been logging them, which makes this much easier than starting from memory.",
+    "media_url": null,
+    "sent_at": "2026-08-29T08:33:00"
+  },
+  {
+    "id": "cce9739d-b5d8-5472-9103-3902b935b1c9",
+    "consultation_id": "7ea9a8b9-6c36-53bd-9731-7f42104d4062",
+    "sender_type": "PATIENT",
+    "type": "TEXT",
+    "body": "They're all logged. I can see them on my side.",
+    "media_url": null,
+    "sent_at": "2026-08-29T08:39:00"
+  },
+  {
+    "id": "f302c7c4-df22-5bcf-a822-5d22b9526c1e",
+    "consultation_id": "7ea9a8b9-6c36-53bd-9731-7f42104d4062",
+    "sender_type": "EXPERT",
+    "type": "TEXT",
+    "body": "I have them. Bring the lab result back into this consultation when it lands and we'll talk about options. There are several, and none of them start with surgery.",
+    "media_url": null,
+    "sent_at": "2026-08-29T08:44:00"
+  },
+  {
+    "id": "e234c094-b6ff-5c86-8b21-32cd891a289f",
+    "consultation_id": "6370b9b9-896d-5c66-a2ac-82f3082e6d48",
+    "sender_type": "PATIENT",
+    "type": "TEXT",
+    "body": "Good afternoon doctor. I've attached photos in daylight as you asked.",
+    "media_url": null,
+    "sent_at": "2026-08-23T07:20:00"
+  },
+  {
+    "id": "ce847bd4-35ed-5800-b64c-de1d0af677e1",
+    "consultation_id": "6370b9b9-896d-5c66-a2ac-82f3082e6d48",
+    "sender_type": "PATIENT",
+    "type": "IMAGE",
+    "body": null,
+    "media_url": "/media/attachment.jpg",
+    "sent_at": "2026-08-23T07:21:00"
+  },
+  {
+    "id": "f875cadd-ecc5-5a8e-8d56-91bb77a9972f",
+    "consultation_id": "6370b9b9-896d-5c66-a2ac-82f3082e6d48",
+    "sender_type": "EXPERT",
+    "type": "TEXT",
+    "body": "Thank you. Can you tell me the exact name on the cream you bought in April, and whether it listed its ingredients?",
+    "media_url": null,
+    "sent_at": "2026-08-23T07:27:00"
+  },
+  {
+    "id": "c61e5825-542e-5538-8f6d-c97628b79800",
+    "consultation_id": "6370b9b9-896d-5c66-a2ac-82f3082e6d48",
+    "sender_type": "PATIENT",
+    "type": "TEXT",
+    "body": "No ingredients on it at all. Just the brand name on the tub.",
+    "media_url": null,
+    "sent_at": "2026-08-23T07:30:00"
+  },
+  {
+    "id": "98ed963f-5019-51be-b73d-7e208e777a4f",
+    "consultation_id": "6370b9b9-896d-5c66-a2ac-82f3082e6d48",
+    "sender_type": "EXPERT",
+    "type": "TEXT",
+    "body": "That's the part I was worried about. Unlabelled lightening creams sold that way very often contain a strong steroid, and a strong steroid on facial skin for six months is what turns a treatable patch into this. Stop it today, don't taper, just stop. I'll write up what to use instead.",
+    "media_url": null,
+    "sent_at": "2026-08-23T07:35:00"
+  },
+  {
+    "id": "1562c227-a3bd-525a-82f6-4e293394da16",
+    "consultation_id": "6370b9b9-896d-5c66-a2ac-82f3082e6d48",
+    "sender_type": "PATIENT",
+    "type": "TEXT",
+    "body": "I stopped this morning after reading your note. Thank you for being straight with me.",
+    "media_url": null,
+    "sent_at": "2026-08-23T08:03:00"
+  },
+  {
+    "id": "fb3b00ab-6594-5bff-bdbf-4fbba47e65ff",
+    "consultation_id": "69200834-2aee-5231-b9db-a67c01a18a20",
+    "sender_type": "PATIENT",
+    "type": "TEXT",
+    "body": "Doctor, they've come back again this month, both sides.",
+    "media_url": null,
+    "sent_at": "2026-08-29T08:42:00"
+  },
+  {
+    "id": "ce83058c-62fd-5aba-a589-7d629e5a8ed0",
+    "consultation_id": "69200834-2aee-5231-b9db-a67c01a18a20",
+    "sender_type": "EXPERT",
+    "type": "TEXT",
+    "body": "How many separate lumps right now, and is any of them draining today?",
+    "media_url": null,
+    "sent_at": "2026-08-29T08:47:00"
+  },
+  {
+    "id": "d4841bc1-f616-55fa-9b73-8144c2630e8a",
+    "consultation_id": "69200834-2aee-5231-b9db-a67c01a18a20",
+    "sender_type": "PATIENT",
+    "type": "TEXT",
+    "body": "Three on the left, one on the right. The left one is draining.",
+    "media_url": null,
+    "sent_at": "2026-08-29T08:51:00"
+  },
+  {
+    "id": "d0eac3fd-100e-5782-9b39-0e03007a1d24",
+    "consultation_id": "69200834-2aee-5231-b9db-a67c01a18a20",
+    "sender_type": "EXPERT",
+    "type": "TEXT",
+    "body": "I've ordered a swab so we treat what's actually there rather than guessing. Please have it taken before you put anything antiseptic on it.",
+    "media_url": null,
+    "sent_at": "2026-08-29T09:04:00"
+  }
+]

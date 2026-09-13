@@ -1,0 +1,12 @@
+{
+  "id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+  "phone": "+234 802 411 9034",
+  "recovery_email": "amara.okonkwo@example.com",
+  "recovery_email_verified_at": "2026-01-30T09:15:00",
+  "has_patient_identity": true,
+  "has_expert_identity": true,
+  "biometric_enabled": true,
+  "closure_status": "ACTIVE",
+  "closure_requested_at": null,
+  "created_at": "2026-01-27T08:30:00"
+}

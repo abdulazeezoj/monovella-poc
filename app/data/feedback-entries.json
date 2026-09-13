@@ -1,0 +1,30 @@
+[
+  {
+    "id": "FDB-2026-0001",
+    "interaction_type": "EXPERT",
+    "interaction_id": "6370b9b9-896d-5c66-a2ac-82f3082e6d48",
+    "patient_identity_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "submitted_by_user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "rating": 5,
+    "public_comment": "The plan was explained clearly.",
+    "comment_kind": "TEXT",
+    "voice_duration_seconds": null,
+    "moderation_status": "APPROVED",
+    "provider_response": "Thank you for sharing this.",
+    "submitted_at": "2026-08-24T09:15:00"
+  },
+  {
+    "id": "FDB-2026-0002",
+    "interaction_type": "LAB",
+    "interaction_id": "be95719b-6c8e-597c-8e1c-166975b048d0",
+    "patient_identity_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "submitted_by_user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "rating": 4,
+    "public_comment": "",
+    "comment_kind": "VOICE",
+    "voice_duration_seconds": 14,
+    "moderation_status": "PENDING",
+    "provider_response": null,
+    "submitted_at": "2026-08-27T09:15:00"
+  }
+]

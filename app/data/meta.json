@@ -1,0 +1,8 @@
+{
+  "id": "202d288f-f8a8-5cb3-a998-84843458529e",
+  "anchor": "2026-08-29T09:15:00",
+  "openapi_version": "0.34.0",
+  "platform_fee_rate": 0.2,
+  "platform_fee_cap_kobo": 300000,
+  "note": "Demo data. No real patient, expert, pharmacy or lab is represented here."
+}

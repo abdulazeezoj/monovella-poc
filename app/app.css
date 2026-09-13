@@ -1,0 +1,307 @@
+@import "tailwindcss";
+
+/* Keep the public front door in Tailwind's source set during dev-server HMR.
+ * The landing page uses container variants that need to be regenerated as its
+ * composition changes. */
+@source "./routes/landing.tsx";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * The device/laptop mockup's chrome used to gate on the `lg` viewport
+ * breakpoint, which a resized desktop window and a real small screen can't be
+ * told apart on. `mockup:` instead follows `[data-mockup]`, a flag set in JS
+ * from `(pointer: fine)` (see app/lib/use-mockup.ts) — a real phone or tablet
+ * never shows the mockup, and a desktop browser always does, however narrow
+ * its window gets (the frame scales down to fit instead of disappearing).
+ */
+@custom-variant mockup (&:where([data-mockup="true"], [data-mockup="true"] *));
+
+/* ─────────────────────────────────────────────────────────────
+   Monovella brand tokens — PRODUCT_BRAND.md §3
+   Raw values live here; @theme maps them into Tailwind utilities.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  color-scheme: light;
+
+  --brand-base-100: #fbf9f5;
+  --brand-base-200: #f5f2ec;
+  --brand-base-300: #ede8dd;
+  --brand-base-content: #211d18;
+
+  --brand-primary: #a8461f;
+  --brand-primary-content: #ffffff;
+  --brand-secondary: #155953;
+  --brand-secondary-content: #ffffff;
+  --brand-accent: #8f3049;
+  --brand-accent-content: #ffffff;
+  --brand-neutral: #2c2822;
+  --brand-neutral-content: #f2ede4;
+
+  --brand-info: #2c5f8a;
+  --brand-info-content: #ffffff;
+  --brand-success: #2f6b3a;
+  --brand-success-content: #ffffff;
+  --brand-warning: #8a5a00;
+  --brand-warning-content: #ffffff;
+  --brand-error: #a83232;
+  --brand-error-content: #ffffff;
+
+  /* Badge tints — pale ground + deep text (PRODUCT_BRAND.md §3 badge rule). */
+  --brand-info-tint: #e2ecf5;
+  --brand-success-tint: #e2f0e4;
+  --brand-warning-tint: #f6ecd6;
+  --brand-error-tint: #f7e3e2;
+  --brand-primary-tint: #f6e5dd;
+  --brand-secondary-tint: #dcece9;
+
+  /* A page should read as a kept record, not a field of interchangeable cards. */
+  --brand-shadow: 0 1px 2px rgb(33 29 24 / 0.08), 0 8px 20px rgb(33 29 24 / 0.07);
+  --brand-folio-shadow: 0 1px 1px rgb(33 29 24 / 0.04), 0 12px 28px rgb(33 29 24 / 0.045);
+
+  --motion-fast: 120ms;
+
+  /* The floating prototype bar's total height. The mobile shell reserves
+     exactly this much so the bar never sits over the app's own tab bar on a
+     real device, where there is no mockup gap to fall into. */
+  --prototype-bar-height: 4.5rem;
+  --motion-base: 200ms;
+  --motion-slow: 280ms;
+  --ease-enter: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --brand-base-100: #1b1815;
+  --brand-base-200: #221e19;
+  --brand-base-300: #2a251f;
+  --brand-base-content: #f2ede4;
+
+  --brand-primary: #e2794c;
+  --brand-primary-content: #1b1815;
+  --brand-secondary: #4fb3aa;
+  --brand-secondary-content: #1b1815;
+  --brand-accent: #e68ca3;
+  --brand-accent-content: #1b1815;
+  --brand-neutral: #4a433a;
+  --brand-neutral-content: #f2ede4;
+
+  --brand-info: #6fa8d8;
+  --brand-info-content: #1b1815;
+  --brand-success: #6fbf73;
+  --brand-success-content: #1b1815;
+  --brand-warning: #e8b93f;
+  --brand-warning-content: #1b1815;
+  --brand-error: #ef8079;
+  --brand-error-content: #1b1815;
+
+  /* Dark tints are darkened grounds carrying the light-mode-bright text. */
+  --brand-info-tint: #1f2c38;
+  --brand-success-tint: #1e2f21;
+  --brand-warning-tint: #332a12;
+  --brand-error-tint: #3a221f;
+  --brand-primary-tint: #33231a;
+  --brand-secondary-tint: #172d2b;
+
+  /* Dark mode uses no shadows — elevation is the 100→200→300 surface step. */
+  --brand-shadow: none;
+  --brand-folio-shadow: none;
+}
+
+@theme inline {
+  --color-base-100: var(--brand-base-100);
+  --color-base-200: var(--brand-base-200);
+  --color-base-300: var(--brand-base-300);
+  --color-base-content: var(--brand-base-content);
+
+  --color-primary: var(--brand-primary);
+  --color-primary-content: var(--brand-primary-content);
+  --color-secondary: var(--brand-secondary);
+  --color-secondary-content: var(--brand-secondary-content);
+  --color-accent: var(--brand-accent);
+  --color-accent-content: var(--brand-accent-content);
+  --color-neutral: var(--brand-neutral);
+  --color-neutral-content: var(--brand-neutral-content);
+
+  --color-info: var(--brand-info);
+  --color-info-content: var(--brand-info-content);
+  --color-success: var(--brand-success);
+  --color-success-content: var(--brand-success-content);
+  --color-warning: var(--brand-warning);
+  --color-warning-content: var(--brand-warning-content);
+  --color-error: var(--brand-error);
+  --color-error-content: var(--brand-error-content);
+
+  --color-info-tint: var(--brand-info-tint);
+  --color-success-tint: var(--brand-success-tint);
+  --color-warning-tint: var(--brand-warning-tint);
+  --color-error-tint: var(--brand-error-tint);
+  --color-primary-tint: var(--brand-primary-tint);
+  --color-secondary-tint: var(--brand-secondary-tint);
+
+  --font-heading: "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-mono: "Fira Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* PRODUCT_BRAND.md §2 type scale. rem so OS text-size scaling is honoured. */
+  --text-display: 2.125rem;
+  --text-display--line-height: 1.15;
+  --text-h1: 1.75rem;
+  --text-h1--line-height: 1.2;
+  --text-h2: 1.375rem;
+  --text-h2--line-height: 1.25;
+  --text-h3: 1.125rem;
+  --text-h3--line-height: 1.3;
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.5;
+  --text-label: 0.875rem;
+  --text-label--line-height: 1.4;
+  --text-data: 0.9375rem;
+  --text-data--line-height: 1.5;
+  --text-record: 0.9375rem;
+  --text-record--line-height: 1.55;
+
+  --radius-brand: 0.75rem;
+  --radius-brand-lg: 1.25rem;
+
+  --shadow-brand: var(--brand-shadow);
+  --shadow-folio: var(--brand-folio-shadow);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--brand-base-100);
+    color: var(--brand-base-content);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* PRODUCT_BRAND.md §7 / 2.4.7 — the focus ring is never suppressed. */
+  :focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--brand-primary);
+    color: var(--brand-primary-content);
+  }
+}
+
+/* Card surfaces are components, not utilities, and the layer matters. These
+   lived in `@layer utilities` alongside `.measure` and `.tabular`, where they
+   sat after Tailwind's own utilities in source order and beat them. Because
+   `.folio-surface` sets the `border` shorthand, it overwrote border-left-width
+   and border-left-color too, so every `<Card className="border-l-[3px]
+   border-l-success">` in the app silently rendered a plain 1px base-300 edge.
+   Ten call sites were affected: overdue rows in list.tsx, late provider
+   requests, calendar entries, discovery and the fulfilment cards. Tailwind v4
+   orders components before utilities precisely so a component's defaults can be
+   overridden by a utility at the call site, which is what all ten intended. */
+@layer components {
+  /* Tonal card surface: gives records a shared provenance via border/shadow,
+     without using colour as status or turning the interface into a dashboard. */
+  .folio-surface {
+    border: 1px solid var(--brand-base-300);
+    background: var(--brand-base-200);
+    box-shadow: var(--brand-folio-shadow);
+  }
+
+  .folio-surface-primary {
+    border-color: color-mix(in srgb, var(--brand-primary) 45%, var(--brand-base-300));
+  }
+}
+
+@layer utilities {
+  /* PRODUCT_BRAND.md §2 — prose holds to a 68-character measure. */
+  .measure {
+    max-width: 68ch;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .skeleton {
+    background-color: var(--brand-base-200);
+    animation: mv-pulse 1.5s ease-in-out infinite;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--brand-base-300) transparent;
+  }
+
+  .folio-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+}
+
+@keyframes mv-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes mv-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes mv-sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.animate-enter {
+  animation: mv-enter var(--motion-base) var(--ease-enter);
+}
+
+.animate-sheet {
+  animation: mv-sheet-up var(--motion-slow) var(--ease-enter);
+}
+
+/* PRODUCT_BRAND.md §4 — reduced motion is one global rule, not per component. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.001ms;
+    scroll-behavior: auto;
+  }
+
+  .skeleton {
+    animation: none;
+  }
+}

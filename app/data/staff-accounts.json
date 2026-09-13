@@ -1,0 +1,54 @@
+[
+  {
+    "id": "b432ce1d-52a5-5261-9b74-9f1dbcbfe549",
+    "name": "Abdulazeez Ojimoh",
+    "email": "abdulazeez@monovella.com",
+    "phone": "+234 803 000 1010",
+    "role": "PLATFORM_ADMIN",
+    "revoked_at": null,
+    "must_change_password": false,
+    "failed_login_attempts": 0,
+    "locked_until": null,
+    "photo_url": null,
+    "password_hash": "argon2id$v=19$m=19456,t=2,p=1$ZGVtby1zYWx0$stf_001-demo-hash"
+  },
+  {
+    "id": "0145b6ce-1ff1-530e-8ff1-e2ba34e2af64",
+    "name": "Chidera Obi",
+    "email": "chidera@monovella.com",
+    "phone": "+234 803 000 1011",
+    "role": "PLATFORM_ADMIN",
+    "revoked_at": null,
+    "must_change_password": false,
+    "failed_login_attempts": 0,
+    "locked_until": null,
+    "photo_url": null,
+    "password_hash": "argon2id$v=19$m=19456,t=2,p=1$ZGVtby1zYWx0$stf_002-demo-hash"
+  },
+  {
+    "id": "98dc53d9-4976-5411-99b1-2239e3e8f40f",
+    "name": "Halima Yakubu",
+    "email": "halima@monovella.com",
+    "phone": "+234 803 000 1012",
+    "role": "PLATFORM_ADMIN",
+    "revoked_at": null,
+    "must_change_password": true,
+    "failed_login_attempts": 2,
+    "locked_until": null,
+    "photo_url": null,
+    "password_hash": "argon2id$v=19$m=19456,t=2,p=1$ZGVtby1zYWx0$stf_003-demo-hash"
+  },
+  {
+    "id": "f7d24366-778b-51af-8e1b-a00adda43694",
+    "name": "Tolu Ajayi",
+    "email": "tolu@monovella.com",
+    "phone": "+234 803 000 1013",
+    "role": "PLATFORM_ADMIN",
+    "revoked_at": "2026-07-14T09:15:00",
+    "must_change_password": false,
+    "failed_login_attempts": 0,
+    "locked_until": null,
+    "photo_url": null,
+    "password_hash": "argon2id$v=19$m=19456,t=2,p=1$ZGVtby1zYWx0$stf_004-demo-hash"
+  }
+]

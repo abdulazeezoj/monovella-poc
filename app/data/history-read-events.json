@@ -1,0 +1,29 @@
+[
+  {
+    "id": "c305fb75-f390-5af6-8cea-7b1779b99972",
+    "expert_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "patient_identity_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "care_event_id": "e5b05de0-903c-54ba-990a-be6557f50448",
+    "sections": ["ALLERGIES", "DIAGNOSES", "PRESCRIPTIONS", "LAB_RESULTS", "ENCOUNTERS"],
+    "route": "NORMAL",
+    "read_at": "2026-08-27T09:21:00"
+  },
+  {
+    "id": "ea566eee-9fce-5acb-a8eb-44ce94b223c1",
+    "expert_id": "7fc697c7-1037-5f0d-b3de-3581323538d8",
+    "patient_identity_id": "a6823d29-f250-54ce-892c-dabcb92a7704",
+    "care_event_id": "69200834-2aee-5231-b9db-a67c01a18a20",
+    "sections": ["ALLERGIES", "DIAGNOSES", "PRESCRIPTIONS", "LAB_RESULTS", "ENCOUNTERS"],
+    "route": "NORMAL",
+    "read_at": "2026-08-29T08:35:00"
+  },
+  {
+    "id": "30830267-ec24-5f2d-9138-54ee74dbc1ee",
+    "expert_id": "28f8f8bf-4c65-58d0-9a8d-bab7c6e64cae",
+    "patient_identity_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "care_event_id": "6370b9b9-896d-5c66-a2ac-82f3082e6d48",
+    "sections": ["ALLERGIES", "PRESCRIPTIONS"],
+    "route": "EMERGENCY",
+    "read_at": "2026-08-23T09:29:00"
+  }
+]

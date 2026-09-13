@@ -1,0 +1,11 @@
+[
+  {
+    "id": "gov_1",
+    "subject_type": "APPLICATION",
+    "subject_id": "5bff35ad-684c-579b-b04c-9eda77532411",
+    "action": "SUBMITTED",
+    "actor_id": "28f8f8bf-4c65-58d0-9a8d-bab7c6e64cae",
+    "occurred_at": "2026-08-26T09:15:00",
+    "note": "LICENCE_RENEWAL"
+  }
+]

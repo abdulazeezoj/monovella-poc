@@ -1,0 +1,13 @@
+[
+  {
+    "id": "754c6f17-3dc1-5f0b-a8da-3ed3c51be69b",
+    "user_id": "9eec12c3-9503-5550-9a03-1c4f86c3b4fa",
+    "provider_id": "phone_pin",
+    "account_id": "+234 802 411 9034",
+    "pin_hash": "argon2id$v=19$m=19456,t=2,p=1$ZGVtby1zYWx0$ZGVtby1waW4taGFzaA",
+    "pin_failed_attempts": 0,
+    "pin_locked_until": null,
+    "created_at": "2026-01-27T08:30:00",
+    "updated_at": "2026-01-27T08:30:00"
+  }
+]

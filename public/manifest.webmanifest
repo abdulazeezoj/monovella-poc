@@ -1,0 +1,31 @@
+{
+  "name": "Monovella",
+  "short_name": "Monovella",
+  "description": "See a specialist without losing a day.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FBF9F5",
+  "theme_color": "#A8461F",
+  "icons": [
+    {
+      "src": "/brand/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/brand/app-icon-colored.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/brand/app-icon-monochrome.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "monochrome"
+    }
+  ]
+}

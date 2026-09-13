@@ -1,0 +1,13 @@
+[
+  {
+    "id": "PRV-2026-0001",
+    "patient_identity_id": "a78f8514-1ee1-54f8-808d-95e3b5a0d8a0",
+    "request_type": "ACCESS",
+    "scope": "A copy of account and consultation information.",
+    "identity_status": "VERIFIED",
+    "status": "IN_REVIEW",
+    "submitted_at": "2026-08-28T09:15:00",
+    "response_due_by": "2026-09-04T09:15:00",
+    "response": null
+  }
+]

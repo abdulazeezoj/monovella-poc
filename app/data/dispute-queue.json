@@ -1,0 +1,35 @@
+[
+  {
+    "id": "8f39c629-f82d-5eb7-be20-52121335fa86",
+    "raised_by": "PHARMACY",
+    "provider_type": "PHARMACY",
+    "decision_due_by": "2026-08-29T05:15:00",
+    "overdue": true,
+    "due_soon": false,
+    "amount_kobo": 504000,
+    "raised_at": "2026-08-23T10:15:00",
+    "subject": "GreenLife Pharmacy vs. Amara Okonkwo"
+  },
+  {
+    "id": "6b1f0dee-b513-50fc-ae20-7ae776cb2819",
+    "raised_by": "PATIENT",
+    "provider_type": "SPECIALIST",
+    "decision_due_by": "2026-09-01T06:15:00",
+    "overdue": false,
+    "due_soon": false,
+    "amount_kobo": 1320000,
+    "raised_at": "2026-08-27T06:15:00",
+    "subject": "Amara Okonkwo vs. Dr. Emem Bassey"
+  },
+  {
+    "id": "44af319f-b410-5a81-9e07-9ac1da3d248b",
+    "raised_by": "LAB",
+    "provider_type": "LAB",
+    "decision_due_by": "2026-09-02T09:15:00",
+    "overdue": false,
+    "due_soon": false,
+    "amount_kobo": 1416000,
+    "raised_at": "2026-08-28T03:15:00",
+    "subject": "Lagos Diagnostics vs. Dele Faronbi"
+  }
+]
