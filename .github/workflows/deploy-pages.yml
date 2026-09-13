@@ -1,0 +1,65 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build (SPA, base path = /monovella-poc/)
+        run: pnpm run build
+        env:
+          GITHUB_PAGES: "true"
+
+      - name: SPA fallback for deep links
+        # GitHub Pages has no server-side rewrites: a hard refresh on any
+        # route other than "/" 404s unless 404.html can also boot the app.
+        # It's the same file as index.html — the client router then reads
+        # the real path from the URL and renders it.
+        run: cp build/client/index.html build/client/404.html
+
+      - name: Disable Jekyll processing
+        # Without this, GitHub Pages' Jekyll build ignores files/folders
+        # that start with "_" — this bundle ships one (__vite-browser-external-*.js).
+        run: touch build/client/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

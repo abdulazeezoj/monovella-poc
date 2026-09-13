@@ -1,3 +1,4 @@
+import { asset } from "~/lib/asset";
 import { cn } from "~/lib/cn";
 
 export function MonovellaIcon({ className }: { className?: string }) {
@@ -7,12 +8,12 @@ export function MonovellaIcon({ className }: { className?: string }) {
   return (
     <span aria-hidden="true" className={cn("relative block", className)}>
       <img
-        src="/brand/icon-colored.svg"
+        src={asset("/brand/icon-colored.svg")}
         alt=""
         className="block size-full object-contain dark:hidden"
       />
       <img
-        src="/brand/icon-light.svg"
+        src={asset("/brand/icon-light.svg")}
         alt=""
         className="hidden size-full object-contain dark:block"
       />
@@ -31,12 +32,12 @@ export function Lockup({
   return (
     <span className={cn("inline-block", logo, className)}>
       <img
-        src="/brand/logo-colored.svg"
+        src={asset("/brand/logo-colored.svg")}
         alt="Monovella"
         className="block h-full w-auto object-contain dark:hidden"
       />
       <img
-        src="/brand/logo-light.svg"
+        src={asset("/brand/logo-light.svg")}
         alt="Monovella"
         className="hidden h-full w-auto object-contain dark:block"
       />

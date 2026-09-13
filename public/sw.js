@@ -3,13 +3,17 @@
  * and to survive a flaky connection, without pretending to be an offline-first
  * data layer it isn't.
  */
-const CACHE = "monovella-prototype-v2";
+const CACHE = "monovella-prototype-v3";
+// The scope, not "/" — a GitHub Pages project site serves this from a
+// "/<repo>/" sub-path, and the cached shell has to be keyed on the URL the
+// app is actually installed at.
+const SHELL = self.registration.scope;
 const PRECACHE = [
-  "/",
-  "/manifest.webmanifest",
-  "/brand/favicon.svg",
-  "/brand/app-icon-colored.png",
-  "/fonts/fonts.css",
+  SHELL,
+  `${SHELL}manifest.webmanifest`,
+  `${SHELL}brand/favicon.svg`,
+  `${SHELL}brand/app-icon-colored.png`,
+  `${SHELL}fonts/fonts.css`,
 ];
 
 self.addEventListener("install", (event) => {
@@ -36,10 +40,10 @@ self.addEventListener("fetch", (event) => {
       fetch(request)
         .then((response) => {
           const copy = response.clone();
-          caches.open(CACHE).then((c) => c.put("/", copy));
+          caches.open(CACHE).then((c) => c.put(SHELL, copy));
           return response;
         })
-        .catch(() => caches.match("/").then((r) => r ?? Response.error())),
+        .catch(() => caches.match(SHELL).then((r) => r ?? Response.error())),
     );
     return;
   }

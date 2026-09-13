@@ -17,6 +17,7 @@ import { Lockup } from "~/components/shell/logo";
 import { PublicWebShell } from "~/components/shell/web-shell";
 import { Badge, ButtonLink } from "~/components/ui";
 import { EXPERT_ID, expertById, expertName, patientById } from "~/data/selectors";
+import { asset } from "~/lib/asset";
 import { specialtyLabel } from "~/lib/format";
 import { usePrototype } from "~/store/prototype";
 
@@ -32,7 +33,10 @@ const CARE_TEAMS: {
     icon: Stethoscope,
     title: "Experts",
     body: "A calmer way to manage care with the context a patient brings.",
-    image: { src: "/marketing/expert-consult.jpg", alt: "A clinician consulting with a patient." },
+    image: {
+      src: asset("/marketing/expert-consult.jpg"),
+      alt: "A clinician consulting with a patient.",
+    },
     to: "/app/expert/apply",
     label: "Join as an expert",
   },
@@ -41,7 +45,7 @@ const CARE_TEAMS: {
     title: "Pharmacies",
     body: "Manage fulfilment requests with the patient record they belong to.",
     image: {
-      src: "/marketing/pharmacy-counter.jpg",
+      src: asset("/marketing/pharmacy-counter.jpg"),
       alt: "People speaking with a pharmacist at a pharmacy counter.",
     },
     to: "/pharmacy/apply",
@@ -52,7 +56,7 @@ const CARE_TEAMS: {
     title: "Labs",
     body: "Keep a lab request and result connected to the wider care story.",
     image: {
-      src: "/marketing/lab-technician.jpg",
+      src: asset("/marketing/lab-technician.jpg"),
       alt: "A laboratory technician preparing samples.",
     },
     to: "/lab/apply",
@@ -213,7 +217,7 @@ export default function Landing() {
 
           <div className="relative overflow-hidden rounded-[1.25rem] border border-base-300 bg-base-200 shadow-folio">
             <img
-              src="/marketing/hero-patient-balanced.png"
+              src={asset("/marketing/hero-patient-balanced.png")}
               alt="A woman using her phone in a naturally lit home."
               className="block w-full"
               decoding="async"
@@ -285,7 +289,7 @@ export default function Landing() {
           <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-12 @lg:px-8 @lg:py-16 @4xl:grid-cols-[0.9fr_1.1fr] @4xl:items-center @4xl:gap-16">
             <div className="overflow-hidden rounded-[1.25rem] border border-base-300 bg-base-200 shadow-folio">
               <img
-                src="/marketing/patient-home-lagos.png"
+                src={asset("/marketing/patient-home-lagos.png")}
                 alt="A woman reviewing her phone at home."
                 className="aspect-[16/10] w-full object-cover"
                 loading="lazy"

@@ -9,6 +9,7 @@ import {
   useNavigation,
 } from "react-router";
 import { Button, ButtonLink, PageStatus } from "~/components/ui";
+import { asset } from "~/lib/asset";
 
 import type { Route } from "./+types/root";
 import { PrototypeProvider } from "./store/prototype";
@@ -17,24 +18,24 @@ import "./app.css";
 export const links: Route.LinksFunction = () => [
   // Self-hosted so the prototype renders identically offline and installs as a
   // real PWA — no third-party request on the critical path.
-  { rel: "stylesheet", href: "/fonts/fonts.css" },
+  { rel: "stylesheet", href: asset("/fonts/fonts.css") },
   {
     rel: "preload",
-    href: "/fonts/eb-garamond-400-latin.woff2",
+    href: asset("/fonts/eb-garamond-400-latin.woff2"),
     as: "font",
     type: "font/woff2",
     crossOrigin: "anonymous",
   },
   {
     rel: "preload",
-    href: "/fonts/fira-mono-400-latin.woff2",
+    href: asset("/fonts/fira-mono-400-latin.woff2"),
     as: "font",
     type: "font/woff2",
     crossOrigin: "anonymous",
   },
-  { rel: "icon", href: "/brand/favicon.svg", type: "image/svg+xml" },
-  { rel: "apple-touch-icon", href: "/brand/app-icon-colored.png" },
-  { rel: "manifest", href: "/manifest.webmanifest" },
+  { rel: "icon", href: asset("/brand/favicon.svg"), type: "image/svg+xml" },
+  { rel: "apple-touch-icon", href: asset("/brand/app-icon-colored.png") },
+  { rel: "manifest", href: asset("/manifest.webmanifest") },
 ];
 
 export const meta: Route.MetaFunction = () => [
@@ -56,7 +57,10 @@ export const meta: Route.MetaFunction = () => [
 const SW_SCRIPT = import.meta.env.PROD
   ? `if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
-    navigator.serviceWorker.register('/sw.js').catch(function () {});
+    // Relative (no leading slash): resolves against the page's own URL, so
+    // this keeps working whether the app is served from "/" or, as on a
+    // GitHub Pages project site, from a "/<repo>/" sub-path.
+    navigator.serviceWorker.register('sw.js').catch(function () {});
   });
 }`
   : `if ('serviceWorker' in navigator) {

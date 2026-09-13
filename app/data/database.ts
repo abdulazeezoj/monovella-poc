@@ -1,6 +1,7 @@
 import { PGlite } from "@electric-sql/pglite";
 import modelForFile from "../../prisma/models.json";
 import tableInfo from "../../prisma/tables.json";
+import { asset } from "../lib/asset";
 
 /**
  * The prototype's data is Postgres.
@@ -92,9 +93,6 @@ const FILE_FOR_KEY: Record<string, string> = {
  */
 const INSTANT_FORMAT = `'YYYY-MM-DD"T"HH24:MI:SS'`;
 
-/** Where the data directory is served from, and where the seed writes it. */
-const DATA_DIR_URL = "/prototype.pgdata";
-
 async function dataDirectory(): Promise<Blob> {
   if (typeof window === "undefined") {
     // The flow scripts run in Node, where there is nothing to fetch from. They
@@ -104,7 +102,8 @@ async function dataDirectory(): Promise<Blob> {
     const file = fileURLToPath(new URL("../../public/prototype.pgdata", import.meta.url));
     return new Blob([readFileSync(file)]);
   }
-  const response = await fetch(DATA_DIR_URL);
+  // Where the data directory is served from, and where the seed writes it.
+  const response = await fetch(asset("/prototype.pgdata"));
   if (!response.ok) {
     throw new Error(
       "Could not load prototype.pgdata. Run `mise run seed` to build it from the fixtures.",

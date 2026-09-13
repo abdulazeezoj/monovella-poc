@@ -1,6 +1,7 @@
 import { Lockup } from "~/components/shell/logo";
 import { MobileScreen } from "~/components/shell/mobile-shell";
 import { ButtonLink } from "~/components/ui";
+import { asset } from "~/lib/asset";
 
 /** P1 — Welcome / Get Started. */
 export default function Welcome() {
@@ -41,7 +42,7 @@ export default function Welcome() {
 
         <figure className="mt-6 overflow-hidden rounded-brand-lg border border-base-300 bg-base-200 shadow-folio @lg:order-1 @lg:mt-0 @lg:flex @lg:min-h-0 @lg:flex-col @lg:rounded-none @lg:border-0 @lg:bg-transparent @lg:shadow-none">
           <img
-            src="/marketing/patient-home-lagos.png"
+            src={asset("/marketing/patient-home-lagos.png")}
             alt="A woman at home reviewing health information on her phone."
             className="aspect-[5/3] w-full object-cover object-[52%_43%] @lg:hidden"
             loading="eager"
@@ -49,7 +50,7 @@ export default function Welcome() {
             fetchPriority="high"
           />
           <img
-            src="/marketing/hero-patient-balanced.png"
+            src={asset("/marketing/hero-patient-balanced.png")}
             alt="A woman at home reviewing health information on her phone."
             className="hidden @lg:block @lg:h-0 @lg:min-h-0 @lg:flex-1 @lg:w-full @lg:object-cover @lg:object-center"
             loading="eager"

@@ -3,6 +3,7 @@ import { ArrowLeft, LifeBuoy, LogOut, Menu, X } from "lucide-react";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
 import type { Tone } from "~/components/ui";
+import { asset } from "~/lib/asset";
 import { cn } from "~/lib/cn";
 import { initials } from "~/lib/format";
 import { usePointerFine } from "~/lib/use-mockup";
@@ -26,20 +27,20 @@ const TONE_TEXT: Record<Tone, string> = {
 function authStory(productName: string) {
   if (productName === "Pharmacy Portal") {
     return {
-      image: "/marketing/pharmacy-counter.jpg",
+      image: asset("/marketing/pharmacy-counter.jpg"),
       eyebrow: "Pharmacy Portal",
       title: "Keep fulfilment connected to the care it belongs to.",
     };
   }
   if (productName === "Lab Portal") {
     return {
-      image: "/marketing/lab-technician.jpg",
+      image: asset("/marketing/lab-technician.jpg"),
       eyebrow: "Lab Portal",
       title: "Every result belongs in the wider care story.",
     };
   }
   return {
-    image: "/marketing/expert-consult.jpg",
+    image: asset("/marketing/expert-consult.jpg"),
     eyebrow: "One whole health story",
     title: "The context for safer, clearer care stays close.",
   };
