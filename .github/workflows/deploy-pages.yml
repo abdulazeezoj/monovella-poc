@@ -31,6 +31,12 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - name: Seed the prototype database
+        # public/prototype.pgdata is gitignored — a 5 MB generated artifact,
+        # not source. It's rebuilt from the fixtures through the real schema
+        # (see scripts/seed-db.ts); without this the deployed app has no data.
+        run: pnpm exec vite-node scripts/seed-db.ts
+
       - name: Build (SPA, base path = /monovella-poc/)
         run: pnpm run build
         env:
