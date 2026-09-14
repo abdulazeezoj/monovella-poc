@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant Patient
+    participant API as Monovella API
+    participant DB as PostgreSQL
+    participant Nomba
+    participant Sub as Provider Nomba sub-account
+
+    Patient->>API: start checkout for booking or order
+    API->>DB: create payment_attempt (pending) + slot_hold
+    API->>Nomba: create order with configured split
+    Note over Nomba: split allocates provider share to Sub,<br/>platform share stays on Monovella's merchant account
+    Nomba-->>Patient: hosted checkout page
+    Patient->>Nomba: pays
+    Nomba-->>Sub: settles provider share directly
+    Nomba-->>API: signed webhook (payment success)
+    API->>API: verify signature, re-query transaction
+    API->>DB: mark payment_attempt verified (idempotent)
+    API->>DB: confirm booking or paid order
+
+    alt hold expired before verification
+        API->>Nomba: trigger refund (API-initiated, no provider action needed)
+        Nomba-->>Patient: refund
+        API->>DB: raise Alert only if the refund attempt itself fails
+    end

@@ -1,0 +1,14 @@
+graph TD
+    ROOT[Test & Rollout Coverage] --> ST[Staged journey tests]
+    ROOT --> CR[Capacity-controlled rollout]
+
+    ST --> HP["Happy path:<br/>booking → consultation → Care Plan → lab/pharmacy → result"]
+    HP --> CF["Conflict:<br/>double booking, duplicate webhook, duplicate result"]
+    CF --> FL["Failure:<br/>payment rejection, partner timeout, notification outage"]
+    FL --> SF["Safety:<br/>revoked grant, unauthorized read, critical-result follow-up"]
+    SF --> OP["Operations:<br/>SLA breach → named owner acknowledgement"]
+
+    CR --> R1[Control evidence recorded]
+    R1 --> R2[Market launch]
+    R2 --> R3[Five live journeys]
+    R3 --> R4[Review, expand, remediate, or pause]

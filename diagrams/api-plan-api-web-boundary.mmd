@@ -1,0 +1,25 @@
+graph TD
+    A1[Every workflow state transition]
+    A2[Payment verification and Nomba split settlement]
+    A3[Consent, authorization, journey-scoped grants]
+    A4[File safety and short-lived signed access]
+    A5[Permission-scoped Care Journey read model]
+    A6[Alerts queue and automatic recovery]
+    A7[Notification content, delivery, and retry]
+
+    W1[Screens, routing, component states]
+    W2[Renders next-action copy verbatim]
+    W3[Responsive and accessibility contract]
+    W4[Client-side form validation UX]
+
+    A1 --> API_OUT
+    A2 --> API_OUT
+    A3 --> API_OUT
+    A4 --> API_OUT
+    A5 --> API_OUT
+    A6 --> API_OUT
+    A7 --> API_OUT
+    API_OUT[Server-composed, permission-checked JSON] --> W1
+    API_OUT --> W2
+    API_OUT --> W3
+    W4 -->|never decides workflow state or access| API_OUT

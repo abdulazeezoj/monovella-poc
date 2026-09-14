@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant Patient
+    participant System as Care Journey service
+    participant PaymentProvider as Payment provider
+
+    Patient->>System: give consent
+    System->>System: verify specialist
+    Patient->>System: reserve final slot
+    Patient->>PaymentProvider: pay for consultation
+    PaymentProvider-->>System: signed webhook
+    System->>System: confirm consultation

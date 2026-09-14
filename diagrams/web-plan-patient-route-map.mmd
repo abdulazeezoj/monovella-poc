@@ -1,0 +1,32 @@
+graph TD
+    Pub["Public layout<br/>(no auth)"]
+    Home["/ home"]
+    Dir["/providers<br/>directory"]
+    Prof["/providers/:id<br/>profile"]
+    Signup["/sign-up"]
+    Signin["/sign-in"]
+    App["/app<br/>patient layout (auth)"]
+    Onb["/app/onboarding<br/>consent + concern"]
+    Disc["/app/specialists<br/>discovery"]
+    Book["/app/specialists/:offeringId/book"]
+    Call["/app/consultations/:id/call"]
+    Journey["/app/journeys/:id<br/>Care Journey"]
+    LabBk["/app/journeys/:id/lab-booking"]
+    PharmOrd["/app/journeys/:id/pharmacy-order"]
+    Result["/app/journeys/:id/result/:resultId"]
+
+    Pub --> Home
+    Pub --> Dir
+    Dir --> Prof
+    Prof -->|"book, pay, or message"| Signup
+    Pub --> Signup
+    Pub --> Signin
+    Signup --> Onb
+    Onb --> Disc
+    Disc --> Book
+    Book --> Call
+    Call --> Journey
+    Journey --> LabBk
+    Journey --> PharmOrd
+    Journey --> Result
+    App --> Onb

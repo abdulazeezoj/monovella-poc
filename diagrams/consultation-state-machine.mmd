@@ -1,0 +1,6 @@
+graph LR
+    A["Pending payment"] -->|"Payment verified"| B["Confirmed"]
+    A -->|"Hold expires or patient cancels"| C["Cancelled"]
+    B -->|"Cancelled before call"| C
+    B -->|"Call ends"| D["Documentation pending"]
+    D -->|"SOAP complete + outcome sent"| E["Completed"]

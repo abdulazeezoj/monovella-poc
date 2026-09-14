@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant Caller as Unrelated or revoked actor
+    participant System as Care Journey service
+    participant Audit as Audit log
+
+    Caller->>System: request result or attachment
+    System->>System: evaluate scoped grant
+    System-->>Caller: 403 access denied
+    System->>Audit: write audit event

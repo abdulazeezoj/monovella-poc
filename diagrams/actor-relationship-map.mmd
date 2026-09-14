@@ -1,0 +1,22 @@
+graph TD
+    Admin[Platform admin]
+    Patient[Patient]
+    Specialist[Medical specialist]
+    Laboratory[Laboratory]
+    Pharmacy[Pharmacy]
+
+    Admin -->|verifies credentials| Specialist
+    Admin -->|verifies credentials| Laboratory
+    Admin -->|verifies credentials| Pharmacy
+
+    Patient -->|books and pays for consultation| Specialist
+    Patient -->|books and pays for test| Laboratory
+    Patient -->|orders and pays| Pharmacy
+
+    Specialist -->|issues lab request| Laboratory
+    Specialist -->|issues prescription| Pharmacy
+
+    Laboratory -->|returns result| Patient
+    Laboratory -->|returns result| Specialist
+
+    Pharmacy -->|fulfills order| Patient

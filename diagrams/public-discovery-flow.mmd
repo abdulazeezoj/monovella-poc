@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant Provider
+    participant Visitor
+    participant System
+
+    Provider->>System: verified, gets a public profile link
+    Visitor->>System: browse directory or open shared profile link
+    System-->>Visitor: public listing or profile (no account)
+
+    Visitor->>System: try to book, pay, or message
+    System-->>Visitor: sign up or sign in required
+    Visitor->>System: sign up or sign in
+    System-->>Visitor: continue to booking

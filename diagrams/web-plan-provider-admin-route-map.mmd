@@ -1,0 +1,37 @@
+graph TD
+    Spec["/specialist layout"]
+    SpecCred["onboarding/credentials"]
+    SpecProf["profile"]
+    SpecAvail["availability"]
+    SpecConsult["consultations/:id"]
+
+    Lab["/laboratory layout"]
+    LabCred["onboarding/credentials"]
+    LabCat["catalogue"]
+    LabQueue["bookings"]
+    LabDetail["bookings/:id"]
+
+    Pharm["/pharmacy layout"]
+    PharmCred["onboarding/credentials"]
+    PharmProf["profile"]
+    PharmQueue["orders"]
+    PharmDetail["orders/:id"]
+
+    Admin["/admin layout"]
+    AdminCred["credentials queue"]
+    AdminAlerts["alerts queue"]
+
+    Spec --> SpecCred
+    Spec --> SpecProf
+    Spec --> SpecAvail
+    Spec --> SpecConsult
+    Lab --> LabCred
+    Lab --> LabCat
+    Lab --> LabQueue
+    LabQueue --> LabDetail
+    Pharm --> PharmCred
+    Pharm --> PharmProf
+    Pharm --> PharmQueue
+    PharmQueue --> PharmDetail
+    Admin --> AdminCred
+    Admin --> AdminAlerts

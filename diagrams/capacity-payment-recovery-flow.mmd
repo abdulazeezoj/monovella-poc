@@ -1,0 +1,30 @@
+sequenceDiagram
+    participant Patient
+    participant System as Care Journey service
+    participant Worker
+    participant PaymentProvider as Payment provider
+    participant Alerts as Alerts queue
+
+    Patient->>System: reserve slot
+    System->>System: create slot_hold with expires_at
+    Patient->>PaymentProvider: initiate payment
+
+    alt webhook arrives before expiry
+        PaymentProvider-->>System: signed webhook
+        System->>System: verify and confirm booking
+    else webhook missing or delayed
+        Worker->>PaymentProvider: query pending payment attempt
+        PaymentProvider-->>Worker: payment status
+        alt reference, amount, currency, target match
+            Worker->>System: confirm booking
+        else mismatch or unmatched
+            Worker->>Alerts: raise Alert
+        end
+    end
+
+    Worker->>Worker: release expired holds
+    Note over Patient,PaymentProvider: verified payment after expiry creates a<br/>high-priority Alert and refund instruction<br/>never takes another patient's confirmed slot
+
+    PaymentProvider-->>System: refunded or partially_refunded event
+    System->>System: idempotent reconciliation updates payment record
+    Note over System: Monovella records refunds but does not initiate them

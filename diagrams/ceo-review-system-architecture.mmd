@@ -1,0 +1,20 @@
+graph TD
+    ACT[Patient / Specialist / Laboratory / Pharmacy] -->|authenticated, journey-scoped request| CJS[Care Journey service]
+    CJS --> AES[Audit event store]
+
+    CJS --> BK[Booking]
+    CJS --> LR[Lab request]
+    CJS --> PE[Payment evidence]
+    CJS --> CP[Care Plan]
+    CJS --> PO[Pharmacy order]
+
+    BK --> SM[State machine]
+    LR --> SM
+    PE --> SM
+    CP --> SM
+    PO --> SM
+
+    SM --> NO[Notification outbox]
+    NO --> RT[Retry]
+    RT --> EQ[Alerts queue]
+    EQ --> JO[Journey owner]

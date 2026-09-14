@@ -1,0 +1,15 @@
+graph TD
+    C[Consultation] --> CN[Case note]
+
+    CN --> RX[Prescription]
+    RX --> PC[Pharmacy confirmation]
+    PC --> PAY1[Payment]
+    PAY1 --> FUL[Fulfilment]
+
+    CN --> LREQ[Lab request]
+    LREQ --> SB[Slot booking]
+    SB --> PAY2[Payment]
+    PAY2 --> TS[Test]
+    TS --> RS[Result]
+    RS --> PT[Patient]
+    RS --> RQ[Requesting specialist]

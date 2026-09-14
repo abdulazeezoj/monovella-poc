@@ -1,0 +1,12 @@
+graph TD
+    subgraph ROW1 [Infrastructure recovery]
+        direction LR
+        F1[Redis fails] --> C1[Postgres revalidation and database fallback] --> U1[Slower discovery; correct state preserved]
+        F2[RustFS unavailable] --> C2[No release before durable object write] --> U2[Visible upload failure; no false result-ready state]
+    end
+    subgraph ROW2 [Admission and client recovery]
+        direction LR
+        F3[Phone proof invalid, expired, or replayed] --> C3[Short-lived challenge, attempt limits, atomic consumption] --> U3[Recovery shown; no account or consent created]
+        F4[Browser misses live update] --> C4[Version plus focus, reconnect, and poll revalidation] --> U4[Fresh authorized state appears]
+    end
+    ROW1 ~~~ ROW2

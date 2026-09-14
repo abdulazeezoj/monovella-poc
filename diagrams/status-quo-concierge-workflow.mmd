@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant Patient as Referrer or patient
+    participant Coordinator
+    participant Specialist
+    participant Partner as Partner lab or pharmacy
+
+    Patient->>Coordinator: contact for care
+    Coordinator->>Specialist: check slot availability
+    Coordinator->>Patient: connect by WhatsApp
+    Specialist->>Coordinator: issue lab request or prescription
+    Coordinator->>Partner: confirm availability, arrange payment and collection or delivery
+    Coordinator->>Partner: follow up
+    Partner-->>Coordinator: lab result
+    Coordinator->>Specialist: bring back result
+    Note over Patient,Partner: patient pays to avoid this hidden work,<br/>delays, and repeated queues

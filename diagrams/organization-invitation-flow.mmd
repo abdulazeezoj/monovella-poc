@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant Owner as Org owner or admin
+    participant System
+    participant Invitee
+
+    Owner->>System: invite teammate by email + role
+    System-->>Owner: pending invitation created
+    System->>Invitee: invitation email
+
+    alt Invitee accepts before expiry
+        Invitee->>System: accept invitation
+        System-->>Invitee: membership created, signed in
+    else Invitee declines
+        Invitee->>System: reject invitation
+        System-->>Owner: invitation marked rejected
+    else Owner changes their mind
+        Owner->>System: cancel invitation
+        System-->>Invitee: invitation no longer valid
+    else Nobody responds
+        System-->>System: invitation expires unused
+    end

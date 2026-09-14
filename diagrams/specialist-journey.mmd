@@ -1,0 +1,6 @@
+graph TD
+    A["Authorized booking notification"] --> B["Work queue: view consultation"]
+    B --> C["In-app LiveKit consultation"]
+    C --> D["Complete SOAP note"]
+    D --> E["Send Care Plan"]
+    E --> F["View released result"]

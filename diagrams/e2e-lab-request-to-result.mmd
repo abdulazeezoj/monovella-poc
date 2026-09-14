@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant Specialist
+    participant System as Care Journey service
+    participant Laboratory
+    participant Patient
+
+    Specialist->>System: issue lab request from consultation
+    System->>Laboratory: match eligible lab
+    Patient->>Laboratory: pay for booking
+    Laboratory->>Laboratory: process sample
+    Laboratory->>System: release validated result
+    System-->>Patient: view result
+    System-->>Specialist: view result

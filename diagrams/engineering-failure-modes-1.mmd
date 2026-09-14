@@ -1,0 +1,30 @@
+graph TD
+    subgraph SG1 [Two patients reserve final slot]
+        direction LR
+        F1[Failure: two patients reserve final slot] --> C1[Control: row lock or versioned reservation] --> U1[User experience: one sees confirmed hold, one sees availability changed]
+    end
+
+    subgraph SG2 [Payment return forged or replayed]
+        direction LR
+        F2[Failure: payment return forged or replayed] --> C2[Control: webhook signature, verification, idempotency] --> U2[User experience: booking stays pending or shows payment failed]
+    end
+
+    subgraph SG3 [Worker unavailable during release]
+        direction LR
+        F3[Failure: worker unavailable during release] --> C3[Control: transactional outbox and retry] --> U3[User experience: result is released, notification delivered later without duplication]
+    end
+
+    subgraph SG4 [Lab uploads wrong or missing file]
+        direction LR
+        F4[Failure: lab uploads wrong or missing file] --> C4[Control: private draft, checksum, release preconditions] --> U4[User experience: lab sees recoverable error, patient sees no result]
+    end
+
+    subgraph SG5 [Consent revoked]
+        direction LR
+        F5[Failure: consent revoked] --> C5[Control: scoped grant re-evaluated at read or command time] --> U5[User experience: access denied without object or key disclosure]
+    end
+
+    U1 ~~~ F2
+    U2 ~~~ F3
+    U3 ~~~ F4
+    U4 ~~~ F5

@@ -1,0 +1,13 @@
+stateDiagram-v2
+    [*] --> requested
+    requested --> held
+    held --> awaiting_payment
+    awaiting_payment --> confirmed
+    awaiting_payment --> cancelled
+    confirmed --> checked_in
+    checked_in --> sample_collected
+    sample_collected --> processing
+    processing --> result_draft
+    result_draft --> result_released
+    cancelled --> [*]
+    result_released --> [*]

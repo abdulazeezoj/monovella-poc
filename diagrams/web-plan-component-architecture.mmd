@@ -1,0 +1,21 @@
+graph TD
+    Routes["Route layouts + loaders/actions<br/>(React Router)"]
+    Shell["Shared care shell<br/>header, story rail / queue list, next-action card"]
+    Timeline["CareTimeline<br/>(signature component)"]
+    Forms["Form surfaces<br/>Base UI Field/Form + route actions"]
+    Hooks["Data hooks<br/>loaders, useRevalidator, polling"]
+    Client["Typed API client<br/>fetch wrapper + error mapping"]
+    API["Monovella API<br/>(sibling plan, authoritative state)"]
+    UI["shadcn/ui + Base UI primitives"]
+    Tokens["DESIGN.md tokens<br/>(app.css CSS variables)"]
+
+    Routes --> Shell
+    Shell --> Timeline
+    Shell --> Forms
+    Routes --> Hooks
+    Hooks --> Client
+    Client --> API
+    Shell --> UI
+    Forms --> UI
+    Timeline --> UI
+    UI --> Tokens

@@ -1,0 +1,6 @@
+graph TD
+    ROOT[Integration Test Coverage]
+    ROOT --> N1["Admission and access<br/>phone challenge · consent atomicity · stale/revoked state"]
+    N1 --> N2["Capacity and payment<br/>concurrent final slot · duplicate webhook"]
+    N2 --> N3["Clinical workflow<br/>duplicate result · consultation completion · pharmacy confirm-before-pay"]
+    N3 --> N4["Infrastructure and communications<br/>Redis outage · RustFS failure · LiveKit auth/replay"]

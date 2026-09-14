@@ -1,0 +1,17 @@
+graph TD
+    A["Submitted"] -->|"Confirm within 15 min"| B["Confirmed"]
+    A -->|"Decline"| C["Declined"]
+    A -->|"Response timeout"| D["Expired"]
+    B -->|"Method selected"| E["Awaiting payment"]
+    B -->|"20-minute quote expires"| D
+    E -->|"Payment verified"| F["Paid"]
+    E -->|"Payment fails; quote valid"| B
+    E -->|"Quote expires"| D
+    E -->|"Patient cancels"| G["Cancelled"]
+    F --> H["Preparing"]
+    F -->|"Cannot fulfil after payment"| L["Manual recovery"]
+    L --> M["Provider refund or pharmacy reselection"]
+    H --> I["Ready for pickup"]
+    H --> J["Out for delivery"]
+    I -->|"Patient collects"| K["Fulfilled"]
+    J -->|"Delivery confirmed"| K

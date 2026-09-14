@@ -1,0 +1,234 @@
+erDiagram
+    direction LR
+    USER {
+        string monovella_id
+        string phone_number
+        string platform_role
+    }
+    ACCOUNT {
+        string provider_id
+        string account_id
+        string password_hash
+    }
+    SESSION {
+        string token
+        string expires_at
+        string active_organization_id
+    }
+    VERIFICATION {
+        string identifier
+        string value
+        string expires_at
+    }
+    CAPACITY_CONTROL {
+        boolean new_patient_signups_enabled
+        boolean new_journeys_enabled
+        int max_active_journeys
+    }
+    PATIENT_PROFILE {
+        string full_legal_name
+        string date_of_birth
+    }
+    SERVICE_LOCALITY {
+        string code
+        string precision
+        string centroid
+    }
+    ORGANIZATION {
+        string slug
+        string org_type
+        string verification_status
+    }
+    PROVIDER_MEMBERSHIP {
+        string role
+        string status
+    }
+    CREDENTIAL {
+        string issuer
+        string number
+        string status
+        string rejection_reason
+    }
+    SPECIALTY_OFFERING {
+        string specialty
+        string fee_currency
+        string offered_fee
+        string activation_state
+        string routing_policy_version
+    }
+    ROUTING_POLICY {
+        string specialty
+        string version
+        string review_status
+        string reviewed_at
+    }
+    ORGANIZATION_INVITATION {
+        string email
+        string role
+        string status
+    }
+    CONSENT_GRANT {
+        string purpose
+        string scope
+        string granted_at
+        string revoked_at
+    }
+    CARE_JOURNEY {
+        string patient
+        string owner
+        string lifecycle
+        string next_action
+    }
+    PATIENT_CONCERN {
+        string routing_outcome
+        string matched_specialty
+        string safety_rule
+        string locality_purge_at
+    }
+    CONSULTATION {
+        string specialty_offering_id
+        string fee_snapshot
+        string capacity
+        string row_version
+        string reservation_state
+    }
+    AVAILABILITY_SLOT {
+        string specialty_offering_id
+        string capacity
+        string reservation_state
+    }
+    LAB_REQUEST {
+        string consultation_id
+        string journey_id
+    }
+    LAB_BOOKING {
+        string lab_id
+        string test_id
+        string slot_id
+    }
+    LAB_RESULT {
+        string state
+        string object_key
+        string checksum
+    }
+    CARE_PLAN {
+        string status
+        string patient_summary
+    }
+    CARE_PLAN_ITEM {
+        string category
+        string recommendation_reason
+    }
+    REFERRAL {
+        string referred_specialty
+        string reason
+    }
+    PRESCRIPTION {
+        string medication
+        string dosage
+    }
+    PHARMACY_ORDER {
+        string status
+        string final_price
+        string confirmation_expires_at
+    }
+    CALL_SESSION {
+        string room_name
+        string status
+    }
+    LIVEKIT_WEBHOOK_EVENT {
+        string event_id
+        string payload_sha256
+        string processing_status
+    }
+    CONSULTATION_SHARED_ITEM {
+        string item_type
+        string patient_profile_id
+        string malware_scan_state
+        string created_at
+    }
+    IDEMPOTENCY_RECORD {
+        string operation
+        string idempotency_key
+        string request_fingerprint
+        string resource_id
+    }
+    ATTACHMENT {
+        string object_key
+        string checksum
+    }
+    PAYMENT_ATTEMPT {
+        string target_type
+        string provider_reference
+        string amount
+        string idempotency_key
+    }
+    AUDIT_EVENT {
+        string actor
+        string action
+        string object
+        string correlation_id
+    }
+    OUTBOX_EVENT {
+        string event_type
+        string delivery_state
+    }
+    SLOT_HOLD {
+        string expires_at
+        string status
+    }
+    ALERT {
+        string category
+        string severity
+        string deadline
+        string status
+    }
+    CRITICAL_RESULT_HANDOFF {
+        string deadline
+        string retry_count
+        string acknowledged_at
+        string acknowledged_by
+    }
+
+    USER ||--o{ ACCOUNT : authenticates_with
+    USER ||--o{ SESSION : opens
+    USER ||--o| CAPACITY_CONTROL : updates
+    USER ||--o| PATIENT_PROFILE : has
+    PATIENT_PROFILE ||--o{ CARE_JOURNEY : owns
+    USER ||--o{ PROVIDER_MEMBERSHIP : holds
+    ORGANIZATION ||--o{ PROVIDER_MEMBERSHIP : employs
+    ORGANIZATION ||--o{ ORGANIZATION_INVITATION : invites
+    SERVICE_LOCALITY ||--o{ ORGANIZATION : locates
+    SERVICE_LOCALITY ||--o{ PATIENT_CONCERN : orders_from
+    ORGANIZATION ||--o{ SESSION : active_in
+    PROVIDER_MEMBERSHIP ||--o{ CREDENTIAL : submits
+    PROVIDER_MEMBERSHIP ||--o{ SPECIALTY_OFFERING : offers
+    ROUTING_POLICY ||--o{ SPECIALTY_OFFERING : governs
+    PATIENT_PROFILE ||--o{ CONSENT_GRANT : grants
+    CARE_JOURNEY ||--o| PATIENT_CONCERN : begins_with
+    CARE_JOURNEY ||--o{ CONSULTATION : contains
+    SPECIALTY_OFFERING ||--o{ AVAILABILITY_SLOT : publishes
+    SPECIALTY_OFFERING ||--o{ CONSULTATION : scopes
+    CONSULTATION ||--o{ AVAILABILITY_SLOT : reserves
+    CONSULTATION ||--o{ LAB_REQUEST : issues
+    CONSULTATION ||--o| CARE_PLAN : produces
+    CARE_PLAN ||--o{ CARE_PLAN_ITEM : contains
+    CONSULTATION ||--o{ PRESCRIPTION : documents
+    CONSULTATION ||--o{ REFERRAL : recommends
+    CONSULTATION ||--o| CALL_SESSION : holds
+    CALL_SESSION ||--o{ LIVEKIT_WEBHOOK_EVENT : receives
+    CONSULTATION ||--o{ CONSULTATION_SHARED_ITEM : receives
+    PATIENT_PROFILE ||--o{ CONSULTATION_SHARED_ITEM : shares
+    PRESCRIPTION ||--o{ PHARMACY_ORDER : submitted_as
+    CARE_JOURNEY ||--o{ LAB_REQUEST : links
+    LAB_REQUEST ||--|| LAB_BOOKING : scheduled_as
+    LAB_BOOKING ||--o{ LAB_RESULT : produces
+    LAB_RESULT ||--o{ ATTACHMENT : attaches
+    CARE_JOURNEY ||--o{ PAYMENT_ATTEMPT : records
+    CARE_JOURNEY ||--o{ AUDIT_EVENT : logs
+    AUDIT_EVENT ||--o{ OUTBOX_EVENT : queues
+    CONSULTATION ||--o| SLOT_HOLD : reserved_by
+    LAB_BOOKING ||--o| SLOT_HOLD : reserved_by
+    PAYMENT_ATTEMPT ||--o| SLOT_HOLD : secures
+    CARE_JOURNEY ||--o{ ALERT : raises
+    LAB_RESULT ||--o| CRITICAL_RESULT_HANDOFF : requires

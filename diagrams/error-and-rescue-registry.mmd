@@ -1,0 +1,30 @@
+graph TD
+    subgraph SG1 [Booking confirmation]
+        direction LR
+        B1[Failure: partner timeout or stale slot] --> B2[Response: keep Pending, retry or raise an Alert by SLA] --> B3[Impact: clear pending state, coordinator follow-up]
+    end
+
+    subgraph SG2 [Payment verification]
+        direction LR
+        P1[Failure: missing, duplicate, or invalid callback] --> P2[Response: verify server-side, deduplicate, retain evidence] --> P3[Impact: no booking until verified, retry guidance]
+    end
+
+    subgraph SG3 [Result upload]
+        direction LR
+        R1[Failure: unauthorized actor, duplicate, or failed file upload] --> R2[Response: reject and audit, retain prior result, follow up if critical] --> R3[Impact: clear retry state, no silent replacement]
+    end
+
+    subgraph SG4 [Notification delivery]
+        direction LR
+        N1[Failure: provider failure or unacknowledged critical result] --> N2[Response: persist, retry, then queue an Alert] --> N3[Impact: authenticated in-app state remains visible]
+    end
+
+    subgraph SG5 [Access request]
+        direction LR
+        A1[Failure: revoked, expired, or unrelated grant] --> A2[Response: deny, audit, show no clinical detail] --> A3[Impact: safe access-denied response]
+    end
+
+    B3 ~~~ P1
+    P3 ~~~ R1
+    R3 ~~~ N1
+    N3 ~~~ A1

@@ -1,0 +1,10 @@
+graph TD
+    WEB["React Router web app"] --> API["FastAPI modular monolith<br/>identity/access | verification | journeys | laboratory | pharmacy<br/>payments | files | audit | communications | notifications"]
+    API --> DB["PostgreSQL<br/>authoritative transaction boundary"]
+    DB --> REDIS["Redis<br/>rate limits and public discovery cache only<br/>PostgreSQL remains authoritative"]
+    DB --> AUDIT["audit_event + transactional outbox"]
+    AUDIT --> WORKER["Worker"]
+    WORKER --> NOTIF["ZeptoMail + Termii"]
+    DB --> RUSTFS["RustFS private S3-compatible bucket<br/>opaque key + checksum + retention metadata in PostgreSQL"]
+    API --> LIVEKIT["LiveKit Cloud<br/>scoped call tokens + authenticated webhooks"]
+    API --> NOMBA["Nomba Checkout<br/>verified payment + partner split"]

@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant Viewer as Patient, specialist, lab, pharmacy, or operations
+    participant Workspace as Journey workspace
+    participant Audit as Audit log
+
+    Viewer->>Workspace: open Care Journey workspace
+    Workspace->>Workspace: evaluate role and grant
+    Workspace-->>Viewer: permitted tabs and summaries only
+    Note over Viewer,Workspace: if membership is revoked
+    Workspace-->>Viewer: redacted response
+    Workspace->>Audit: write audit event

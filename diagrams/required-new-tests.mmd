@@ -1,0 +1,29 @@
+graph TD
+    subgraph SG1 [Integration]
+        direction TB
+        I1["Two holds for final slot:<br/>exactly one survives"]
+        I2["Expired hold releases;<br/>paid-after-expiry creates Alert or remedy"]
+        I3["Missed webhook:<br/>reconciliation match or mismatch path"]
+        I4["Provider refund:<br/>payment state reconciled idempotently"]
+        I5["Phone challenge + consent:<br/>expiry, replay, direct-API omission, atomicity"]
+        I6["LiveKit webhook:<br/>JWT, raw body, binding, replay, event mapping"]
+        I7["Pharmacy:<br/>confirmation before payment + post-payment recovery"]
+        I1 --> I2 --> I3 --> I4 --> I5 --> I6 --> I7
+    end
+
+    subgraph SG2 [E2E]
+        direction TB
+        T1["Suspended provider or staff:<br/>immediate clinical-access denial"]
+        T2["Notification payload:<br/>no clinical terms or attachment detail"]
+        T3["Critical handoff:<br/>unacknowledged deadline leads to retry and follow-up"]
+        T4["Capability disabled:<br/>safe visible fallback and coordinator Alert"]
+        T5["Consultation completion:<br/>SOAP + sent Care Plan or no-action summary"]
+        T1 --> T2 --> T3 --> T4 --> T5
+    end
+
+    subgraph SG3 [Security]
+        direction TB
+        S1["Active file:<br/>forced download or isolated safe preview"]
+        S2["App DB role:<br/>cannot update or delete audit event"]
+        S1 --> S2
+    end

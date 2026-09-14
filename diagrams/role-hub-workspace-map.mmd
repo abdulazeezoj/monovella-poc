@@ -1,0 +1,7 @@
+graph TD
+    H["Role entry queues<br/>Patient: My care<br/>Specialist: Today<br/>Laboratory / pharmacy: Work queue<br/>Monovella: Alerts"]
+    CJW["Care Journey workspace"]
+    H -->|selects authorized item| CJW
+    CJW --> T1["Clinical<br/>Consultation · Care Plan · Result · Attachments"]
+    CJW --> T2["Orders<br/>Lab request / booking · Pharmacy order"]
+    CJW --> T3["Operations<br/>Payment evidence · Alert"]

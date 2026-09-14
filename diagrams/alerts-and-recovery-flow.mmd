@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant Patient
+    participant System
+    participant Nomba
+    participant Provider
+    participant Ops as Operations owner
+
+    System->>System: detect a handoff that can't complete on its own
+    note over System: payment lands after hold expires,<br/>or a provider can't fulfil after payment
+
+    alt System can recover automatically
+        System->>Nomba: trigger refund
+        Nomba-->>Patient: refund received
+        System-->>Patient: rebooking prompt
+    else Needs a human to act
+        System->>Ops: Alert notification
+        System-->>Ops: item added to Alerts queue
+        Ops->>Provider: follow up if needed
+        Ops->>System: resolve Alert
+        System-->>Patient: outcome (refund, rebooking, or fix)
+    end

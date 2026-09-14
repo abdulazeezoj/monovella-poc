@@ -1,0 +1,10 @@
+graph TD
+    S1["Verified-phone admission + consent + Care Journey audit"] --> S2["Verified specialist booking + partner response targets"]
+    S2 --> S3A[Lab request]
+    S3A --> S3B[Booking]
+    S3B --> S3C[Payment verification]
+    S3C --> S3D[Result upload]
+    S3D --> S4["Notification retry + Alerts queue + critical-result follow-up"]
+    S4 --> S5A[Staged end-to-end rehearsal]
+    S5A --> S5B[Market launch within capacity]
+    S5B --> S5C[Professional review, remediate or expand]

@@ -1,0 +1,13 @@
+graph TD
+    C[Consultation]
+    C -->|issues| RX[Prescription]
+    RX -->|fulfilled by| PH[Pharmacy]
+    PH -->|handed to patient via| PD[Pickup / Delivery]
+
+    C -->|issues| LR[Lab request]
+    LR -->|sent to| LAB[Laboratory]
+    LAB -->|schedules| BK[Booking]
+    BK -->|performs| TS[Test]
+    TS -->|produces| RS[Result]
+    RS -->|viewed by| PT[Patient]
+    RS -->|viewed by| RQ[Requesting specialist]

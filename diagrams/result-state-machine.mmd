@@ -1,0 +1,6 @@
+stateDiagram-v2
+    [*] --> draft
+    draft --> released: authorized lab validation only
+    released --> corrective_version: corrective version, separately audited
+    corrective_version --> released
+    released --> [*]

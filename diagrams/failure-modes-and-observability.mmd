@@ -1,0 +1,30 @@
+graph TD
+    subgraph SG1 [Stalled partner handoff]
+        direction LR
+        M1[Failure mode: stalled partner handoff] --> M2[Rescued: SLA Alert] --> M3[Visible to: journey owner and patient]
+    end
+
+    subgraph SG2 [Failed payment verification]
+        direction LR
+        P1[Failure mode: failed payment verification] --> P2[Rescued: verified retry] --> P3[Visible to: patient and journey owner]
+    end
+
+    subgraph SG3 [Critical result unacknowledged]
+        direction LR
+        C1[Failure mode: critical result unacknowledged] --> C2[Rescued: tiered follow-up] --> C3[Visible to: specialist, partner contact, owner]
+    end
+
+    subgraph SG4 [Unauthorized clinical access]
+        direction LR
+        U1[Failure mode: unauthorized clinical access] --> U2[Rescued: deny and audit] --> U3[Visible to: security or audit team]
+    end
+
+    subgraph SG5 [Notification delivery failure]
+        direction LR
+        N1[Failure mode: notification delivery failure] --> N2[Rescued: retry and queue] --> N3[Visible to: journey owner]
+    end
+
+    M3 ~~~ P1
+    P3 ~~~ C1
+    C3 ~~~ U1
+    U3 ~~~ N1
