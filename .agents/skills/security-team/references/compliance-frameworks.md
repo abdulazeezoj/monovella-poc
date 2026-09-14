@@ -1,0 +1,23 @@
+# Compliance Frameworks
+
+## Ground the choice in a real trigger, not framework prestige
+
+Pursuing a compliance certification for its own sake is expensive and slow for an early-stage company. The realistic trigger is almost always external: a specific enterprise customer's security questionnaire or contract requirement, an investor's due-diligence checklist, or a genuine regulatory obligation tied to the data being handled. Identify the actual trigger before choosing a framework — it usually determines which one is actually needed, and sometimes reveals that a lighter-weight security questionnaire response is enough for now, with formal certification deferred until it's genuinely required.
+
+## SOC 2 vs. ISO 27001
+
+**SOC 2** (a US-originated attestation, but referenced globally) evaluates an organization against the Trust Services Criteria — security, and optionally availability, processing integrity, confidentiality, and privacy. It states *criteria* to be met, not prescriptive controls, giving real flexibility in how they're satisfied — useful for a smaller company that doesn't want to build a full formal management system just to pass. Comes in two flavors: **Type I** (a point-in-time assessment of whether controls are designed appropriately) and **Type II** (an assessment of whether those controls actually operated effectively over a period, typically 3-12 months) — Type II is what most enterprise buyers actually want to see, since it demonstrates sustained practice, not just a paper design.
+
+**ISO 27001** is an internationally recognized standard for building an actual Information Security Management System (ISMS) — more prescriptive and structural than SOC 2, requiring documented policies, risk assessments, and a continuous improvement process. More work to stand up initially, but organizations that build ISO 27001's management-system discipline first often find SOC 2 comes together with proportionally less extra effort afterward, since the underlying practices overlap substantially.
+
+**Practical guidance for a small company:** SOC 2 is more commonly the first target for a US-market-facing SaaS startup responding to a specific customer requirement, given its lower relative cost and faster path to Type I. ISO 27001 becomes more relevant with an international customer base or when a customer specifically requires it (common with EU-based enterprise buyers). Pursuing both eventually is reasonable for a company selling into both US and international enterprise markets — verify current cost/timeline expectations before committing, since both vary meaningfully by scope and auditor.
+
+## OWASP Top 10 — application security baseline
+
+The OWASP Top 10 is the standard reference list of the most critical web-application security risk categories, maintained by consensus and real-world vulnerability data. **It was substantially revised in November 2025** (the first major update since 2021) — treat the 2021 categories as outdated if cited anywhere, and verify the current 2025 list's exact categories and ordering directly from OWASP before relying on specifics, since even current secondary sources show some inconsistency in exact ordering. Notable shifts in the 2025 revision worth knowing even before verifying exact details: **Software Supply Chain Failures** became its own dedicated category (broadened from the older, narrower "Vulnerable and Outdated Components"), reflecting that dependency and build-pipeline compromise has become a primary attack vector, not a secondary one — directly relevant to `dev-team`'s SCA/dependency-scanning layer. Security misconfiguration also moved notably higher in the ranking, reflecting how much cloud-native architectures raise the stakes of a single wrong access/config toggle.
+
+The OWASP Top 10 isn't itself a compliance certification, but SOC 2, ISO 27001, and PCI DSS all reference it (directly or as accepted evidence of secure development practice) — mapping application security work to it is a genuinely useful, low-cost way to demonstrate due diligence toward any of those frameworks later, even before formally pursuing one.
+
+## What this skill does vs. what a real audit requires
+
+This skill can assess current posture against a framework's actual requirements, build a gap analysis, and produce a realistic remediation roadmap with rough effort/priority. An actual certification or attestation requires a licensed/accredited external auditor (for SOC 2, a licensed CPA firm; for ISO 27001, an accredited certification body) — this skill prepares the ground so that engagement goes faster and costs less, it doesn't replace it.

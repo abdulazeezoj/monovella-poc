@@ -1,0 +1,23 @@
+# Hardening and Security Awareness
+
+## Cloud and infrastructure account hardening
+
+Broader than per-PR infrastructure-as-code scanning (which `dev-team`'s security checklist already covers) — this is the account-level posture underneath everything else:
+
+- **MFA on every account that matters**, and specifically on the accounts that would be catastrophic if compromised: cloud provider root/owner accounts, domain registrar, DNS provider, source-control org owner, and the secrets manager itself. A single-factor password on a cloud root account is one of the highest-leverage single points of failure a small company can have.
+- **Root/owner account protection** — the cloud provider's root account should be used only for account-level administrative tasks, not daily operations; day-to-day work happens through a scoped IAM user/role. Root credentials should be stored securely and rarely touched.
+- **Billing/spend anomaly alerts** — a sudden, unexplained spike in cloud spend is frequently the first visible sign of a compromised account being used to mine cryptocurrency or spin up unauthorized resources, often before any other alert fires. Cheap to set up, genuinely useful as an early-warning signal. Set a budget threshold and a rate-of-change alert on every paid account that can be abused (cloud, AI/API providers, SMS and email senders), route them to a person who will actually read them, and treat an unexplained spike as a suspected incident under `references/incident-response.md` until the cause is confirmed — a leaked API key usually shows up on the bill before it shows up anywhere else.
+- **Network segmentation appropriate to scale** — databases and internal services not directly exposed to the public internet unless there's a specific, reviewed reason; a small startup doesn't need enterprise-grade network architecture, but "everything reachable from anywhere" is a real, avoidable risk even at small scale.
+- **Backup and disaster-recovery basics** — regular, tested backups (a backup that's never been restored isn't verified to work), stored separately from the primary system (so a compromise of the primary doesn't also destroy the backup), with a stated, realistic recovery time expectation. Make the restore test a scheduled event, not an intention: on a fixed cadence, restore a recent backup into a scratch environment using `dev-team`'s `/operate` runbook's restore step exactly as written, confirm the data is complete and the application runs against it, and record the date and how long it took. A restore that fails in the drill is a Major finding; the same failure during a ransomware or corruption incident is the company's data, gone. This is the resilience signal that decides whether an incident is an inconvenience or an existential event.
+
+## Security awareness for a small team
+
+For a company without a dedicated security function, most real-world compromises trace back to the human layer rather than a sophisticated technical exploit — phishing, credential reuse, or a social-engineering call are all cheaper and more reliable for an attacker than finding a novel technical vulnerability. Keep guidance concrete and proportional rather than importing an enterprise training program wholesale:
+
+- **A password manager, used by everyone, for everyone's real work accounts** — this alone eliminates password reuse, which is the single most common way one small breach elsewhere becomes a breach here.
+- **Hardware or app-based 2FA over SMS** where the option exists — SMS-based two-factor is vulnerable to SIM-swapping and is the weaker option when a stronger one is available at similar convenience.
+- **A specific, low-friction way to report something that looks like phishing or a suspicious request** — even just "forward it to [person], no judgment for false alarms" — since the biggest barrier to reporting is usually the fear of wasting someone's time over a false positive, and that fear actively suppresses the reports that matter most.
+- **Device basics** — screen locks, disk encryption on laptops, and prompt patching of the OS and browser on devices that touch company systems, especially for a distributed or work-from-anywhere team.
+- **Healthy skepticism of urgency in requests** — a message demanding an unusual, urgent action (a wire transfer, a credential, an access grant) outside normal process is a classic social-engineering pattern regardless of who it appears to be from; a quick out-of-band check (a call, a separate message) before acting on it costs little and catches a lot.
+
+Awareness guidance should be revisited periodically, not delivered once and forgotten — attacker techniques evolve, and a team's actual habits drift without occasional reinforcement.

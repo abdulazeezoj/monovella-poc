@@ -1,0 +1,4 @@
+interface:
+  display_name: "Base UI"
+  short_description: "Build accessible React primitives with Base UI"
+  default_prompt: "Use Base UI primitives to implement an accessible React interaction."
