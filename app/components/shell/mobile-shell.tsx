@@ -39,9 +39,14 @@ export function MobileShell() {
   return (
     <MockupZoomProvider>
       <CallProvider>
-        <MockupStage mockup={mockup} className="bg-base-100 pb-[var(--prototype-bar-height)]">
+        <MockupStage
+          mockup={mockup}
+          appShell
+          className="bg-base-100 pb-[var(--prototype-bar-height)]"
+        >
           <DeviceFrame
             tablet={frame === "tablet"}
+            fixedShell
             className={cn("h-[calc(100dvh-var(--prototype-bar-height))]", size)}
           >
             <div className="@container relative flex min-h-0 flex-1 flex-col overflow-hidden bg-base-100">

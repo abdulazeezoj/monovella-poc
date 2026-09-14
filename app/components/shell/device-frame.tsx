@@ -169,11 +169,21 @@ export const DeviceFrame = forwardRef<
   HTMLDivElement,
   {
     tablet?: boolean;
+    /**
+     * Keep the screen pinned to its own height — with `overflow-hidden`, so
+     * `children` must supply their own scroll region — even without a
+     * mockup. The mobile app screens are a fixed header/tab bar around one
+     * scrolling body, and rely on that shape on a real phone too. The web
+     * portals reuse this frame at phone/tablet width, but are ordinary pages:
+     * without a mockup they want the opposite, natural height and the
+     * browser's own scroll.
+     */
+    fixedShell?: boolean;
     className?: string;
     style?: React.CSSProperties;
     children: React.ReactNode;
   }
->(function DeviceFrame({ tablet = false, className, style, children }, ref) {
+>(function DeviceFrame({ tablet = false, fixedShell = false, className, style, children }, ref) {
   return (
     <div
       ref={ref}
@@ -204,7 +214,8 @@ export const DeviceFrame = forwardRef<
           reflows to the screen rather than scaling to it. */}
       <div
         className={cn(
-          "relative flex min-h-0 flex-1 flex-col overflow-hidden bg-base-100 mockup:pb-[0.9rem]",
+          "relative flex flex-col bg-base-100 mockup:pb-[0.9rem]",
+          fixedShell ? "min-h-0 flex-1 overflow-hidden" : "mockup:min-h-0 mockup:flex-1 mockup:overflow-hidden",
           tablet ? "mockup:rounded-[1.35rem]" : "mockup:rounded-[2.25rem]",
         )}
       >
@@ -268,10 +279,13 @@ export const LaptopFrame = forwardRef<
       style={style}
       className={cn("flex w-full flex-1 flex-col mockup:flex-none mockup:items-center", className)}
     >
-      {/* The lid. */}
+      {/* The lid — a fixed box with its own scroll, but only when a mockup
+          is actually drawn. Without one this is an ordinary page: natural
+          height, and the browser's own scrollbar reaches content taller
+          than one screen. */}
       <div
         className={cn(
-          "relative flex w-full min-h-0 flex-1 flex-col overflow-hidden bg-base-100",
+          "relative flex w-full flex-col bg-base-100 mockup:min-h-0 mockup:flex-1 mockup:overflow-hidden",
           "mockup:rounded-[1.1rem] mockup:bg-[#2b2621] mockup:p-[0.6rem] mockup:pt-[1.1rem]",
           "mockup:shadow-[0_2.5rem_5rem_-2rem_rgb(0_0_0/0.45)] mockup:ring-1 mockup:ring-inset mockup:ring-white/10",
         )}
@@ -280,9 +294,9 @@ export const LaptopFrame = forwardRef<
           aria-hidden
           className="pointer-events-none absolute left-1/2 top-[0.42rem] hidden size-[0.26rem] -translate-x-1/2 rounded-full bg-[#0b0a09] mockup:block"
         />
-        <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden bg-base-100 mockup:rounded-[0.55rem]">
+        <div className="relative flex flex-col bg-base-100 mockup:min-h-0 mockup:flex-1 mockup:overflow-hidden mockup:rounded-[0.55rem]">
           <BrowserChrome url={url} />
-          <div className="relative flex min-h-0 flex-1 flex-col">
+          <div className="relative flex flex-col mockup:min-h-0 mockup:flex-1">
             {children}
             <ToastHost />
           </div>

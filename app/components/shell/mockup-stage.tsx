@@ -63,10 +63,22 @@ const STAGE_PAD = 32;
 
 export function MockupStage({
   mockup,
+  appShell = false,
   className,
   children,
 }: {
   mockup: boolean;
+  /**
+   * Whether the real-device wrapper should still behave like a native app
+   * shell: pinned to the viewport height, with `children` responsible for
+   * their own internal scroll region. The mobile app screens are built that
+   * way (a fixed header and tab bar, one scrolling body) and rely on this
+   * even without a mockup, on a real phone. The web portals and the public
+   * site are ordinary pages — without a mockup they need the *opposite*,
+   * unconstrained natural height, so the browser's own scrollbar can reach
+   * content taller than one screen.
+   */
+  appShell?: boolean;
   /** Styling for the plain (real-device) wrapper only — the stage styles itself. */
   className?: string;
   children: React.ReactNode;
@@ -135,7 +147,11 @@ export function MockupStage({
     return (
       <div
         data-mockup={false}
-        className={cn("flex h-dvh flex-col overflow-hidden bg-base-100", className)}
+        className={cn(
+          "bg-base-100",
+          appShell ? "flex h-dvh flex-col overflow-hidden" : "flex flex-col",
+          className,
+        )}
       >
         {children}
       </div>
