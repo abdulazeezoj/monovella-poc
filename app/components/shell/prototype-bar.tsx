@@ -8,15 +8,13 @@ import {
   Plus,
   RotateCcw,
   SlidersHorizontal,
-  Smartphone,
   Sun,
-  Tablet,
   X,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import { cn } from "~/lib/cn";
-import { type DeviceFrame, usePrototype } from "~/store/prototype";
+import { usePrototype } from "~/store/prototype";
 import { MonovellaIcon } from "./logo";
 import { useMockupZoom, ZOOM_STOPS } from "./mockup-stage";
 
@@ -34,15 +32,9 @@ export type WebWidth = "mobile" | "tablet" | "desktop";
  */
 export function PrototypeBar({
   surface,
-  frames,
-  webWidth,
-  onWebWidth,
   mockup,
 }: {
   surface: string;
-  frames?: boolean;
-  webWidth?: WebWidth;
-  onWebWidth?: (w: WebWidth) => void;
   /** Whether a device mockup is on stage — zoom only exists when one is. */
   mockup?: boolean;
 }) {
@@ -66,63 +58,16 @@ export function PrototypeBar({
 
         {/* Inline controls, md and up. */}
         <div className="hidden items-center gap-1 md:flex">
-          <DeviceControl frames={frames} webWidth={webWidth} onWebWidth={onWebWidth} />
           <ThemeControl />
           {mockup ? <ZoomControl /> : null}
           <ResetButton onReset={reset} />
         </div>
 
         {/* The same controls, below md, in a panel. */}
-        <ControlsMenu
-          frames={frames}
-          webWidth={webWidth}
-          onWebWidth={onWebWidth}
-          mockup={mockup}
-          onReset={reset}
-        />
+        <ControlsMenu mockup={mockup} onReset={reset} />
       </div>
     </div>
   );
-}
-
-function DeviceControl({
-  frames,
-  webWidth,
-  onWebWidth,
-}: {
-  frames?: boolean;
-  webWidth?: WebWidth;
-  onWebWidth?: (w: WebWidth) => void;
-}) {
-  const { frame, setFrame } = usePrototype();
-  if (frames) {
-    return (
-      <Segmented
-        label="Device"
-        value={frame}
-        onChange={(v) => setFrame(v as DeviceFrame)}
-        options={[
-          { value: "phone", label: "Phone", icon: Smartphone },
-          { value: "tablet", label: "Tablet", icon: Tablet },
-        ]}
-      />
-    );
-  }
-  if (webWidth && onWebWidth) {
-    return (
-      <Segmented
-        label="Device"
-        value={webWidth}
-        onChange={(v) => onWebWidth(v as WebWidth)}
-        options={[
-          { value: "mobile", label: "Phone", icon: Smartphone },
-          { value: "tablet", label: "Tablet", icon: Tablet },
-          { value: "desktop", label: "Laptop", icon: Monitor },
-        ]}
-      />
-    );
-  }
-  return null;
 }
 
 function ThemeControl() {
@@ -226,15 +171,9 @@ function ResetButton({ onReset, labelled }: { onReset: () => void; labelled?: bo
 
 /** Below `md`: one button, every control, nothing missing — just rehoused. */
 function ControlsMenu({
-  frames,
-  webWidth,
-  onWebWidth,
   mockup,
   onReset,
 }: {
-  frames?: boolean;
-  webWidth?: WebWidth;
-  onWebWidth?: (w: WebWidth) => void;
   mockup?: boolean;
   onReset: () => void;
 }) {
@@ -268,9 +207,6 @@ function ControlsMenu({
           aria-label="Prototype controls"
           className="animate-enter fixed bottom-16 right-3 w-[min(17rem,calc(100vw-1.5rem))] space-y-3 rounded-brand-lg border border-base-300 bg-base-100 p-3 shadow-brand"
         >
-          <ControlRow label="Device">
-            <DeviceControl frames={frames} webWidth={webWidth} onWebWidth={onWebWidth} />
-          </ControlRow>
           <ControlRow label="Theme">
             <ThemeControl />
           </ControlRow>

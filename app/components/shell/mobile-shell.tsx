@@ -57,7 +57,7 @@ export function MobileShell() {
             </div>
           </DeviceFrame>
         </MockupStage>
-        <PrototypeBar surface="Mobile app" frames mockup={mockup} />
+        <PrototypeBar surface="Mobile app" mockup={mockup} />
       </CallProvider>
     </MockupZoomProvider>
   );

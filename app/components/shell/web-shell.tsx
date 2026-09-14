@@ -131,7 +131,9 @@ export function WebShell({
   /** This portal's own support screen. Email is the fallback, never the route. */
   supportHref?: string;
 }) {
-  const [width, setWidth] = useState<WebWidth>("desktop");
+  // No control changes this anymore (the device selector left the prototype
+  // bar), so it's a constant rather than state — always the laptop mockup.
+  const width: WebWidth = "desktop";
   const [menuOpen, setMenuOpen] = useState(false);
   const menuTrigger = useRef<HTMLButtonElement>(null);
   const menuId = useId();
@@ -229,7 +231,7 @@ export function WebShell({
       <MockupStage mockup={mockup} className="bg-base-200">
         {shell}
       </MockupStage>
-      <PrototypeBar surface={productName} webWidth={width} onWebWidth={setWidth} mockup={mockup} />
+      <PrototypeBar surface={productName} mockup={mockup} />
     </MockupZoomProvider>
   );
 }
@@ -557,7 +559,9 @@ export function WebAuthShell({
   productTone?: Tone;
   children: React.ReactNode;
 }) {
-  const [width, setWidth] = useState<WebWidth>("desktop");
+  // No control changes this anymore (the device selector left the prototype
+  // bar), so it's a constant rather than state — always the laptop mockup.
+  const width: WebWidth = "desktop";
   const { pathname } = useLocation();
   const mockup = usePointerFine();
   const story = authStory(productName);
@@ -627,7 +631,7 @@ export function WebAuthShell({
       <MockupStage mockup={mockup} className="bg-base-200">
         {shell}
       </MockupStage>
-      <PrototypeBar surface={productName} webWidth={width} onWebWidth={setWidth} mockup={mockup} />
+      <PrototypeBar surface={productName} mockup={mockup} />
     </MockupZoomProvider>
   );
 }
@@ -645,7 +649,9 @@ export function PublicWebShell({
   children: React.ReactNode;
   surface?: string;
 }) {
-  const [width, setWidth] = useState<WebWidth>("desktop");
+  // No control changes this anymore (the device selector left the prototype
+  // bar), so it's a constant rather than state — always the laptop mockup.
+  const width: WebWidth = "desktop";
   const { pathname } = useLocation();
   const mockup = usePointerFine();
 
@@ -681,7 +687,7 @@ export function PublicWebShell({
       <MockupStage mockup={mockup} className="bg-base-200">
         {shell}
       </MockupStage>
-      <PrototypeBar surface={surface} webWidth={width} onWebWidth={setWidth} mockup={mockup} />
+      <PrototypeBar surface={surface} mockup={mockup} />
     </MockupZoomProvider>
   );
 }
