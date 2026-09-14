@@ -211,6 +211,10 @@ export function ApplicationsQueue() {
 
 /** B8 / B9 — Application Detail and the decision panel over it. */
 export function ApplicationDetail() {
+  const mutation = useMutationStates(
+    ["submitting", "offline", "failed", "conflict", "forbidden"],
+    "this decision",
+  );
   const { id } = useParams();
   const { data, update, toast } = usePrototype();
   const navigate = useNavigate();
@@ -218,7 +222,6 @@ export function ApplicationDetail() {
   const [note, setNote] = useState("");
   const [decision, setDecision] = useState<null | "approve" | "reject">(null);
   const [reason, setReason] = useState("");
-  const [conflict, setConflict] = useState(false);
 
   const app = data.applicationDetails.find((a) => a.id === id);
   const queueRow = data.applicationsQueue.find((a) => a.id === id);
@@ -236,7 +239,7 @@ export function ApplicationDetail() {
   // A 409 means another reviewer's decision may already have landed — the
   // banner above says so, but only disabling the button actually prevents
   // submitting a second, conflicting decision on top of it.
-  const canDecide = !conflict && (isSpecialist ? true : checked && !cacFailed);
+  const canDecide = !mutation.blocked && (isSpecialist ? true : checked && !cacFailed);
   const settled = app.status !== "PENDING";
 
   return (
@@ -270,27 +273,7 @@ export function ApplicationDetail() {
       />
 
       <div data-screen="B8" className="space-y-4">
-        <ScreenStates
-          states={[
-            { value: "normal", label: "Pending" },
-            { value: "conflict", label: "409 already reviewed" },
-          ]}
-          value={conflict ? "conflict" : "normal"}
-          onChange={(v) => setConflict(v === "conflict")}
-        />
-
-        {conflict ? (
-          <Banner
-            tone="warning"
-            action={
-              <Button size="sm" variant="secondary" onClick={() => setConflict(false)}>
-                Refresh
-              </Button>
-            }
-          >
-            Already reviewed by another staff member. Refresh to see the current decision.
-          </Banner>
-        ) : null}
+        {mutation.node}
 
         {app.prior_rejection_reason ? (
           <Banner tone="info">
@@ -470,7 +453,11 @@ export function ApplicationDetail() {
               <Check aria-hidden className="size-4" strokeWidth={1.5} />
               Approve
             </Button>
-            <Button variant="secondary" onClick={() => setDecision("reject")}>
+            <Button
+              variant="secondary"
+              disabled={mutation.blocked}
+              onClick={() => setDecision("reject")}
+            >
               <X aria-hidden className="size-4" strokeWidth={1.5} />
               Decline
             </Button>
@@ -506,7 +493,7 @@ export function ApplicationDetail() {
             <Button
               full
               variant={decision === "reject" ? "destructive" : "primary"}
-              disabled={decision === "reject" && !reason.trim()}
+              disabled={(decision === "reject" && !reason.trim()) || mutation.blocked}
               onClick={() => {
                 let recorded = false;
                 let unauthorized = false;
@@ -525,7 +512,7 @@ export function ApplicationDetail() {
                 if (!recorded) {
                   setDecision(null);
                   if (unauthorized) toast("This case is assigned to another staff member.");
-                  else setConflict(true);
+                  else mutation.setState("conflict");
                   return;
                 }
                 toast(decision === "reject" ? "Application declined." : "Application approved.");
@@ -718,7 +705,6 @@ export function DisputeDetail() {
   const [deciding, setDeciding] = useState(false);
   const [favors, setFavors] = useState<"PATIENT" | "PROVIDER">("PATIENT");
   const [text, setText] = useState("");
-  const [conflict, setConflict] = useState(false);
 
   const payoutRequest = data.payoutSupportRequests.find((request) => request.id === id);
   const supportPayout = payoutRequest
@@ -808,12 +794,12 @@ export function DisputeDetail() {
                 )}
               </Field>
               <div className="mt-4 flex flex-wrap gap-2">
-                <Button disabled={!text.trim()} onClick={() => act("retry")}>
+                <Button disabled={!text.trim() || mutation.blocked} onClick={() => act("retry")}>
                   Retry transfer
                 </Button>
                 <Button
                   variant="destructive"
-                  disabled={!text.trim()}
+                  disabled={!text.trim() || mutation.blocked}
                   onClick={() => act("reverse")}
                 >
                   Confirm reversal
@@ -862,26 +848,15 @@ export function DisputeDetail() {
           dispute.decision_final ? (
             <Badge tone="success">Resolved</Badge>
           ) : (
-            <Button onClick={() => setDeciding(true)}>Decide</Button>
+            <Button disabled={mutation.blocked} onClick={() => setDeciding(true)}>
+              Decide
+            </Button>
           )
         }
       />
 
       <div data-screen="B12" className="space-y-4">
-        <ScreenStates
-          states={[
-            { value: "normal", label: "Current" },
-            { value: "conflict", label: "409 already decided" },
-          ]}
-          value={conflict ? "conflict" : "normal"}
-          onChange={(value) => setConflict(value === "conflict")}
-        />
-        {conflict ? (
-          <Banner tone="warning">
-            Another assigned staff member already decided this record. Refresh to see the current
-            decision.
-          </Banner>
-        ) : null}
+        {mutation.node}
         {row?.overdue ? <Banner tone="error">This decision is overdue.</Banner> : null}
 
         <div className="grid gap-4 @3xl:grid-cols-2">
@@ -988,7 +963,7 @@ export function DisputeDetail() {
         footer={
           <Button
             full
-            disabled={!text.trim()}
+            disabled={!text.trim() || mutation.blocked}
             onClick={() => {
               let recorded = false;
               let unauthorized = false;
@@ -1007,7 +982,7 @@ export function DisputeDetail() {
               if (!recorded) {
                 setDeciding(false);
                 if (unauthorized) toast("This case is assigned to another staff member.");
-                else setConflict(true);
+                else mutation.setState("conflict");
                 return;
               }
               toast("Decision recorded.");
@@ -1378,12 +1353,15 @@ export function StandingQueue() {
 
 /** B18 / B19 — Standing Detail as a factual timeline, then lift or uphold. */
 export function StandingDetail() {
+  const mutation = useMutationStates(
+    ["submitting", "offline", "failed", "conflict", "forbidden"],
+    "this suspension decision",
+  );
   const { id } = useParams();
   const { data, update, toast } = usePrototype();
   const navigate = useNavigate();
   const [deciding, setDeciding] = useState<null | "lift" | "uphold">(null);
   const [note, setNote] = useState("");
-  const [conflict, setConflict] = useState(false);
   const item = data.standingQueue.find((s) => s.id === id);
   const assignment = id ? assigneeOf(data, id) : undefined;
   const expectedRevision = id ? revisionOf(data, id) : 1;
@@ -1407,10 +1385,17 @@ export function StandingDetail() {
         description={`${actorTypeLabel[item.actor_type]} · suspended ${formatDate(item.standing_suspended_at)}`}
         action={
           <div className="flex gap-2">
-            <Button variant="secondary" onClick={() => setDeciding("uphold")}>
+            <Button
+              variant="secondary"
+              disabled={mutation.blocked}
+              onClick={() => setDeciding("uphold")}
+            >
               Uphold
             </Button>
-            <Button disabled={automaticCredentialCase} onClick={() => setDeciding("lift")}>
+            <Button
+              disabled={automaticCredentialCase || mutation.blocked}
+              onClick={() => setDeciding("lift")}
+            >
               Lift
             </Button>
           </div>
@@ -1418,20 +1403,7 @@ export function StandingDetail() {
       />
 
       <div data-screen="B18" className="space-y-4">
-        <ScreenStates
-          states={[
-            { value: "normal", label: "Current" },
-            { value: "conflict", label: "409 already decided" },
-          ]}
-          value={conflict ? "conflict" : "normal"}
-          onChange={(value) => setConflict(value === "conflict")}
-        />
-        {conflict ? (
-          <Banner tone="warning">
-            Another assigned staff member already decided this case. Refresh before taking another
-            action.
-          </Banner>
-        ) : null}
+        {mutation.node}
         {item.events.includes("CREDENTIAL_EXPIRED") ? (
           <Banner tone="info">
             Resolves automatically once the pending licence renewal is approved. No lift needed here
@@ -1485,7 +1457,7 @@ export function StandingDetail() {
             </Button>
             <Button
               full
-              disabled={!note.trim()}
+              disabled={!note.trim() || mutation.blocked}
               onClick={() => {
                 let recorded = false;
                 let unauthorized = false;
@@ -1504,7 +1476,7 @@ export function StandingDetail() {
                 if (!recorded) {
                   setDeciding(null);
                   if (unauthorized) toast("This case is assigned to another staff member.");
-                  else setConflict(true);
+                  else mutation.setState("conflict");
                   return;
                 }
                 toast(deciding === "lift" ? "Suspension lifted." : "Suspension upheld.");
@@ -2122,11 +2094,14 @@ export function ClinicalSafetyQueue() {
 
 /** B25 — Clinical Safety Detail and review action. */
 export function ClinicalSafetyDetail() {
+  const mutation = useMutationStates(
+    ["submitting", "offline", "failed", "conflict", "forbidden"],
+    "this clinical review",
+  );
   const { id } = useParams();
   const { data, update, toast } = usePrototype();
   const navigate = useNavigate();
   const [outcome, setOutcome] = useState("");
-  const [conflict, setConflict] = useState(false);
   const complaint = data.clinicalComplaintReferrals.find((item) => item.id === id);
   const consultation = complaint ? consultationById(data, complaint.consultation_id) : undefined;
 
@@ -2203,26 +2178,7 @@ export function ClinicalSafetyDetail() {
         }
       />
       <div data-screen="B25" className="space-y-4">
-        <ScreenStates
-          states={[
-            { value: "normal", label: "Current" },
-            { value: "conflict", label: "409 another reviewer" },
-          ]}
-          value={conflict ? "conflict" : "normal"}
-          onChange={(value) => setConflict(value === "conflict")}
-        />
-        {conflict ? (
-          <Banner
-            tone="warning"
-            action={
-              <Button size="sm" variant="secondary" onClick={() => setConflict(false)}>
-                Refresh
-              </Button>
-            }
-          >
-            Another staff member changed this review. Refresh before recording another action.
-          </Banner>
-        ) : null}
+        {mutation.node}
         {complaint.overdue ? (
           <Banner tone="error">The expected response window has passed.</Banner>
         ) : null}
@@ -2269,19 +2225,23 @@ export function ClinicalSafetyDetail() {
               monitoring.
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
-              <Button variant="secondary" disabled={conflict} onClick={() => setTriage("ROUTINE")}>
+              <Button
+                variant="secondary"
+                disabled={mutation.blocked}
+                onClick={() => setTriage("ROUTINE")}
+              >
                 Routine
               </Button>
               <Button
                 variant="secondary"
-                disabled={conflict}
+                disabled={mutation.blocked}
                 onClick={() => setTriage("URGENT_SAFETY")}
               >
                 Urgent safety
               </Button>
               <Button
                 variant="destructive"
-                disabled={conflict}
+                disabled={mutation.blocked}
                 onClick={() => setTriage("IMMEDIATE_EMERGENCY")}
               >
                 Immediate emergency
@@ -2289,7 +2249,7 @@ export function ClinicalSafetyDetail() {
             </div>
             <Button
               className="mt-4"
-              disabled={conflict || complaint.triage === "UNASSESSED"}
+              disabled={mutation.blocked || complaint.triage === "UNASSESSED"}
               onClick={startReview}
             >
               {complaint.status === "APPEALED"
@@ -2310,7 +2270,7 @@ export function ClinicalSafetyDetail() {
             </Field>
             <Button
               className="mt-4"
-              disabled={!outcome.trim() || conflict}
+              disabled={!outcome.trim() || mutation.blocked}
               onClick={() => {
                 const resolvedAt = now().toISOString().slice(0, 19);
                 update((draft) => {
