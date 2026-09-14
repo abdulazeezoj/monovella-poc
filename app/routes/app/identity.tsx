@@ -1017,7 +1017,7 @@ export function DependantConfirm() {
 /** P18 — Verify Dependant's NIN. */
 export function VerifyDependantNin() {
   const mutation = useMutationStates(
-    ["submitting", "offline", "failed", "validation", "conflict"],
+    ["submitting", "offline", "failed", "validation", "conflict", "forbidden"],
     "this dependant's verification",
   );
   const { id } = useParams();
@@ -1079,7 +1079,7 @@ export function VerifyDependantNin() {
         />
         <Button
           full
-          disabled={nin.length < 11 || !consent}
+          disabled={nin.length < 11 || !consent || mutation.blocked}
           onClick={() => {
             update((d) => {
               recordConsent(d.consentRecords, {

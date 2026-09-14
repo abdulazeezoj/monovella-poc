@@ -508,7 +508,9 @@ export function PrescriptionSelfReport() {
 
         <Button
           full
-          disabled={uploading || (outcome === "FILLED" && !!pastCareDateError(date))}
+          disabled={
+            uploading || (outcome === "FILLED" && !!pastCareDateError(date)) || mutation.blocked
+          }
           onClick={() => {
             if (uploading || (outcome === "FILLED" && pastCareDateError(date))) return;
             if (!activeFulfillmentPatient(data, session.viewingPatientId)) return;
@@ -1505,7 +1507,12 @@ export function LabSelfReport() {
         </Field>
         <Button
           full
-          disabled={uploading || (!summary.trim() && !file) || !!pastCareDateError(date, true)}
+          disabled={
+            uploading ||
+            (!summary.trim() && !file) ||
+            !!pastCareDateError(date, true) ||
+            mutation.blocked
+          }
           onClick={() => {
             if (uploading || (!summary.trim() && !file) || pastCareDateError(date, true)) return;
             if (!activeFulfillmentPatient(data, session.viewingPatientId)) return;

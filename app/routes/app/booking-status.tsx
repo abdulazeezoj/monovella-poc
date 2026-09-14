@@ -553,7 +553,7 @@ export function TelemedicineConsent() {
         />
         <Button
           full
-          disabled={!agreed}
+          disabled={!agreed || mutation.blocked}
           onClick={() => {
             update((d) => {
               recordConsent(d.consentRecords, {
@@ -879,7 +879,7 @@ export function ReferralReceived() {
         </p>
         <Button
           full
-          disabled={!referralAgreed || !telemedicineAgreed || confirming}
+          disabled={!referralAgreed || !telemedicineAgreed || confirming || mutation.blocked}
           onClick={() => {
             if (session.viewingPatientId !== referralPatientId) {
               toast("The care context changed. Review the referral again.");
